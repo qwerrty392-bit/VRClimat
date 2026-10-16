@@ -3,108 +3,119 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium Auto Glass & Sound</title>
+<title>Prime Climate — Премиальные системы кондиционирования</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:'Montserrat',sans-serif;background:#faf8f5;color:#1a1a1a;line-height:1.6;overflow-x:hidden}
 .container{max-width:1300px;margin:0 auto;padding:0 30px}
 
-header{position:relative;height:100vh;min-height:750px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#faf8f5 0%,#f0ebe3 50%,#faf8f5 100%);overflow:hidden}
-header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(184,134,11,0.06) 0%,transparent 60%);animation:rotate 40s linear infinite}
+/* ШАПКА */
+header{position:relative;height:100vh;min-height:750px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#faf8f5 0%,#e8f4f8 50%,#faf8f5 100%);overflow:hidden}
+header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(30,144,255,0.06) 0%,transparent 60%);animation:rotate 40s linear infinite}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .header-content{position:relative;z-index:2;max-width:1000px;padding:0 30px}
-.header-badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#b8860b;margin-bottom:40px;animation:fadeInUp 1s ease 0.3s both}
-.header-badge::before,.header-badge::after{content:'';display:inline-block;width:40px;height:1px;background:#b8860b;vertical-align:middle;margin:0 20px}
+.header-badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#1e90ff;margin-bottom:40px;animation:fadeInUp 1s ease 0.3s both}
+.header-badge::before,.header-badge::after{content:'';display:inline-block;width:40px;height:1px;background:#1e90ff;vertical-align:middle;margin:0 20px}
 header h1{font-family:'Cormorant Garamond',serif;font-size:96px;font-weight:500;line-height:1;letter-spacing:-2px;margin-bottom:30px;color:#1a1a1a;animation:fadeInUp 1s ease 0.5s both}
-header h1 em{font-style:italic;font-weight:700;color:#b8860b}
+header h1 em{font-style:italic;font-weight:700;color:#1e90ff}
 header p{font-size:17px;color:#555;font-weight:300;max-width:550px;margin:0 auto 50px;letter-spacing:1px;animation:fadeInUp 1s ease 0.7s both}
 .btn-primary{display:inline-block;background:#1a1a1a;color:#faf8f5;padding:20px 55px;text-decoration:none;font-weight:500;font-size:12px;letter-spacing:4px;text-transform:uppercase;transition:all 0.4s;border:none;cursor:pointer;animation:fadeInUp 1s ease 0.9s both}
-.btn-primary:hover{background:#b8860b;color:#fff;transform:translateY(-2px);box-shadow:0 15px 40px rgba(184,134,11,0.3)}
+.btn-primary:hover{background:#1e90ff;color:#fff;transform:translateY(-2px);box-shadow:0 15px 40px rgba(30,144,255,0.3)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
+/* СЕКЦИИ */
 section{padding:140px 0;position:relative}
 .section-header{text-align:center;margin-bottom:90px}
-.section-label{font-size:11px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#b8860b;margin-bottom:25px;display:block}
+.section-label{font-size:11px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#1e90ff;margin-bottom:25px;display:block}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:500;line-height:1.1;letter-spacing:-1px;margin-bottom:25px;color:#1a1a1a}
-.section-title em{font-style:italic;font-weight:700;color:#b8860b}
+.section-title em{font-style:italic;font-weight:700;color:#1e90ff}
 .section-subtitle{color:#666;font-size:17px;font-weight:300;max-width:600px;margin:0 auto;letter-spacing:0.5px}
 
+/* УСЛУГИ */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
 .service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;box-shadow:0 5px 30px rgba(0,0,0,0.05);border-top:3px solid transparent}
-.service-card:hover{border-top-color:#b8860b;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
-.service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:#b8860b;letter-spacing:3px;margin-bottom:30px;display:block}
+.service-card:hover{border-top-color:#1e90ff;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+.service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:#1e90ff;letter-spacing:3px;margin-bottom:30px;display:block}
 .service-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#1a1a1a;margin-bottom:20px;line-height:1.2}
 .service-card p{color:#666;font-size:15px;font-weight:300;margin-bottom:30px;line-height:1.8}
 .service-card .price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:#1a1a1a}
 .service-card .price small{font-family:'Montserrat',sans-serif;font-size:12px;color:#999;font-weight:400;letter-spacing:2px}
 
+/* ПРЕИМУЩЕСТВА */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
 .feature{text-align:center;padding:40px 20px}
-.feature .icon{font-size:36px;color:#b8860b;margin-bottom:25px;display:block;font-weight:300}
+.feature .icon{font-size:36px;color:#1e90ff;margin-bottom:25px;display:block;font-weight:300}
 .feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#1a1a1a;margin-bottom:15px}
 .feature p{color:#666;font-size:15px;font-weight:300;line-height:1.8}
 
-.about-section{background:#f0ebe3}
+/* О НАС */
+.about-section{background:#f0f6fa}
 .about-content{max-width:850px;margin:0 auto;text-align:center}
 .about-content p{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;line-height:1.8;color:#333;margin-bottom:30px}
-.about-content em{color:#b8860b;font-style:italic;font-weight:700}
+.about-content em{color:#1e90ff;font-style:italic;font-weight:700}
 .about-content strong{color:#1a1a1a;font-weight:600}
 
+/* КЛИЕНТЫ */
 .clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
 .client-card{background:#fff;padding:70px 50px;text-align:center;transition:all 0.4s;box-shadow:0 5px 30px rgba(0,0,0,0.05);border-top:3px solid transparent}
-.client-card:hover{border-top-color:#b8860b;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
-.client-card .client-icon{font-size:40px;color:#b8860b;margin-bottom:30px;display:block}
+.client-card:hover{border-top-color:#1e90ff;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+.client-card .client-icon{font-size:40px;color:#1e90ff;margin-bottom:30px;display:block}
 .client-card h3{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:#1a1a1a;margin-bottom:20px}
 .client-card p{color:#666;font-size:15px;font-weight:300;line-height:1.8}
 
-.contacts-section{background:#f0ebe3}
+/* БРЕНДЫ */
+.brands-section{background:#f0f6fa}
+.brands-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;max-width:1100px;margin:0 auto}
+.brand-card{background:#fff;padding:50px 30px;text-align:center;transition:all 0.4s;box-shadow:0 5px 30px rgba(0,0,0,0.05)}
+.brand-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+.brand-card h4{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#1a1a1a}
+.brand-card p{color:#999;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:10px}
+
+/* КОНТАКТЫ */
+.contacts-section{background:#f0f6fa}
 .contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:0 auto}
 .contact-card{background:#fff;text-align:center;padding:50px 25px;transition:all 0.4s;box-shadow:0 5px 30px rgba(0,0,0,0.05)}
 .contact-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
-.contact-card .contact-icon{font-size:26px;color:#b8860b;margin-bottom:20px;display:block}
-.contact-card h4{font-family:'Montserrat',sans-serif;color:#b8860b;font-size:11px;font-weight:600;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
+.contact-card .contact-icon{font-size:26px;color:#1e90ff;margin-bottom:20px;display:block}
+.contact-card h4{font-family:'Montserrat',sans-serif;color:#1e90ff;font-size:11px;font-weight:600;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
 .contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:600}
-.contact-card a:hover{color:#b8860b}
+.contact-card a:hover{color:#1e90ff}
 
-.requisites-section{background:#faf8f5;padding:100px 0}
-.requisites-box{max-width:850px;margin:0 auto;background:#fff;padding:60px;box-shadow:0 5px 30px rgba(0,0,0,0.05);border-top:3px solid #b8860b}
-.requisites-box h3{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:34px;font-weight:600;margin-bottom:40px;text-align:center}
-.requisites-box .req-row{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #eee;font-size:15px;font-weight:400}
-.requisites-box .req-row:last-child{border-bottom:none}
-.requisites-box .req-label{color:#888;letter-spacing:1px}
-.requisites-box .req-value{color:#1a1a1a;text-align:right;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600}
-
+/* ПОДВАЛ */
 footer{background:#1a1a1a;padding:60px 0;text-align:center;color:#999;font-size:13px;letter-spacing:2px}
-footer .gold{color:#d4af37;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:15px}
+footer .gold{color:#1e90ff;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:15px}
 
+/* ПЛАВАЮЩАЯ КНОПКА */
 .floating-btn{position:fixed;bottom:40px;right:40px;z-index:999;background:#1a1a1a;color:#faf8f5;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(0,0,0,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
-.floating-btn:hover{background:#b8860b;transform:translateY(-3px);box-shadow:0 20px 60px rgba(184,134,11,0.4)}
+.floating-btn:hover{background:#1e90ff;transform:translateY(-3px);box-shadow:0 20px 60px rgba(30,144,255,0.4)}
 .floating-btn .btn-icon{font-size:18px}
 
+/* МОДАЛЬНОЕ ОКНО */
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,26,26,0.85);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease}
 .modal-overlay.active{display:flex}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .modal-content{background:#faf8f5;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 30px 80px rgba(0,0,0,0.3)}
 @keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#999;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:200}
-.modal-close:hover{color:#b8860b}
+.modal-close:hover{color:#1e90ff}
 .modal-content h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:42px;font-weight:500;margin-bottom:10px;color:#1a1a1a}
-.modal-content h2 em{font-style:italic;font-weight:700;color:#b8860b}
+.modal-content h2 em{font-style:italic;font-weight:700;color:#1e90ff}
 .modal-content .form-subtitle{text-align:center;color:#888;margin-bottom:40px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
 .form-group{margin-bottom:22px}
 .form-group label{display:block;margin-bottom:10px;color:#666;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase}
 .form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #ccc;color:#1a1a1a;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:500;outline:none;transition:border-color 0.4s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#b8860b}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#1e90ff}
 .form-group textarea{resize:vertical;min-height:80px}
 .form-group select{cursor:pointer;color:#1a1a1a}
 .form-group select option{background:#faf8f5;color:#1a1a1a}
 .modal-content .btn-primary{width:100%;margin-top:20px;padding:20px;background:#1a1a1a;color:#faf8f5;border:none;font-size:12px;letter-spacing:4px;font-weight:600}
-.modal-content .btn-primary:hover{background:#b8860b;color:#fff}
+.modal-content .btn-primary:hover{background:#1e90ff;color:#fff}
 .form-status{margin-top:25px;text-align:center;font-size:14px;min-height:20px;letter-spacing:1px;font-weight:500}
-.form-status.success{color:#b8860b}
+.form-status.success{color:#1e90ff}
 .form-status.error{color:#c0392b}
 
+/* АДАПТИВ */
 @media (max-width:768px){
 header h1{font-size:52px}
 .section-title{font-size:42px}
@@ -112,9 +123,6 @@ section{padding:90px 0}
 .service-card,.client-card{padding:50px 35px}
 .floating-btn{bottom:20px;right:20px;padding:15px 25px;font-size:11px}
 .modal-content{padding:50px 30px}
-.requisites-box{padding:40px 25px}
-.requisites-box .req-row{flex-direction:column;gap:5px}
-.requisites-box .req-value{text-align:left}
 .header-badge::before,.header-badge::after{width:20px;margin:0 10px}
 }
 .reveal{opacity:0;transform:translateY(50px);transition:opacity 1s ease,transform 1s ease}
@@ -125,9 +133,9 @@ section{padding:90px 0}
 
 <header>
 <div class="header-content">
-<div class="header-badge">Premium Auto Service</div>
-<h1>Полировка стёкол и <em>шумоизоляция</em> авто</h1>
-<p>Профессиональный уход за вашим автомобилем. Опыт более 5 лет, гарантия качества, честные цены.</p>
+<div class="header-badge">Prime Climate Systems</div>
+<h1>Премиальные системы <em>кондиционирования</em></h1>
+<p>Продажа, установка и обслуживание кондиционеров премиум-класса. Работаем с 2015 года.</p>
 <button onclick="openModal()" class="btn-primary">Оставить заявку</button>
 </div>
 </header>
@@ -137,31 +145,31 @@ section{padding:90px 0}
 <div class="section-header reveal">
 <span class="section-label">Услуги</span>
 <h2 class="section-title">Наши <em>услуги</em></h2>
-<p class="section-subtitle">Полный спектр работ по полировке и шумоизоляции автомобилей</p>
+<p class="section-subtitle">Полный спектр работ по кондиционированию</p>
 </div>
 <div class="services">
-<div class="service-card reveal"><span class="service-number">01</span><h3>Полировка лобового стекла</h3><p>Убираем царапины и потёртости, возвращаем прозрачность и блеск.</p><div class="price">0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">02</span><h3>Полировка всех стёкол</h3><p>Полный комплекс: лобовое, заднее и боковые стёкла. Идеальный обзор.</p><div class="price">0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">03</span><h3>Полировка заднего стекла</h3><p>Устраняем царапины и помутнения на заднем стекле.</p><div class="price">0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">04</span><h3>Полировка одного стекла</h3><p>Если нужно привести в порядок только одно стекло — сделаем быстро.</p><div class="price">0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">05</span><h3>Полировка фар</h3><p>Возвращаем фарам прозрачность и яркость. Улучшаем свет и внешний вид.</p><div class="price">0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">06</span><h3>Шумоизоляция авто</h3><p>Полная или частичная шумо- и виброизоляция. Тишина и комфорт в салоне.</p><div class="price">0 <small>BYN</small></div></div>
+<div class="service-card reveal"><span class="service-number">01</span><h3>Продажа кондиционеров</h3><p>Официальный дилер ведущих мировых брендов. Подбор под ваш интерьер и бюджет.</p><div class="price">от 0 <small>BYN</small></div></div>
+<div class="service-card reveal"><span class="service-number">02</span><h3>Установка кондиционеров</h3><p>Профессиональный монтаж с гарантией. Аккуратно, быстро, с соблюдением всех норм.</p><div class="price">от 0 <small>BYN</small></div></div>
+<div class="service-card reveal"><span class="service-number">03</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка, замена фильтров.</p><div class="price">от 0 <small>BYN</small></div></div>
+<div class="service-card reveal"><span class="service-number">04</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности. Оригинальные запчасти, гарантия на работы.</p><div class="price">от 0 <small>BYN</small></div></div>
+<div class="service-card reveal"><span class="service-number">05</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента. Используем только сертифицированный фреон.</p><div class="price">от 0 <small>BYN</small></div></div>
+<div class="service-card reveal"><span class="service-number">06</span><h3>Мульти-сплит системы</h3><p>Проектирование и установка мульти-сплит систем для квартир, домов и офисов.</p><div class="price">от 0 <small>BYN</small></div></div>
 </div>
 </div>
 </section>
 
-<section style="background:#f0ebe3">
+<section style="background:#f0f6fa">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Преимущества</span>
 <h2 class="section-title">Почему <em>выбирают нас</em></h2>
-<p class="section-subtitle">Мы делаем свою работу честно и качественно</p>
+<p class="section-subtitle">Мы работаем честно и качественно</p>
 </div>
 <div class="features">
-<div class="feature reveal"><span class="icon">◆</span><h3>Опыт более 5 лет</h3><p>Даже если ИП открыто недавно, за плечами — годы практики и сотни довольных клиентов.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Гарантия качества</h3><p>Отвечаем за результат. Если что-то не устроит — исправим.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Быстро и аккуратно</h3><p>Работы выполняются в оговорённые сроки, без лишних задержек.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Премиум-подход</h3><p>Используем качественные материалы и современное оборудование.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Опыт более 8 лет</h3><p>Более 2000 установленных систем. Работаем с 2015 года.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Официальная гарантия</h3><p>До 5 лет гарантии на оборудование и работы. Все документы официально.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Сертифицированные мастера</h3><p>Все специалисты имеют профильное образование и регулярно повышают квалификацию.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Работа с юрлицами</h3><p>Безналичный расчёт, договор, все закрывающие документы. Работаем с объектами любого масштаба.</p></div>
 </div>
 </div>
 </section>
@@ -170,27 +178,45 @@ section{padding:90px 0}
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">О нас</span>
-<h2 class="section-title">Знакомство с <em>мастером</em></h2>
+<h2 class="section-title">Компания <em>Prime Climate</em></h2>
 </div>
 <div class="about-content reveal">
-<p>Меня зовут <em>Владислав</em>. Я занимаюсь полировкой стёкол, фар и шумоизоляцией автомобилей уже <strong>более 5 лет</strong>.</p>
-<p>За это время через мои руки прошли сотни машин — от обычных городских авто до премиум-класса. Я люблю своё дело и делаю его честно.</p>
-<p>Несмотря на то, что ИП было открыто недавно, опыт и качество работы остаются на высшем уровне. <strong>Гарантия качества</strong> — мой главный принцип.</p>
-<p>Работаю с <strong>физическими и юридическими лицами</strong>. Возможен безналичный расчёт.</p>
+<p>Мы — команда профессионалов, которая занимается <em>кондиционированием</em> уже <strong>более 8 лет</strong>.</p>
+<p>За это время мы установили более <strong>2000 систем</strong> — от компактных бытовых кондиционеров до промышленных мульти-сплит систем для крупных объектов.</p>
+<p>Мы работаем с ведущими мировыми брендами и даём <strong>официальную гарантию</strong> на всё оборудование и работы. Наш главный принцип — честность и качество.</p>
+<p>Работаем с <strong>физическими и юридическими лицами</strong>. Возможен безналичный расчёт.</p>
 </div>
 </div>
 </section>
 
-<section style="background:#f0ebe3">
+<section style="background:#f0f6fa">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-label">Бренды</span>
+<h2 class="section-title">Работаем с <em>лучшими</em></h2>
+<p class="section-subtitle">Официальный дилер ведущих мировых производителей</p>
+</div>
+<div class="brands-grid">
+<div class="brand-card reveal"><h4>Daikin</h4><p>Япония</p></div>
+<div class="brand-card reveal"><h4>Mitsubishi</h4><p>Япония</p></div>
+<div class="brand-card reveal"><h4>LG</h4><p>Корея</p></div>
+<div class="brand-card reveal"><h4>Samsung</h4><p>Корея</p></div>
+<div class="brand-card reveal"><h4>Panasonic</h4><p>Япония</p></div>
+<div class="brand-card reveal"><h4>Toshiba</h4><p>Япония</p></div>
+</div>
+</div>
+</section>
+
+<section>
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Клиенты</span>
-<h2 class="section-title">Кому мы <em>оказываем услуги</em></h2>
+<h2 class="section-title">Кому мы <em>помогаем</em></h2>
 <p class="section-subtitle">Работаем с физическими и юридическими лицами</p>
 </div>
 <div class="clients-grid">
-<div class="client-card reveal"><span class="client-icon">◆</span><h3>Физическим лицам</h3><p>Владельцам автомобилей, которые хотят улучшить внешний вид и комфорт своего авто. Работаем быстро, аккуратно и с гарантией.</p></div>
-<div class="client-card reveal"><span class="client-icon">◆</span><h3>Юридическим лицам</h3><p>Автопаркам, компаниям и организациям. Возможен безналичный расчёт, работа по договору, отсрочка платежа. Предоставляем все закрывающие документы.</p></div>
+<div class="client-card reveal"><span class="client-icon">◆</span><h3>Физическим лицам</h3><p>Владельцам квартир и домов. Подберём кондиционер под интерьер, установим аккуратно и быстро, обеспечим сервис.</p></div>
+<div class="client-card reveal"><span class="client-icon">◆</span><h3>Юридическим лицам</h3><p>Офисам, магазинам, ресторанам, складам. Проектирование, монтаж, обслуживание. Все закрывающие документы.</p></div>
 </div>
 </div>
 </section>
@@ -205,30 +231,16 @@ section{padding:90px 0}
 <div class="contacts-grid reveal">
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Телефон</h4><a href="tel:+375256439632">+375 (25) 643-96-32</a></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Telegram / Viber</h4><a href="https://t.me/ваш_ник">@ваш_ник</a></div>
-<div class="contact-card"><span class="contact-icon">◆</span><h4>Instagram</h4><a href="https://instagram.com/ваш_ник">@ваш_ник</a></div>
+<div class="contact-card"><span class="contact-icon">◆</span><h4>Email</h4><a href="mailto:info@primeclimate.by">info@primeclimate.by</a></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Время работы</h4><p>Пн–Вс: 9:00 – 21:00</p></div>
-</div>
-</div>
-</section>
-
-<section class="requisites-section" id="requisites">
-<div class="container">
-<div class="requisites-box reveal">
-<h3>Реквизиты ИП</h3>
-<div class="req-row"><span class="req-label">Наименование</span><span class="req-value">ИП [Ваша Фамилия И.О.]</span></div>
-<div class="req-row"><span class="req-label">УНП</span><span class="req-value">[Вставь УНП]</span></div>
-<div class="req-row"><span class="req-label">Юридический адрес</span><span class="req-value">[Вставь адрес]</span></div>
-<div class="req-row"><span class="req-label">Банк</span><span class="req-value">[Название банка]</span></div>
-<div class="req-row"><span class="req-label">БИК</span><span class="req-value">[БИК]</span></div>
-<div class="req-row"><span class="req-label">Расчётный счёт</span><span class="req-value">[Номер счёта]</span></div>
 </div>
 </div>
 </section>
 
 <footer>
 <div class="container">
-<p class="gold">© 2026 Premium Auto Glass & Sound</p>
-<p>ИП [Ваша Фамилия И.О.], УНП [номер]</p>
+<p class="gold">© 2026 Prime Climate Systems</p>
+<p>Премиальные системы кондиционирования</p>
 </div>
 </footer>
 
@@ -241,22 +253,23 @@ section{padding:90px 0}
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal()">×</button>
 <h2>Оставить <em>заявку</em></h2>
-<p class="form-subtitle">Мы свяжемся с вами</p>
+<p class="form-subtitle">Мы свяжемся с вами в течение 15 минут</p>
 <form id="leadForm">
 <div class="form-group"><label>Ваше имя</label><input type="text" name="name" placeholder="Иван" required></div>
 <div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required></div>
 <div class="form-group"><label>Услуга</label>
 <select name="service" required>
 <option value="">Выберите услугу</option>
-<option>Полировка лобового стекла</option>
-<option>Полировка всех стёкол</option>
-<option>Полировка заднего стекла</option>
-<option>Полировка одного стекла</option>
-<option>Полировка фар</option>
-<option>Шумоизоляция авто</option>
+<option>Продажа кондиционера</option>
+<option>Установка кондиционера</option>
+<option>Обслуживание и чистка</option>
+<option>Ремонт кондиционера</option>
+<option>Заправка фреоном</option>
+<option>Мульти-сплит система</option>
+<option>Консультация</option>
 </select>
 </div>
-<div class="form-group"><label>Комментарий</label><textarea name="message" placeholder="Марка авто, удобное время..."></textarea></div>
+<div class="form-group"><label>Комментарий</label><textarea name="message" placeholder="Тип помещения, площадь, пожелания..."></textarea></div>
 <button type="submit" class="btn-primary">Отправить заявку</button>
 <div class="form-status" id="formStatus"></div>
 </form>
@@ -281,7 +294,7 @@ const name=form.name.value.trim();
 const phone=form.phone.value.trim();
 const service=form.service.value;
 const message=form.message.value.trim();
-const text=`🚗 Новая заявка!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
+const text=`❄️ Новая заявка с сайта Prime Climate!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
 btn.disabled=true;btn.textContent='Отправка...';status.textContent='';status.className='form-status';
 try{
 const url=`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
