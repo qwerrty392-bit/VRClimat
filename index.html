@@ -4,100 +4,107 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premium Auto Glass & Sound</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@200;300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat',sans-serif;background:#0a0a0a;color:#fff;line-height:1.6;overflow-x:hidden}
+body{font-family:'Montserrat',sans-serif;background:#faf8f5;color:#1a1a1a;line-height:1.6;overflow-x:hidden}
 .container{max-width:1300px;margin:0 auto;padding:0 30px}
-header{position:relative;height:100vh;min-height:750px;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,#1f1f1f 0%,#0a0a0a 100%);overflow:hidden}
-header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(212,175,55,0.1) 0%,transparent 60%);animation:rotate 30s linear infinite}
+
+header{position:relative;height:100vh;min-height:750px;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#faf8f5 0%,#f0ebe3 50%,#faf8f5 100%);overflow:hidden}
+header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(184,134,11,0.06) 0%,transparent 60%);animation:rotate 40s linear infinite}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .header-content{position:relative;z-index:2;max-width:1000px;padding:0 30px}
-.header-badge{display:inline-block;font-size:12px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#f4e5a1;margin-bottom:40px;animation:fadeInUp 1s ease 0.3s both}
-.header-badge::before,.header-badge::after{content:'';display:inline-block;width:40px;height:1px;background:#f4e5a1;vertical-align:middle;margin:0 20px}
-header h1{font-family:'Cormorant Garamond',serif;font-size:96px;font-weight:400;line-height:1;letter-spacing:-2px;margin-bottom:30px;color:#ffffff;animation:fadeInUp 1s ease 0.5s both}
-header h1 em{font-style:italic;font-weight:700;background:linear-gradient(135deg,#f4e5a1 0%,#d4af37 50%,#f4e5a1 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-header p{font-size:17px;color:#dddddd;font-weight:300;max-width:550px;margin:0 auto 50px;letter-spacing:1px;animation:fadeInUp 1s ease 0.7s both}
-.btn-primary{display:inline-block;background:transparent;color:#f4e5a1;padding:20px 55px;text-decoration:none;font-weight:500;font-size:13px;letter-spacing:4px;text-transform:uppercase;transition:all 0.5s;border:1px solid #f4e5a1;cursor:pointer;position:relative;overflow:hidden;animation:fadeInUp 1s ease 0.9s both}
-.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(135deg,#d4af37,#f4e5a1);transition:left 0.5s;z-index:-1}
-.btn-primary:hover{color:#0a0a0a}
-.btn-primary:hover::before{left:0}
+.header-badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#b8860b;margin-bottom:40px;animation:fadeInUp 1s ease 0.3s both}
+.header-badge::before,.header-badge::after{content:'';display:inline-block;width:40px;height:1px;background:#b8860b;vertical-align:middle;margin:0 20px}
+header h1{font-family:'Cormorant Garamond',serif;font-size:96px;font-weight:500;line-height:1;letter-spacing:-2px;margin-bottom:30px;color:#1a1a1a;animation:fadeInUp 1s ease 0.5s both}
+header h1 em{font-style:italic;font-weight:700;color:#b8860b}
+header p{font-size:17px;color:#555;font-weight:300;max-width:550px;margin:0 auto 50px;letter-spacing:1px;animation:fadeInUp 1s ease 0.7s both}
+.btn-primary{display:inline-block;background:#1a1a1a;color:#faf8f5;padding:20px 55px;text-decoration:none;font-weight:500;font-size:12px;letter-spacing:4px;text-transform:uppercase;transition:all 0.4s;border:none;cursor:pointer;animation:fadeInUp 1s ease 0.9s both}
+.btn-primary:hover{background:#b8860b;color:#fff;transform:translateY(-2px);box-shadow:0 15px 40px rgba(184,134,11,0.3)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
+
 section{padding:140px 0;position:relative}
 .section-header{text-align:center;margin-bottom:90px}
-.section-label{font-size:12px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#f4e5a1;margin-bottom:25px;display:block}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:400;line-height:1.1;letter-spacing:-1px;margin-bottom:25px;color:#ffffff}
-.section-title em{font-style:italic;font-weight:700;background:linear-gradient(135deg,#f4e5a1,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.section-subtitle{color:#cccccc;font-size:17px;font-weight:300;max-width:600px;margin:0 auto;letter-spacing:0.5px}
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2px;background:#2a2a2a}
-.service-card{background:#141414;padding:60px 45px;transition:all 0.6s cubic-bezier(0.4,0,0.2,1);position:relative;overflow:hidden}
-.service-card::before{content:'';position:absolute;top:0;left:0;width:100%;height:2px;background:linear-gradient(90deg,transparent,#f4e5a1,transparent);transform:scaleX(0);transition:transform 0.6s}
-.service-card:hover::before{transform:scaleX(1)}
-.service-card:hover{background:#1a1a1a;transform:translateY(-5px)}
-.service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:#f4e5a1;letter-spacing:3px;margin-bottom:30px;display:block}
-.service-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;color:#ffffff;margin-bottom:20px;line-height:1.2}
-.service-card p{color:#bbbbbb;font-size:15px;font-weight:300;margin-bottom:30px;line-height:1.8}
-.service-card .price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:#f4e5a1}
-.service-card .price small{font-family:'Montserrat',sans-serif;font-size:12px;color:#888;font-weight:400;letter-spacing:2px}
+.section-label{font-size:11px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#b8860b;margin-bottom:25px;display:block}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:500;line-height:1.1;letter-spacing:-1px;margin-bottom:25px;color:#1a1a1a}
+.section-title em{font-style:italic;font-weight:700;color:#b8860b}
+.section-subtitle{color:#666;font-size:17px;font-weight:300;max-width:600px;margin:0 auto;letter-spacing:0.5px}
+
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
+.service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;box-shadow:0 5px 30px rgba(0,0,0,0.05);border-top:3px solid transparent}
+.service-card:hover{border-top-color:#b8860b;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+.service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:500;color:#b8860b;letter-spacing:3px;margin-bottom:30px;display:block}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:#1a1a1a;margin-bottom:20px;line-height:1.2}
+.service-card p{color:#666;font-size:15px;font-weight:300;margin-bottom:30px;line-height:1.8}
+.service-card .price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:#1a1a1a}
+.service-card .price small{font-family:'Montserrat',sans-serif;font-size:12px;color:#999;font-weight:400;letter-spacing:2px}
+
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
-.feature{text-align:center}
-.feature .icon{font-size:36px;color:#f4e5a1;margin-bottom:25px;display:block;font-weight:300}
-.feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:#ffffff;margin-bottom:15px}
-.feature p{color:#bbbbbb;font-size:15px;font-weight:300;line-height:1.8}
-.about-section{background:#0f0f0f}
+.feature{text-align:center;padding:40px 20px}
+.feature .icon{font-size:36px;color:#b8860b;margin-bottom:25px;display:block;font-weight:300}
+.feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:#1a1a1a;margin-bottom:15px}
+.feature p{color:#666;font-size:15px;font-weight:300;line-height:1.8}
+
+.about-section{background:#f0ebe3}
 .about-content{max-width:850px;margin:0 auto;text-align:center}
-.about-content p{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;line-height:1.8;color:#dddddd;margin-bottom:30px}
-.about-content em{color:#f4e5a1;font-style:italic;font-weight:700}
-.about-content strong{color:#ffffff;font-weight:600}
-.clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:2px;background:#2a2a2a}
-.client-card{background:#141414;padding:70px 50px;text-align:center;transition:all 0.6s;position:relative}
-.client-card:hover{background:#1a1a1a}
-.client-card .client-icon{font-size:40px;color:#f4e5a1;margin-bottom:30px;display:block}
-.client-card h3{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:500;color:#ffffff;margin-bottom:20px}
-.client-card p{color:#bbbbbb;font-size:15px;font-weight:300;line-height:1.8}
-.contacts-section{background:#0f0f0f}
-.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;background:#2a2a2a;max-width:1100px;margin:0 auto}
-.contact-card{background:#141414;text-align:center;padding:50px 25px;transition:all 0.5s}
-.contact-card:hover{background:#1a1a1a}
-.contact-card .contact-icon{font-size:26px;color:#f4e5a1;margin-bottom:20px;display:block}
-.contact-card h4{font-family:'Montserrat',sans-serif;color:#f4e5a1;font-size:11px;font-weight:500;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
-.contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#ffffff;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:500}
-.contact-card a:hover{color:#f4e5a1}
-.requisites-section{background:#0a0a0a;padding:100px 0}
-.requisites-box{max-width:850px;margin:0 auto;background:#141414;padding:60px;border:1px solid #2a2a2a}
-.requisites-box h3{font-family:'Cormorant Garamond',serif;color:#f4e5a1;font-size:34px;font-weight:500;margin-bottom:40px;text-align:center}
-.requisites-box .req-row{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #2a2a2a;font-size:15px;font-weight:400}
+.about-content p{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:400;line-height:1.8;color:#333;margin-bottom:30px}
+.about-content em{color:#b8860b;font-style:italic;font-weight:700}
+.about-content strong{color:#1a1a1a;font-weight:600}
+
+.clients-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
+.client-card{background:#fff;padding:70px 50px;text-align:center;transition:all 0.4s;box-shadow:0 5px 30px rgba(0,0,0,0.05);border-top:3px solid transparent}
+.client-card:hover{border-top-color:#b8860b;transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+.client-card .client-icon{font-size:40px;color:#b8860b;margin-bottom:30px;display:block}
+.client-card h3{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:600;color:#1a1a1a;margin-bottom:20px}
+.client-card p{color:#666;font-size:15px;font-weight:300;line-height:1.8}
+
+.contacts-section{background:#f0ebe3}
+.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:0 auto}
+.contact-card{background:#fff;text-align:center;padding:50px 25px;transition:all 0.4s;box-shadow:0 5px 30px rgba(0,0,0,0.05)}
+.contact-card:hover{transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,0.1)}
+.contact-card .contact-icon{font-size:26px;color:#b8860b;margin-bottom:20px;display:block}
+.contact-card h4{font-family:'Montserrat',sans-serif;color:#b8860b;font-size:11px;font-weight:600;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
+.contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:600}
+.contact-card a:hover{color:#b8860b}
+
+.requisites-section{background:#faf8f5;padding:100px 0}
+.requisites-box{max-width:850px;margin:0 auto;background:#fff;padding:60px;box-shadow:0 5px 30px rgba(0,0,0,0.05);border-top:3px solid #b8860b}
+.requisites-box h3{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:34px;font-weight:600;margin-bottom:40px;text-align:center}
+.requisites-box .req-row{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid #eee;font-size:15px;font-weight:400}
 .requisites-box .req-row:last-child{border-bottom:none}
-.requisites-box .req-label{color:#999;letter-spacing:1px}
-.requisites-box .req-value{color:#ffffff;text-align:right;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:500}
-footer{background:#0a0a0a;padding:60px 0;text-align:center;color:#888;font-size:13px;border-top:1px solid #222;letter-spacing:2px}
-footer .gold{color:#f4e5a1;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:500;margin-bottom:15px}
-.floating-btn{position:fixed;bottom:40px;right:40px;z-index:999;background:linear-gradient(135deg,#d4af37,#f4e5a1,#d4af37);background-size:200% auto;color:#0a0a0a;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(212,175,55,0.5);transition:all 0.4s;display:flex;align-items:center;gap:12px}
-.floating-btn:hover{transform:translateY(-3px);background-position:right center;box-shadow:0 20px 60px rgba(212,175,55,0.8)}
+.requisites-box .req-label{color:#888;letter-spacing:1px}
+.requisites-box .req-value{color:#1a1a1a;text-align:right;font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600}
+
+footer{background:#1a1a1a;padding:60px 0;text-align:center;color:#999;font-size:13px;letter-spacing:2px}
+footer .gold{color:#d4af37;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;margin-bottom:15px}
+
+.floating-btn{position:fixed;bottom:40px;right:40px;z-index:999;background:#1a1a1a;color:#faf8f5;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(0,0,0,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
+.floating-btn:hover{background:#b8860b;transform:translateY(-3px);box-shadow:0 20px 60px rgba(184,134,11,0.4)}
 .floating-btn .btn-icon{font-size:18px}
-.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease}
+
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,26,26,0.85);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease}
 .modal-overlay.active{display:flex}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal-content{background:#141414;max-width:550px;width:100%;padding:70px 50px;border:1px solid #f4e5a1;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1)}
+.modal-content{background:#faf8f5;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);box-shadow:0 30px 80px rgba(0,0,0,0.3)}
 @keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#999;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:200}
-.modal-close:hover{color:#f4e5a1}
-.modal-content h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:42px;font-weight:400;margin-bottom:10px;color:#ffffff}
-.modal-content h2 em{font-style:italic;font-weight:700;color:#f4e5a1}
-.modal-content .form-subtitle{text-align:center;color:#999;margin-bottom:40px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.modal-close:hover{color:#b8860b}
+.modal-content h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:42px;font-weight:500;margin-bottom:10px;color:#1a1a1a}
+.modal-content h2 em{font-style:italic;font-weight:700;color:#b8860b}
+.modal-content .form-subtitle{text-align:center;color:#888;margin-bottom:40px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
 .form-group{margin-bottom:22px}
-.form-group label{display:block;margin-bottom:10px;color:#bbb;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #333;color:#ffffff;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:500;outline:none;transition:border-color 0.4s}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#f4e5a1}
+.form-group label{display:block;margin-bottom:10px;color:#666;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #ccc;color:#1a1a1a;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:500;outline:none;transition:border-color 0.4s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#b8860b}
 .form-group textarea{resize:vertical;min-height:80px}
-.form-group select{cursor:pointer;color:#ffffff}
-.form-group select option{background:#141414;color:#ffffff}
-.modal-content .btn-primary{width:100%;margin-top:20px;padding:20px;background:linear-gradient(135deg,#d4af37,#f4e5a1);color:#0a0a0a;border:none;font-size:12px;letter-spacing:4px;font-weight:700}
-.modal-content .btn-primary::before{display:none}
-.modal-content .btn-primary:hover{transform:translateY(-2px);box-shadow:0 15px 40px rgba(212,175,55,0.5)}
+.form-group select{cursor:pointer;color:#1a1a1a}
+.form-group select option{background:#faf8f5;color:#1a1a1a}
+.modal-content .btn-primary{width:100%;margin-top:20px;padding:20px;background:#1a1a1a;color:#faf8f5;border:none;font-size:12px;letter-spacing:4px;font-weight:600}
+.modal-content .btn-primary:hover{background:#b8860b;color:#fff}
 .form-status{margin-top:25px;text-align:center;font-size:14px;min-height:20px;letter-spacing:1px;font-weight:500}
-.form-status.success{color:#f4e5a1}
-.form-status.error{color:#ff6b6b}
+.form-status.success{color:#b8860b}
+.form-status.error{color:#c0392b}
+
 @media (max-width:768px){
 header h1{font-size:52px}
 .section-title{font-size:42px}
@@ -143,7 +150,7 @@ section{padding:90px 0}
 </div>
 </section>
 
-<section style="background:#0f0f0f">
+<section style="background:#f0ebe3">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Преимущества</span>
@@ -174,7 +181,7 @@ section{padding:90px 0}
 </div>
 </section>
 
-<section style="background:#0f0f0f">
+<section style="background:#f0ebe3">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Клиенты</span>
