@@ -1,1 +1,232 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шумоизоляция автомобиля в Минске</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        body {
+            background: #1a1a1a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Шапка */
+        header {
+            background: linear-gradient(135deg, #ff6b00, #ff9500);
+            padding: 60px 0;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        header p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: #ff6b00;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 25px;
+            transition: transform 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        /* Секции */
+        section {
+            padding: 60px 0;
+        }
+        h2 {
+            font-size: 36px;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #ff9500;
+        }
+        /* Услуги */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            transition: transform 0.2s;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff9500;
+        }
+        .service-card h3 {
+            color: #ff9500;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        .service-card .price {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #fff;
+        }
+        /* Преимущества */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .feature {
+            padding: 20px;
+        }
+        .feature .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        /* Контакты */
+        .contacts {
+            background: #2a2a2a;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .contacts a {
+            color: #ff9500;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        /* Подвал */
+        footer {
+            background: #111;
+            padding: 30px 0;
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 32px; }
+            h2 { font-size: 26px; }
+        }
+    </style>
+</head>
+<body>
 
+    <!-- ШАПКА -->
+    <header>
+        <div class="container">
+            <h1>Шумоизоляция автомобиля</h1>
+            <p>Профессиональная шумо- и виброизоляция в Минске</p>
+            <a href="tel:+375291234567" class="btn">📞 Позвонить</a>
+        </div>
+    </header>
+
+    <!-- УСЛУГИ -->
+    <section>
+        <div class="container">
+            <h2>Наши услуги</h2>
+            <div class="services">
+                <div class="service-card">
+                    <h3>Полная шумоизоляция</h3>
+                    <p>Все зоны: двери, пол, крыша, багажник, арки. Максимальный комфорт и тишина.</p>
+                    <div class="price">от 800 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Шумоизоляция дверей</h3>
+                    <p>Убираем скрипы, улучшаем звук акустики, делаем двери «как в премиум-классе».</p>
+                    <div class="price">от 150 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Шумоизоляция пола</h3>
+                    <p>Снижаем шум от дороги и вибрации. Комфорт в каждой поездке.</p>
+                    <div class="price">от 250 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Шумоизоляция арок</h3>
+                    <p>Убираем гул от шин. Особенно актуально для зимней резины.</p>
+                    <div class="price">от 200 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Виброизоляция</h3>
+                    <p>Устраняем вибрации кузова, продлеваем срок службы деталей.</p>
+                    <div class="price">от 300 руб.</div>
+                </div>
+                <div class="service-card">
+                    <h3>Антискрип</h3>
+                    <p>Убираем скрипы пластика и панелей. Тишина в салоне гарантирована.</p>
+                    <div class="price">от 100 руб.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПРЕИМУЩЕСТВА -->
+    <section style="background: #222;">
+        <div class="container">
+            <h2>Почему мы?</h2>
+            <div class="features">
+                <div class="feature">
+                    <div class="icon">✅</div>
+                    <h3>Опыт 5+ лет</h3>
+                    <p>Сделали более 500 автомобилей</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">🛡️</div>
+                    <h3>Гарантия</h3>
+                    <p>2 года на все работы</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">⚡</div>
+                    <h3>Быстро</h3>
+                    <p>Работы за 1-2 дня</p>
+                </div>
+                <div class="feature">
+                    <div class="icon">💰</div>
+                    <h3>Честные цены</h3>
+                    <p>Без скрытых доплат</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
+    <section>
+        <div class="container">
+            <h2>Свяжитесь с нами</h2>
+            <div class="contacts">
+                <p>📍 г. Минск, ул. Примерная, 1</p>
+                <p style="margin: 20px 0;">📞 Телефон:</p>
+                <a href="tel:+375291234567">+375 (29) 123-45-67</a>
+                <p style="margin-top: 20px;">🕐 Работаем ежедневно с 9:00 до 21:00</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ПОДВАЛ -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Шумоизоляция в Минске. Все права защищены.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
