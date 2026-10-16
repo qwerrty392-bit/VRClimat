@@ -3,202 +3,334 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Полировка стёкол и шумоизоляция авто в Минске</title>
+    <title>Premium Auto Glass & Sound — Полировка стёкол и шумоизоляция</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Arial, sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background: #1a1a1a;
+            font-family: 'Montserrat', sans-serif;
+            background: #0a0a0a;
             color: #fff;
             line-height: 1.6;
+            overflow-x: hidden;
         }
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        /* Шапка */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ШАПКА */
         header {
-            background: linear-gradient(135deg, #ff6b00, #ff9500);
-            padding: 60px 0;
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%; left: -50%;
+            width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(255,107,0,0.15) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .header-content { position: relative; z-index: 2; max-width: 900px; padding: 0 20px; }
+        .header-badge {
+            display: inline-block;
+            background: rgba(255,107,0,0.15);
+            border: 1px solid rgba(255,107,0,0.4);
+            color: #ff9500;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            animation: fadeInDown 0.8s ease;
         }
         header h1 {
-            font-size: 48px;
-            margin-bottom: 15px;
+            font-size: 64px;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        header h1 span {
+            background: linear-gradient(135deg, #ff6b00, #ff9500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         header p {
             font-size: 20px;
-            opacity: 0.9;
+            color: #999;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease 0.4s both;
         }
-        /* Секции */
-        section {
-            padding: 60px 0;
-        }
-        h2 {
-            font-size: 36px;
-            margin-bottom: 40px;
-            text-align: center;
-            color: #ff9500;
-        }
-        /* Услуги */
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-        }
-        .service-card {
-            background: #2a2a2a;
-            padding: 30px;
-            border-radius: 15px;
-            border: 1px solid #333;
-            transition: transform 0.2s;
-        }
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: #ff9500;
-        }
-        .service-card h3 {
-            color: #ff9500;
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-        .service-card .price {
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 15px;
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b00, #ff9500);
             color: #fff;
+            padding: 18px 50px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            animation: fadeInUp 0.8s ease 0.6s both;
+            box-shadow: 0 10px 40px rgba(255,107,0,0.3);
         }
-        /* Преимущества */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            text-align: center;
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 15px 50px rgba(255,107,0,0.5); }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* СЕКЦИИ */
+        section { padding: 100px 0; position: relative; }
+        .section-title { font-size: 42px; font-weight: 900; text-align: center; margin-bottom: 20px; }
+        .section-subtitle { text-align: center; color: #888; font-size: 18px; font-weight: 300; margin-bottom: 60px; max-width: 600px; margin-left: auto; margin-right: auto; }
+
+        /* УСЛУГИ */
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card {
+            background: linear-gradient(145deg, #1a1a1a, #151515);
+            padding: 40px 35px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
         }
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 3px;
+            background: linear-gradient(90deg, #ff6b00, #ff9500);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s;
+        }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-card:hover { transform: translateY(-10px); border-color: #333; box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+        .service-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+        .service-card h3 { color: #fff; margin-bottom: 15px; font-size: 22px; font-weight: 700; }
+        .service-card p { color: #888; font-size: 15px; margin-bottom: 20px; }
+        .service-card .price { font-size: 28px; font-weight: 900; color: #ff9500; }
+        .service-card .price small { font-size: 14px; color: #666; font-weight: 400; }
+
+        /* ПРЕИМУЩЕСТВА */
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
         .feature {
-            padding: 20px;
-        }
-        .feature .icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-        }
-        .feature h3 {
-            color: #ff9500;
-            margin-bottom: 10px;
-        }
-        /* О нас */
-        .about-text {
-            max-width: 800px;
-            margin: 0 auto;
             text-align: center;
-            font-size: 18px;
-            line-height: 1.8;
-        }
-        /* Подвал */
-        footer {
+            padding: 40px 25px;
             background: #111;
-            padding: 30px 0;
+            border-radius: 20px;
+            border: 1px solid #1a1a1a;
+            transition: all 0.3s;
+        }
+        .feature:hover { border-color: #ff9500; transform: translateY(-5px); }
+        .feature .icon { font-size: 50px; margin-bottom: 20px; display: block; }
+        .feature h3 { color: #fff; font-size: 20px; margin-bottom: 10px; font-weight: 700; }
+        .feature p { color: #777; font-size: 14px; }
+
+        /* ФОРМА */
+        .form-section {
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+        .form-wrapper {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #151515;
+            padding: 50px 40px;
+            border-radius: 25px;
+            border: 1px solid #222;
+            box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+        }
+        .form-wrapper h2 { text-align: center; font-size: 32px; margin-bottom: 10px; font-weight: 900; }
+        .form-wrapper .form-subtitle { text-align: center; color: #888; margin-bottom: 35px; font-size: 15px; }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; color: #ccc; font-size: 14px; font-weight: 500; }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 15px 20px;
+            background: #0a0a0a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 15px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus { border-color: #ff9500; }
+        .form-group textarea { resize: vertical; min-height: 100px; }
+        .form-group select { cursor: pointer; }
+        .form-group select option { background: #0a0a0a; }
+        .form-wrapper .btn-primary { width: 100%; margin-top: 10px; }
+        .form-status {
+            margin-top: 20px;
             text-align: center;
-            color: #666;
-            font-size: 14px;
+            font-size: 15px;
+            min-height: 24px;
         }
+        .form-status.success { color: #4caf50; }
+        .form-status.error { color: #f44336; }
+
+        /* ПОДВАЛ */
+        footer { background: #050505; padding: 40px 0; text-align: center; color: #555; font-size: 14px; border-top: 1px solid #111; }
+        footer p { margin-bottom: 5px; }
+
+        /* АДАПТИВ */
         @media (max-width: 768px) {
-            header h1 { font-size: 32px; }
-            h2 { font-size: 26px; }
+            header h1 { font-size: 38px; }
+            .section-title { font-size: 30px; }
+            .form-wrapper { padding: 35px 25px; }
+            section { padding: 70px 0; }
+            .service-card { padding: 30px 25px; }
         }
+
+        .fade-in { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
 
     <!-- ШАПКА -->
     <header>
-        <div class="container">
-            <h1>Полировка стёкол и шумоизоляция авто</h1>
-            <p>Профессиональный уход за вашим автомобилем в Минске</p>
+        <div class="header-content">
+            <div class="header-badge">Premium Auto Service</div>
+            <h1>Полировка стёкол и <span>шумоизоляция</span> авто</h1>
+            <p>Профессиональный уход за вашим автомобилем. Опыт более 5 лет, гарантия качества, честные цены.</p>
+            <a href="#form" class="btn-primary">Оставить заявку</a>
         </div>
     </header>
 
     <!-- УСЛУГИ -->
-    <section>
+    <section id="services">
         <div class="container">
-            <h2>Наши услуги</h2>
+            <h2 class="section-title fade-in">Наши услуги</h2>
+            <p class="section-subtitle fade-in">Полный спектр работ по полировке и шумоизоляции</p>
             <div class="services">
-                <div class="service-card">
+                <div class="service-card fade-in">
+                    <span class="service-icon">🪟</span>
                     <h3>Полировка лобового стекла</h3>
                     <p>Убираем царапины и потёртости, возвращаем прозрачность и блеск.</p>
-                    <div class="price">0 руб.</div>
+                    <div class="price">0 <small>руб.</small></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
+                    <span class="service-icon">✨</span>
                     <h3>Полировка всех стёкол</h3>
                     <p>Полный комплекс: лобовое, заднее и боковые стёкла. Идеальный обзор.</p>
-                    <div class="price">0 руб.</div>
+                    <div class="price">0 <small>руб.</small></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
+                    <span class="service-icon">🔙</span>
                     <h3>Полировка заднего стекла</h3>
                     <p>Устраняем царапины и помутнения на заднем стекле.</p>
-                    <div class="price">0 руб.</div>
+                    <div class="price">0 <small>руб.</small></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
+                    <span class="service-icon">1️⃣</span>
                     <h3>Полировка одного стекла</h3>
                     <p>Если нужно привести в порядок только одно стекло — сделаем быстро.</p>
-                    <div class="price">0 руб.</div>
+                    <div class="price">0 <small>руб.</small></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
+                    <span class="service-icon">💡</span>
                     <h3>Полировка фар</h3>
                     <p>Возвращаем фарам прозрачность и яркость. Улучшаем свет и внешний вид.</p>
-                    <div class="price">0 руб.</div>
+                    <div class="price">0 <small>руб.</small></div>
                 </div>
-                <div class="service-card">
+                <div class="service-card fade-in">
+                    <span class="service-icon">🔇</span>
                     <h3>Шумоизоляция авто</h3>
                     <p>Полная или частичная шумо- и виброизоляция. Тишина и комфорт в салоне.</p>
-                    <div class="price">0 руб.</div>
+                    <div class="price">0 <small>руб.</small></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ПРЕИМУЩЕСТВА -->
-    <section style="background: #222;">
+    <section style="background: #0d0d0d;">
         <div class="container">
-            <h2>Почему выбирают нас</h2>
+            <h2 class="section-title fade-in">Почему выбирают нас</h2>
+            <p class="section-subtitle fade-in">Мы делаем свою работу честно и качественно</p>
             <div class="features">
-                <div class="feature">
-                    <div class="icon">✅</div>
+                <div class="feature fade-in">
+                    <span class="icon">🏆</span>
                     <h3>Опыт более 5 лет</h3>
                     <p>Даже если ИП открыто недавно, за плечами — годы практики и сотни довольных клиентов.</p>
                 </div>
-                <div class="feature">
-                    <div class="icon">🛡️</div>
+                <div class="feature fade-in">
+                    <span class="icon">🛡️</span>
                     <h3>Гарантия качества</h3>
                     <p>Отвечаем за результат. Если что-то не устроит — исправим.</p>
                 </div>
-                <div class="feature">
-                    <div class="icon">⚡</div>
+                <div class="feature fade-in">
+                    <span class="icon">⚡</span>
                     <h3>Быстро и аккуратно</h3>
                     <p>Работы выполняются в оговорённые сроки, без лишних задержек.</p>
                 </div>
-                <div class="feature">
-                    <div class="icon">💰</div>
-                    <h3>Честные цены</h3>
-                    <p>Без скрытых доплат. Стоимость обсуждается заранее.</p>
+                <div class="feature fade-in">
+                    <span class="icon">💎</span>
+                    <h3>Премиум-подход</h3>
+                    <p>Используем качественные материалы и современное оборудование.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- О НАС -->
-    <section>
+    <!-- ФОРМА ЗАЯВКИ -->
+    <section class="form-section" id="form">
         <div class="container">
-            <h2>О нас</h2>
-            <div class="about-text">
-                <p>Мы занимаемся полировкой стёкол, фар и шумоизоляцией автомобилей уже более 5 лет. За это время через наши руки прошли сотни машин — от обычных городских авто до премиум-класса.</p>
-                <p style="margin-top: 20px;">Несмотря на то, что ИП было открыто недавно, опыт и качество работы остаются на высшем уровне. Мы любим своё дело и делаем его честно.</p>
-                <p style="margin-top: 20px;">Гарантия качества — наш главный принцип.</p>
+            <div class="form-wrapper fade-in">
+                <h2>Оставить заявку</h2>
+                <p class="form-subtitle">Заполните форму, и мы свяжемся с вами в ближайшее время</p>
+                <form id="leadForm">
+                    <div class="form-group">
+                        <label>Ваше имя</label>
+                        <input type="text" name="name" placeholder="Как к вам обращаться?" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Телефон</label>
+                        <input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Услуга</label>
+                        <select name="service" required>
+                            <option value="">Выберите услугу</option>
+                            <option>Полировка лобового стекла</option>
+                            <option>Полировка всех стёкол</option>
+                            <option>Полировка заднего стекла</option>
+                            <option>Полировка одного стекла</option>
+                            <option>Полировка фар</option>
+                            <option>Шумоизоляция авто</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Комментарий (необязательно)</label>
+                        <textarea name="message" placeholder="Марка авто, удобное время..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary">Отправить заявку</button>
+                    <div class="form-status" id="formStatus"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -206,9 +338,83 @@
     <!-- ПОДВАЛ -->
     <footer>
         <div class="container">
-            <p>© 2026 Полировка стёкол и шумоизоляция авто. Все права защищены.</p>
+            <p>© 2026 Premium Auto Glass & Sound. Все права защищены.</p>
         </div>
     </footer>
+
+    <script>
+        // ====== НАСТРОЙКИ TELEGRAM ======
+        const TELEGRAM_BOT_TOKEN = "8905141156:AAEQdvVWLZA9-9BL5-ZFOfR8YfhStyMY48w";
+        const TELEGRAM_CHAT_ID = "545995986";
+
+        // Анимация появления
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Плавный скролл
+        document.querySelectorAll('a[href="#form"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                document.getElementById('form').scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // ====== ОТПРАВКА ФОРМЫ В TELEGRAM ======
+        document.getElementById('leadForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const status = document.getElementById('formStatus');
+            const btn = form.querySelector('button[type="submit"]');
+
+            const name = form.name.value.trim();
+            const phone = form.phone.value.trim();
+            const service = form.service.value;
+            const message = form.message.value.trim();
+
+            const text = `🚗 Новая заявка с сайта!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
+
+            btn.disabled = true;
+            btn.textContent = 'Отправка...';
+            status.textContent = '';
+            status.className = 'form-status';
+
+            try {
+                const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: TELEGRAM_CHAT_ID,
+                        text: text
+                    })
+                });
+
+                const data = await response.json();
+
+                if (data.ok) {
+                    status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.';
+                    status.className = 'form-status success';
+                    form.reset();
+                } else {
+                    status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.';
+                    status.className = 'form-status error';
+                    console.error('Telegram error:', data);
+                }
+            } catch (err) {
+                status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.';
+                status.className = 'form-status error';
+                console.error(err);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Отправить заявку';
+            }
+        });
+    </script>
 
 </body>
 </html>
