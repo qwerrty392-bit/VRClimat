@@ -2,18 +2,19 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Prime Climate — Кондиционеры для частных домов | Под ключ</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat',sans-serif;background:#0d0d0d;color:#fff;line-height:1.6;overflow-x:hidden}
-.container{max-width:1300px;margin:0 auto;padding:0 30px}
+html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
+body{font-family:'Montserrat',sans-serif;background:#0d0d0d;color:#fff;line-height:1.6;overflow-x:hidden;width:100%}
+.container{max-width:1300px;margin:0 auto;padding:0 30px;width:100%}
 
-header{position:relative;height:100vh;min-height:750px;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,#1a1a1a 0%,#0d0d0d 100%);overflow:hidden}
+header{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,#1a1a1a 0%,#0d0d0d 100%);overflow:hidden;padding:20px}
 header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(0,191,165,0.08) 0%,transparent 60%);animation:rotate 40s linear infinite}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
-.header-content{position:relative;z-index:2;max-width:1000px;padding:0 30px}
+.header-content{position:relative;z-index:2;max-width:1000px;padding:0 20px;width:100%}
 .header-badge{display:inline-block;font-size:11px;font-weight:500;letter-spacing:8px;text-transform:uppercase;color:#00bfa5;margin-bottom:40px;animation:fadeInUp 1s ease 0.3s both}
 .header-badge::before,.header-badge::after{content:'';display:inline-block;width:40px;height:1px;background:#00bfa5;vertical-align:middle;margin:0 20px}
 header h1{font-family:'Cormorant Garamond',serif;font-size:96px;font-weight:500;line-height:1;letter-spacing:-2px;margin-bottom:30px;color:#fff;animation:fadeInUp 1s ease 0.5s both}
@@ -74,19 +75,19 @@ footer .gold{color:#00bfa5;font-family:'Cormorant Garamond',serif;font-size:22px
 .floating-btn:hover{background:#00e0c2;transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,191,165,0.6)}
 .floating-btn .btn-icon{font-size:18px}
 
-.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease}
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);backdrop-filter:blur(10px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease;overflow-y:auto}
 .modal-overlay.active{display:flex}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .modal-content{background:#141414;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);border:1px solid #00bfa5;box-shadow:0 30px 80px rgba(0,191,165,0.2)}
 @keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#666;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:200}
+.modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#666;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:200;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
 .modal-close:hover{color:#00bfa5}
 .modal-content h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:42px;font-weight:500;margin-bottom:10px;color:#fff}
 .modal-content h2 em{font-style:italic;font-weight:700;color:#00bfa5}
 .modal-content .form-subtitle{text-align:center;color:#888;margin-bottom:40px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
 .form-group{margin-bottom:22px}
 .form-group label{display:block;margin-bottom:10px;color:#999;font-size:11px;font-weight:500;letter-spacing:3px;text-transform:uppercase}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #333;color:#fff;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:500;outline:none;transition:border-color 0.4s}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #333;color:#fff;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:500;outline:none;transition:border-color 0.4s;-webkit-appearance:none;appearance:none;border-radius:0}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#00bfa5}
 .form-group textarea{resize:vertical;min-height:80px}
 .form-group select{cursor:pointer;color:#fff}
@@ -97,15 +98,66 @@ footer .gold{color:#00bfa5;font-family:'Cormorant Garamond',serif;font-size:22px
 .form-status.success{color:#00bfa5}
 .form-status.error{color:#ff6b6b}
 
-@media (max-width:768px){
-header h1{font-size:52px}
-.section-title{font-size:42px}
-section{padding:90px 0}
-.service-card,.client-card{padding:50px 35px}
-.floating-btn{bottom:20px;right:20px;padding:15px 25px;font-size:11px}
-.modal-content{padding:50px 30px}
-.header-badge::before,.header-badge::after{width:20px;margin:0 10px}
+/* ===== ПЛАНШЕТЫ (от 769 до 1024) ===== */
+@media (max-width:1024px){
+header h1{font-size:72px}
+.section-title{font-size:52px}
+.services{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 }
+
+/* ===== МОБИЛЬНЫЕ (до 768) ===== */
+@media (max-width:768px){
+.container{padding:0 20px}
+header{min-height:auto;padding:100px 0}
+header h1{font-size:48px;letter-spacing:-1px}
+header p{font-size:15px;padding:0 10px}
+.header-badge{font-size:9px;letter-spacing:4px;margin-bottom:30px}
+.header-badge::before,.header-badge::after{width:20px;margin:0 8px}
+.btn-primary{padding:16px 40px;font-size:11px;letter-spacing:3px}
+section{padding:80px 0}
+.section-header{margin-bottom:60px}
+.section-label{font-size:10px;letter-spacing:5px;margin-bottom:20px}
+.section-title{font-size:36px;letter-spacing:-0.5px}
+.section-subtitle{font-size:15px;padding:0 10px}
+.services{grid-template-columns:1fr;gap:20px}
+.service-card{padding:40px 30px}
+.service-card h3{font-size:26px}
+.service-card p{font-size:14px}
+.service-card .price{font-size:32px}
+.features{grid-template-columns:1fr;gap:30px}
+.feature{padding:20px 10px}
+.feature h3{font-size:22px}
+.about-content p{font-size:20px}
+.brands-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+.brand-card{padding:35px 15px}
+.brand-card h4{font-size:22px}
+.contacts-grid{grid-template-columns:1fr;gap:20px}
+.contact-card{padding:35px 20px}
+.contact-card p,.contact-card a{font-size:20px}
+.floating-btn{bottom:20px;right:20px;padding:14px 22px;font-size:10px;letter-spacing:2px}
+.floating-btn .btn-icon{font-size:16px}
+.modal-overlay{padding:10px;align-items:flex-start;padding-top:30px}
+.modal-content{padding:50px 25px;max-height:95vh}
+.modal-content h2{font-size:32px}
+.modal-content .form-subtitle{font-size:11px;margin-bottom:30px}
+.form-group{margin-bottom:18px}
+.form-group label{font-size:10px;letter-spacing:2px}
+.form-group input,.form-group select,.form-group textarea{font-size:16px}
+.modal-close{top:10px;right:10px}
+footer{padding:40px 20px}
+footer .gold{font-size:18px}
+}
+
+/* ===== МАЛЕНЬКИЕ ТЕЛЕФОНЫ (до 380) ===== */
+@media (max-width:380px){
+header h1{font-size:38px}
+.section-title{font-size:30px}
+.btn-primary{padding:14px 30px;font-size:10px}
+.service-card{padding:30px 20px}
+.brands-grid{grid-template-columns:1fr}
+.floating-btn{padding:12px 18px;font-size:9px}
+}
+
 .reveal{opacity:0;transform:translateY(50px);transition:opacity 1s ease,transform 1s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 </style>
