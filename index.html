@@ -11,6 +11,14 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
 body{font-family:'Montserrat',sans-serif;background:#fcfcfc;color:#1a1a1a;line-height:1.6;overflow-x:hidden;width:100%}
 .container{max-width:1300px;margin:0 auto;padding:0 30px;width:100%}
 
+/* ВЕРХНЯЯ ПАНЕЛЬ */
+.top-bar{background:#1a1a1a;color:#fff;padding:12px 0;font-size:13px;font-weight:500;letter-spacing:1px;position:relative;z-index:10}
+.top-bar-content{max-width:1300px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.top-bar-phone{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;transition:color 0.3s}
+.top-bar-phone:hover{color:#008080}
+.top-bar-phone .phone-icon{font-size:16px;color:#008080}
+.top-bar-info{color:#888;font-size:12px;letter-spacing:1px;text-align:right}
+
 /* ШАПКА */
 header{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#fcfcfc 0%,#f0f4f8 50%,#fcfcfc 100%);overflow:hidden;padding:20px}
 header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(0,128,128,0.06) 0%,transparent 60%);animation:rotate 40s linear infinite}
@@ -32,6 +40,20 @@ section{padding:140px 0;position:relative}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;line-height:1.1;letter-spacing:-1px;margin-bottom:25px;color:#1a1a1a}
 .section-title em{font-style:italic;font-weight:700;color:#008080}
 .section-subtitle{color:#666;font-size:18px;font-weight:400;max-width:600px;margin:0 auto;letter-spacing:0.5px}
+
+/* ТОП-3 */
+.top-products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1100px;margin:0 auto}
+.product-card{background:#fff;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02);transition:all 0.4s;position:relative;overflow:hidden;padding:50px 40px}
+.product-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.08);border-color:#008080}
+.product-rank{position:absolute;top:20px;right:20px;font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:700;color:rgba(0,128,128,0.1);line-height:1}
+.product-card h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#1a1a1a;margin-bottom:15px;line-height:1.3;padding-right:50px}
+.product-desc{color:#666;font-size:14px;line-height:1.7;margin-bottom:25px}
+.product-specs{list-style:none;margin-bottom:25px;padding:0}
+.product-specs li{font-size:13px;color:#555;padding:8px 0;border-bottom:1px solid #f5f5f5;display:flex;justify-content:space-between}
+.product-specs li span:first-child{color:#999}
+.product-specs li span:last-child{font-weight:600;color:#1a1a1a}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#008080;margin-top:20px}
+.product-price small{font-family:'Montserrat',sans-serif;font-size:11px;color:#999;font-weight:500;letter-spacing:2px;display:block;margin-top:5px}
 
 /* УСЛУГИ */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
@@ -76,8 +98,11 @@ section{padding:140px 0;position:relative}
 .contact-card a:hover{color:#008080}
 
 /* ПОДВАЛ */
-footer{background:#1a1a1a;padding:60px 0;text-align:center;color:#888;font-size:13px;letter-spacing:2px;border-top:1px solid #333}
-footer .gold{color:#008080;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:15px}
+footer{background:#1a1a1a;padding:60px 0 40px;text-align:center;color:#888;font-size:13px;letter-spacing:1px;border-top:1px solid #333}
+footer .footer-brand{color:#008080;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:20px}
+footer .footer-req{margin-bottom:15px;line-height:1.8;font-size:12px}
+footer .footer-req strong{color:#fff;font-weight:600}
+footer .footer-copy{margin-top:20px;font-size:11px;color:#555;letter-spacing:2px}
 
 /* ПЛАВАЮЩАЯ КНОПКА */
 .floating-btn{position:fixed;bottom:40px;right:40px;z-index:999;background:#008080;color:#fff;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(0,128,128,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
@@ -113,9 +138,12 @@ footer .gold{color:#008080;font-family:'Cormorant Garamond',serif;font-size:22px
 header h1{font-size:72px}
 .section-title{font-size:52px}
 .services{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.top-products{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 }
 
 @media (max-width:768px){
+.top-bar-content{flex-direction:column;gap:5px;text-align:center}
+.top-bar-info{text-align:center}
 .container{padding:0 20px}
 header{min-height:auto;padding:100px 0}
 header h1{font-size:48px;letter-spacing:-1px}
@@ -133,6 +161,11 @@ section{padding:80px 0}
 .service-card h3{font-size:26px}
 .service-card p{font-size:14px}
 .service-card .price{font-size:32px}
+.top-products{grid-template-columns:1fr;gap:20px}
+.product-card{padding:40px 30px}
+.product-rank{font-size:45px;top:15px;right:15px}
+.product-card h3{font-size:24px}
+.product-price{font-size:26px}
 .features{grid-template-columns:1fr;gap:30px}
 .feature{padding:20px 10px}
 .feature h3{font-size:22px}
@@ -154,7 +187,8 @@ section{padding:80px 0}
 .form-group input,.form-group select,.form-group textarea{font-size:16px}
 .modal-close{top:10px;right:10px}
 footer{padding:40px 20px}
-footer .gold{font-size:18px}
+footer .footer-brand{font-size:20px}
+footer .footer-req{font-size:11px}
 }
 
 @media (max-width:380px){
@@ -172,6 +206,15 @@ header h1{font-size:38px}
 </head>
 <body>
 
+<div class="top-bar">
+<div class="top-bar-content">
+<a href="tel:+375256439632" class="top-bar-phone">
+<span class="phone-icon">📞</span> +375 (25) 643-96-32
+</a>
+<div class="top-bar-info">Бесплатная доставка по РБ | Минск и Минский район, область + выезд к клиенту</div>
+</div>
+</div>
+
 <header>
 <div class="header-content">
 <div class="header-badge">Prime Climate Systems</div>
@@ -181,6 +224,57 @@ header h1{font-size:38px}
 </div>
 </header>
 
+<section id="top-products" style="background:#fcfcfc">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-label">Топ-3</span>
+<h2 class="section-title">Лучшие <em>модели</em></h2>
+<p class="section-subtitle">Наш выбор для частных домов — проверенные временем</p>
+</div>
+<div class="top-products">
+<div class="product-card reveal">
+<div class="product-rank">01</div>
+<h3>[Название модели 1]</h3>
+<div class="product-desc">[Краткое описание: для каких помещений, ключевая особенность]</div>
+<ul class="product-specs">
+<li><span>Мощность:</span><span>[___ кВт]</span></li>
+<li><span>Площадь:</span><span>[до ___ м²]</span></li>
+<li><span>Режим:</span><span>[охлаждение/обогрев]</span></li>
+<li><span>Уровень шума:</span><span>[___ дБ]</span></li>
+<li><span>Класс энергоэффективности:</span><span>[___]</span></li>
+</ul>
+<div class="product-price">Цена по запросу</div>
+</div>
+<div class="product-card reveal">
+<div class="product-rank">02</div>
+<h3>[Название модели 2]</h3>
+<div class="product-desc">[Краткое описание: для каких помещений, ключевая особенность]</div>
+<ul class="product-specs">
+<li><span>Мощность:</span><span>[___ кВт]</span></li>
+<li><span>Площадь:</span><span>[до ___ м²]</span></li>
+<li><span>Режим:</span><span>[охлаждение/обогрев]</span></li>
+<li><span>Уровень шума:</span><span>[___ дБ]</span></li>
+<li><span>Класс энергоэффективности:</span><span>[___]</span></li>
+</ul>
+<div class="product-price">Цена по запросу</div>
+</div>
+<div class="product-card reveal">
+<div class="product-rank">03</div>
+<h3>[Название модели 3]</h3>
+<div class="product-desc">[Краткое описание: для каких помещений, ключевая особенность]</div>
+<ul class="product-specs">
+<li><span>Мощность:</span><span>[___ кВт]</span></li>
+<li><span>Площадь:</span><span>[до ___ м²]</span></li>
+<li><span>Режим:</span><span>[охлаждение/обогрев]</span></li>
+<li><span>Уровень шума:</span><span>[___ дБ]</span></li>
+<li><span>Класс энергоэффективности:</span><span>[___]</span></li>
+</ul>
+<div class="product-price">Цена по запросу</div>
+</div>
+</div>
+</div>
+</section>
+
 <section id="services">
 <div class="container">
 <div class="section-header reveal">
@@ -189,12 +283,12 @@ header h1{font-size:38px}
 <p class="section-subtitle">Полный спектр работ для вашего дома</p>
 </div>
 <div class="services">
-<div class="service-card reveal"><span class="service-number">01</span><h3>Установка под ключ</h3><p>Полный монтаж бытового кондиционера: подбор оборудования, установка, пусконаладка. Всё в одном.</p><div class="price">под ключ <small>от 0 BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">02</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка бытовых сплит-систем в частных домах и коттеджах.</p><div class="price">от 0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">03</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка, замена фильтров.</p><div class="price">от 0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">04</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности. Оригинальные запчасти, гарантия на работы.</p><div class="price">от 0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">05</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента. Используем только сертифицированный фреон.</p><div class="price">от 0 <small>BYN</small></div></div>
-<div class="service-card reveal"><span class="service-number">06</span><h3>Подбор оборудования</h3><p>Поможем выбрать кондиционер, который идеально подойдёт для вашего дома и бюджета.</p><div class="price">бесплатно <small>консультация</small></div></div>
+<div class="service-card reveal"><span class="service-number">01</span><h3>Установка под ключ</h3><p>Полный монтаж бытового кондиционера из нашего каталога: подбор, установка, пусконаладка.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">02</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка бытовых сплит-систем в частных домах и коттеджах.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">03</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка, замена фильтров.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">04</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности. Оригинальные запчасти, гарантия на работы.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">05</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента. Используем только сертифицированный фреон.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">06</span><h3>Подбор оборудования</h3><p>Поможем выбрать кондиционер из нашего каталога, который идеально подойдёт для дома.</p><div class="price">бесплатно <small>консультация</small></div></div>
 </div>
 </div>
 </section>
@@ -208,8 +302,8 @@ header h1{font-size:38px}
 </div>
 <div class="features">
 <div class="feature reveal"><span class="icon">◆</span><h3>Опыт более 8 лет</h3><p>Более 2000 установленных систем в частных домах. Работаем без нареканий.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Официальная гарантия</h3><p>До 5 лет гарантии на оборудование и работы. Все документы официально.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Работаем под ключ</h3><p>Берём на себя всё: от подбора до первого включения. Вам не нужно ни о чём беспокоиться.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Гарантия до 10 лет</h3><p>Официальная гарантия до 10 лет на оборудование и работы. Все документы официально.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Бесплатная доставка по РБ</h3><p>Доставим кондиционер в любой уголок Беларуси бесплатно.</p></div>
 <div class="feature reveal"><span class="icon">◆</span><h3>Только частные дома</h3><p>Специализируемся на загородных домах, коттеджах и дачах. Знаем все нюансы.</p></div>
 </div>
 </div>
@@ -224,8 +318,8 @@ header h1{font-size:38px}
 <div class="about-content reveal">
 <p>Мы — команда профессионалов, которая занимается <em>кондиционированием частных домов</em> уже <strong>более 8 лет</strong>.</p>
 <p>За это время мы установили более <strong>2000 бытовых кондиционеров</strong> — в загородных домах, коттеджах и дачах.</p>
-<p>Мы знаем все особенности работы с частными домами: от особенностей монтажа до подбора оборудования под конкретную площадь и архитектуру.</p>
-<p>Мы даём <strong>официальную гарантию</strong> на всё оборудование и работы. Наш главный принцип — честность и качество.</p>
+<p><strong>Мы монтируем только кондиционеры из нашего каталога</strong>, так как только в этом случае можем предоставить полную гарантию на весь цикл работ и быть уверенными в совместимости всех элементов системы.</p>
+<p>Выбор моделей и цены — <strong>по запросу</strong>. Оставьте заявку, и мы вышлем вам актуальный каталог с ценами.</p>
 </div>
 </div>
 </section>
@@ -258,8 +352,8 @@ header h1{font-size:38px}
 </div>
 <div class="contacts-grid reveal">
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Телефон</h4><a href="tel:+375256439632">+375 (25) 643-96-32</a></div>
-<div class="contact-card"><span class="contact-icon">◆</span><h4>Telegram / Viber</h4><a href="https://t.me/ваш_ник">@ваш_ник</a></div>
-<div class="contact-card"><span class="contact-icon">◆</span><h4>Email</h4><a href="mailto:info@primeclimate.by">info@primeclimate.by</a></div>
+<div class="contact-card"><span class="contact-icon">◆</span><h4>Зона работы</h4><p>Минск и Минский район, область + выезд к клиенту</p></div>
+<div class="contact-card"><span class="contact-icon">◆</span><h4>Доставка</h4><p>Бесплатная доставка по всей РБ</p></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Время работы</h4><p>Пн–Вс: 9:00 – 21:00</p></div>
 </div>
 </div>
@@ -267,8 +361,12 @@ header h1{font-size:38px}
 
 <footer>
 <div class="container">
-<p class="gold">Prime Climate Systems</p>
-<p>Кондиционеры для частных домов под ключ</p>
+<div class="footer-brand">Prime Climate Systems</div>
+<div class="footer-req">
+<strong>ИП Салацкий Владислав Владимирович</strong><br>
+УНП: 693462668
+</div>
+<div class="footer-copy">© Prime Climate. Все права защищены.</div>
 </div>
 </footer>
 
@@ -292,8 +390,8 @@ header h1{font-size:38px}
 <option>Монтаж кондиционера</option>
 <option>Обслуживание и чистка</option>
 <option>Ремонт кондиционера</option>
-<option>Заправка фреоном</option>
-<option>Подбор оборудования</option>
+  <option>Заправка фреоном</option>
+<option>Подбор оборудования (каталог)</option>
 <option>Консультация</option>
 </select>
 </div>
