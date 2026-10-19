@@ -77,6 +77,19 @@ section{padding:140px 0;position:relative}
 .feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:15px}
 .feature p{color:#666;font-size:15px;font-weight:400;line-height:1.8}
 
+/* АКЦИЯ */
+.promo-section { padding: 80px 0; background: #fcfcfc; }
+.promo-box { background: linear-gradient(135deg, #008080 0%, #006666 100%); border-radius: 30px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 128, 128, 0.3); }
+.promo-box::before { content: '🎁'; position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.1; transform: rotate(15deg); }
+.promo-content { position: relative; z-index: 2; }
+.promo-badge { display: inline-block; background: rgba(255, 255, 255, 0.2); color: #fff; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.promo-title { font-family: 'Cormorant Garamond', serif; font-size: 54px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+.promo-title em { font-style: italic; color: #f4e5a1; }
+.promo-text { font-size: 18px; color: #e0e0e0; max-width: 700px; margin: 0 auto 40px; line-height: 1.6; }
+.promo-text strong { color: #fff; }
+.promo-btn { background: #fff; color: #008080; padding: 18px 50px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s; border: 2px solid #fff; }
+.promo-btn:hover { background: transparent; color: #fff; transform: translateY(-3px); }
+
 /* О НАС */
 .about-section{background:#f8f9fa}
 .about-content{max-width:850px;margin:0 auto;text-align:center}
@@ -84,7 +97,7 @@ section{padding:140px 0;position:relative}
 .about-content em{color:#008080;font-style:italic;font-weight:700}
 .about-content strong{color:#1a1a1a;font-weight:700}
 
-/* БРЕНДЫ - НОВЫЙ ДИЗАЙН */
+/* БРЕНДЫ */
 .brands-section{background:#f8f9fa}
 .brand-category{margin-bottom:70px;text-align:center}
 .brand-category:last-child{margin-bottom:0}
@@ -168,6 +181,9 @@ section{padding:80px 0}
 .section-title{font-size:36px;letter-spacing:-0.5px}
 .section-subtitle{font-size:15px;padding:0 10px}
 .warranty-badge h2{font-size:36px}
+.promo-box { padding: 40px 25px; }
+.promo-title { font-size: 36px; }
+.promo-text { font-size: 16px; }
 .services{grid-template-columns:1fr;gap:20px}
 .service-card{padding:40px 30px}
 .service-card h3{font-size:26px}
@@ -284,6 +300,20 @@ header h1{font-size:38px}
 </div>
 </section>
 
+<!-- БЛОК АКЦИИ -->
+<section class="promo-section" id="promo">
+<div class="container">
+<div class="promo-box reveal">
+<div class="promo-content">
+<span class="promo-badge">Специальное предложение</span>
+<h2 class="promo-title">Зимний комплект <em>в подарок</em></h2>
+<p class="promo-text">При заказе установки кондиционера под ключ до 31 декабря дарим <strong>зимний комплект</strong>. Ваш кондиционер будет работать на обогрев даже в сильные морозы, а вы сэкономите на его защите.</p>
+<a href="#" onclick="openModal('service'); return false;" class="btn-primary promo-btn">Забрать подарок</a>
+</div>
+</div>
+</div>
+</section>
+
 <section id="services">
 <div class="container">
 <div class="section-header reveal">
@@ -339,7 +369,6 @@ header h1{font-size:38px}
 <h2 class="section-title">Работаем с <em>лучшими</em></h2>
 <p class="section-subtitle">Подберем кондиционер под ваш бюджет и задачи</p>
 </div>
-
 <div class="brand-category reveal">
 <h3 class="brand-cat-title">Премиум-класс</h3>
 <div class="brands-row">
@@ -351,7 +380,6 @@ header h1{font-size:38px}
 <div class="brand-item"><h4>Samsung</h4><p>Корея</p></div>
 </div>
 </div>
-
 <div class="brand-category reveal">
 <h3 class="brand-cat-title">Средний класс</h3>
 <div class="brands-row">
@@ -363,7 +391,6 @@ header h1{font-size:38px}
 <div class="brand-item"><h4>Neoclima</h4><p>Китай</p></div>
 </div>
 </div>
-
 <div class="brand-category reveal">
 <h3 class="brand-cat-title">Бюджетный класс</h3>
 <div class="brands-row">
@@ -373,7 +400,6 @@ header h1{font-size:38px}
 <div class="brand-item"><h4>TCL</h4><p>Китай</p></div>
 </div>
 </div>
-
 </div>
 </section>
 
