@@ -33,6 +33,11 @@ header p{font-size:18px;color:#555;font-weight:400;max-width:600px;margin:0 auto
 .btn-primary:hover{background:#006666;transform:translateY(-2px);box-shadow:0 15px 40px rgba(0,128,128,0.4)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
+/* ВЫДЕЛЕННЫЙ БЛОК ГАРАНТИИ */
+.warranty-badge{background:#008080;color:#fff;padding:40px 20px;text-align:center;position:relative;z-index:5}
+.warranty-badge h2{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;margin-bottom:10px}
+.warranty-badge p{font-size:16px;font-weight:400;letter-spacing:1px;opacity:0.9}
+
 /* СЕКЦИИ */
 section{padding:140px 0;position:relative}
 .section-header{text-align:center;margin-bottom:90px}
@@ -104,12 +109,14 @@ footer .footer-req{margin-bottom:15px;line-height:1.8;font-size:12px}
 footer .footer-req strong{color:#fff;font-weight:600}
 footer .footer-copy{margin-top:20px;font-size:11px;color:#555;letter-spacing:2px}
 
-/* ПЛАВАЮЩАЯ КНОПКА */
-.floating-btn{position:fixed;bottom:40px;right:40px;z-index:999;background:#008080;color:#fff;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(0,128,128,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
-.floating-btn:hover{background:#006666;transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,128,128,0.5)}
-.floating-btn .btn-icon{font-size:18px}
+/* ПЛАВАЮЩИЕ КНОПКИ */
+.floating-buttons{position:fixed;bottom:40px;right:40px;z-index:999;display:flex;flex-direction:column;gap:15px}
+.floating-btn-main{background:#008080;color:#fff;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(0,128,128,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
+.floating-btn-main:hover{background:#006666;transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,128,128,0.5)}
+.floating-btn-catalog{background:#fff;color:#008080;border:2px solid #008080;padding:15px 30px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:all 0.4s;display:flex;align-items:center;gap:10px}
+.floating-btn-catalog:hover{background:#008080;color:#fff;transform:translateY(-3px)}
 
-/* МОДАЛЬНОЕ ОКНО */
+/* МОДАЛЬНЫЕ ОКНА */
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,26,26,0.6);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease;overflow-y:auto}
 .modal-overlay.active{display:flex}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -156,6 +163,7 @@ section{padding:80px 0}
 .section-label{font-size:10px;letter-spacing:5px;margin-bottom:20px}
 .section-title{font-size:36px;letter-spacing:-0.5px}
 .section-subtitle{font-size:15px;padding:0 10px}
+.warranty-badge h2{font-size:36px}
 .services{grid-template-columns:1fr;gap:20px}
 .service-card{padding:40px 30px}
 .service-card h3{font-size:26px}
@@ -176,8 +184,8 @@ section{padding:80px 0}
 .contacts-grid{grid-template-columns:1fr;gap:20px}
 .contact-card{padding:35px 20px}
 .contact-card p,.contact-card a{font-size:20px}
-.floating-btn{bottom:20px;right:20px;padding:14px 22px;font-size:10px;letter-spacing:2px}
-.floating-btn .btn-icon{font-size:16px}
+.floating-buttons{bottom:20px;right:20px;gap:10px}
+.floating-btn-main,.floating-btn-catalog{padding:14px 22px;font-size:10px;letter-spacing:2px}
 .modal-overlay{padding:10px;align-items:flex-start;padding-top:30px}
 .modal-content{padding:50px 25px;max-height:95vh}
 .modal-content h2{font-size:32px}
@@ -197,7 +205,8 @@ header h1{font-size:38px}
 .btn-primary{padding:14px 30px;font-size:10px}
 .service-card{padding:30px 20px}
 .brands-grid{grid-template-columns:1fr}
-.floating-btn{padding:12px 18px;font-size:9px}
+.floating-buttons{bottom:15px;right:15px}
+.floating-btn-main,.floating-btn-catalog{padding:12px 18px;font-size:9px}
 }
 
 .reveal{opacity:0;transform:translateY(50px);transition:opacity 1s ease,transform 1s ease}
@@ -220,9 +229,14 @@ header h1{font-size:38px}
 <div class="header-badge">Prime Climate Systems</div>
 <h1>Кондиционеры для <em>частных домов</em> под ключ</h1>
 <p>Профессиональная установка и обслуживание бытовых кондиционеров для загородных домов, коттеджей и дач. Лучшие в Республике Беларусь.</p>
-<button onclick="openModal()" class="btn-primary">Оставить заявку</button>
+<button onclick="openModal('service')" class="btn-primary">Оставить заявку</button>
 </div>
 </header>
+
+<div class="warranty-badge">
+<h2>Гарантия до 10 лет</h2>
+<p>На оборудование и все виды работ</p>
+</div>
 
 <section id="top-products" style="background:#fcfcfc">
 <div class="container">
@@ -235,39 +249,33 @@ header h1{font-size:38px}
 <div class="product-card reveal">
 <div class="product-rank">01</div>
 <h3>[Название модели 1]</h3>
-<div class="product-desc">[Краткое описание: для каких помещений, ключевая особенность]</div>
+<div class="product-desc">[Краткое описание]</div>
 <ul class="product-specs">
 <li><span>Мощность:</span><span>[___ кВт]</span></li>
 <li><span>Площадь:</span><span>[до ___ м²]</span></li>
 <li><span>Режим:</span><span>[охлаждение/обогрев]</span></li>
-<li><span>Уровень шума:</span><span>[___ дБ]</span></li>
-<li><span>Класс энергоэффективности:</span><span>[___]</span></li>
 </ul>
 <div class="product-price">Цена по запросу</div>
 </div>
 <div class="product-card reveal">
 <div class="product-rank">02</div>
 <h3>[Название модели 2]</h3>
-<div class="product-desc">[Краткое описание: для каких помещений, ключевая особенность]</div>
+<div class="product-desc">[Краткое описание]</div>
 <ul class="product-specs">
 <li><span>Мощность:</span><span>[___ кВт]</span></li>
 <li><span>Площадь:</span><span>[до ___ м²]</span></li>
 <li><span>Режим:</span><span>[охлаждение/обогрев]</span></li>
-<li><span>Уровень шума:</span><span>[___ дБ]</span></li>
-<li><span>Класс энергоэффективности:</span><span>[___]</span></li>
 </ul>
 <div class="product-price">Цена по запросу</div>
 </div>
 <div class="product-card reveal">
 <div class="product-rank">03</div>
 <h3>[Название модели 3]</h3>
-<div class="product-desc">[Краткое описание: для каких помещений, ключевая особенность]</div>
+<div class="product-desc">[Краткое описание]</div>
 <ul class="product-specs">
 <li><span>Мощность:</span><span>[___ кВт]</span></li>
 <li><span>Площадь:</span><span>[до ___ м²]</span></li>
 <li><span>Режим:</span><span>[охлаждение/обогрев]</span></li>
-<li><span>Уровень шума:</span><span>[___ дБ]</span></li>
-<li><span>Класс энергоэффективности:</span><span>[___]</span></li>
 </ul>
 <div class="product-price">Цена по запросу</div>
 </div>
@@ -283,12 +291,12 @@ header h1{font-size:38px}
 <p class="section-subtitle">Полный спектр работ для вашего дома</p>
 </div>
 <div class="services">
-<div class="service-card reveal"><span class="service-number">01</span><h3>Установка под ключ</h3><p>Полный монтаж бытового кондиционера из нашего каталога: подбор, установка, пусконаладка.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">02</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка бытовых сплит-систем в частных домах и коттеджах.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">03</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка, замена фильтров.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">04</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности. Оригинальные запчасти, гарантия на работы.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">05</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента. Используем только сертифицированный фреон.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">06</span><h3>Подбор оборудования</h3><p>Поможем выбрать кондиционер из нашего каталога, который идеально подойдёт для дома.</p><div class="price">бесплатно <small>консультация</small></div></div>
+<div class="service-card reveal"><span class="service-number">01</span><h3>Установка под ключ</h3><p>Полный монтаж бытового кондиционера из нашего каталога.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">02</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка в частных домах и коттеджах.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">03</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">04</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">05</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">06</span><h3>Подбор оборудования</h3><p>Поможем выбрать кондиционер из нашего каталога.</p><div class="price">бесплатно <small>консультация</small></div></div>
 </div>
 </div>
 </section>
@@ -298,13 +306,12 @@ header h1{font-size:38px}
 <div class="section-header reveal">
 <span class="section-label">Преимущества</span>
 <h2 class="section-title">Почему <em>выбирают нас</em></h2>
-<p class="section-subtitle">Мы работаем честно и качественно</p>
 </div>
 <div class="features">
-<div class="feature reveal"><span class="icon">◆</span><h3>Опыт более 8 лет</h3><p>Более 2000 установленных систем в частных домах. Работаем без нареканий.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Гарантия до 10 лет</h3><p>Официальная гарантия до 10 лет на оборудование и работы. Все документы официально.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Бесплатная доставка по РБ</h3><p>Доставим кондиционер в любой уголок Беларуси бесплатно.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Только частные дома</h3><p>Специализируемся на загородных домах, коттеджах и дачах. Знаем все нюансы.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Опыт более 8 лет</h3><p>Более 2000 установленных систем.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Гарантия до 10 лет</h3><p>Официальная гарантия на оборудование и работы.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Бесплатная доставка по РБ</h3><p>Доставим кондиционер в любой уголок Беларуси.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Только частные дома</h3><p>Специализируемся на загородных домах и дачах.</p></div>
 </div>
 </div>
 </section>
@@ -317,8 +324,7 @@ header h1{font-size:38px}
 </div>
 <div class="about-content reveal">
 <p>Мы — команда профессионалов, которая занимается <em>кондиционированием частных домов</em> уже <strong>более 8 лет</strong>.</p>
-<p>За это время мы установили более <strong>2000 бытовых кондиционеров</strong> — в загородных домах, коттеджах и дачах.</p>
-<p><strong>Мы монтируем только кондиционеры из нашего каталога</strong>, так как только в этом случае можем предоставить полную гарантию на весь цикл работ и быть уверенными в совместимости всех элементов системы.</p>
+<p><strong>Мы монтируем только кондиционеры из нашего каталога</strong>, так как только в этом случае можем предоставить полную гарантию.</p>
 <p>Выбор моделей и цены — <strong>по запросу</strong>. Оставьте заявку, и мы вышлем вам актуальный каталог с ценами.</p>
 </div>
 </div>
@@ -329,7 +335,6 @@ header h1{font-size:38px}
 <div class="section-header reveal">
 <span class="section-label">Бренды</span>
 <h2 class="section-title">Работаем с <em>лучшими</em></h2>
-<p class="section-subtitle">Официальный дилер ведущих мировых производителей</p>
 </div>
 <div class="brands-grid">
 <div class="brand-card reveal"><h4>Daikin</h4><p>Япония</p></div>
@@ -348,11 +353,10 @@ header h1{font-size:38px}
 <div class="section-header reveal">
 <span class="section-label">Контакты</span>
 <h2 class="section-title">Свяжитесь с <em>нами</em></h2>
-<p class="section-subtitle">Выберите удобный способ связи</p>
 </div>
 <div class="contacts-grid reveal">
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Телефон</h4><a href="tel:+375256439632">+375 (25) 643-96-32</a></div>
-<div class="contact-card"><span class="contact-icon">◆</span><h4>Зона работы</h4><p>Минск и Минский район, область + выезд к клиенту</p></div>
+<div class="contact-card"><span class="contact-icon">◆</span><h4>Зона работы</h4><p>Минск и Минский район, область</p></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Доставка</h4><p>Бесплатная доставка по всей РБ</p></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Время работы</h4><p>Пн–Вс: 9:00 – 21:00</p></div>
 </div>
@@ -370,17 +374,21 @@ header h1{font-size:38px}
 </div>
 </footer>
 
-<button class="floating-btn" onclick="openModal()">
-<span class="btn-icon">✦</span>
-Оставить заявку
+<div class="floating-buttons">
+<button class="floating-btn-catalog" onclick="openModal('catalog')">
+<span>📄</span> Запросить каталог
 </button>
+<button class="floating-btn-main" onclick="openModal('service')">
+<span>✦</span> Оставить заявку
+</button>
+</div>
 
-<div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
+<div class="modal-overlay" id="modalService" onclick="closeModalOutside(event, 'modalService')">
 <div class="modal-content" onclick="event.stopPropagation()">
-<button class="modal-close" onclick="closeModal()">×</button>
+<button class="modal-close" onclick="closeModal('modalService')">×</button>
 <h2>Оставить <em>заявку</em></h2>
 <p class="form-subtitle">Мы свяжемся с вами в течение 15 минут</p>
-<form id="leadForm">
+<form id="serviceForm">
 <div class="form-group"><label>Ваше имя</label><input type="text" name="name" placeholder="Иван" required></div>
 <div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required></div>
 <div class="form-group"><label>Услуга</label>
@@ -390,7 +398,7 @@ header h1{font-size:38px}
 <option>Монтаж кондиционера</option>
 <option>Обслуживание и чистка</option>
 <option>Ремонт кондиционера</option>
-  <option>Заправка фреоном</option>
+<option>Заправка фреоном</option>
 <option>Подбор оборудования (каталог)</option>
 <option>Консультация</option>
 </select>
@@ -402,36 +410,95 @@ header h1{font-size:38px}
 </div>
 </div>
 
+<div class="modal-overlay" id="modalCatalog" onclick="closeModalOutside(event, 'modalCatalog')">
+<div class="modal-content" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeModal('modalCatalog')">×</button>
+<h2>Запросить <em>каталог</em></h2>
+<p class="form-subtitle">Мы вышлем вам актуальные модели и цены</p>
+<form id="catalogForm">
+<div class="form-group"><label>Ваше имя</label><input type="text" name="name" placeholder="Иван" required></div>
+<div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required></div>
+<div class="form-group"><label>Удобный способ связи</label>
+<select name="contact_method" required>
+<option value="">Выберите способ</option>
+<option>Telegram</option>
+<option>Viber</option>
+<option>Звонок</option>
+</select>
+</div>
+<button type="submit" class="btn-primary">Получить каталог</button>
+<div class="form-status" id="catalogStatus"></div>
+</form>
+</div>
+</div>
+
 <script>
 const TELEGRAM_BOT_TOKEN="8905141156:AAEQdvVWLZA9-9BL5-ZFOfR8YfhStyMY48w";
 const TELEGRAM_CHAT_ID="545995986";
 
-function openModal(){document.getElementById('modalOverlay').classList.add('active');document.body.style.overflow='hidden'}
-function closeModal(){document.getElementById('modalOverlay').classList.remove('active');document.body.style.overflow=''}
-function closeModalOutside(event){if(event.target.id==='modalOverlay')closeModal()}
-document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeModal()});
-
-document.getElementById('leadForm').addEventListener('submit',async function(e){
-e.preventDefault();
-const form=e.target;
-const status=document.getElementById('formStatus');
-const btn=form.querySelector('button[type="submit"]');
-const name=form.name.value.trim();
-const phone=form.phone.value.trim();
-const service=form.service.value;
-const message=form.message.value.trim();
-const text=`❄️ Новая заявка с сайта Prime Climate!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
-btn.disabled=true;btn.textContent='Отправка...';status.textContent='';status.className='form-status';
-try{
-const url=`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-const response=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({chat_id:TELEGRAM_CHAT_ID,text:text})});
-const data=await response.json();
-if(data.ok){status.textContent='✅ Заявка отправлена! Мы свяжемся с вами.';status.className='form-status success';form.reset()}
-else{status.textContent='❌ Ошибка отправки. Попробуйте ещё раз.';status.className='form-status error'}
-}catch(err){status.textContent='❌ Ошибка сети. Попробуйте ещё раз.';status.className='form-status error'}
-finally{btn.disabled=false;btn.textContent='Отправить заявку'}
+function openModal(type){
+const id = type === 'service' ? 'modalService' : 'modalCatalog';
+document.getElementById(id).classList.add('active');
+document.body.style.overflow='hidden';
+}
+function closeModal(id){
+document.getElementById(id).classList.remove('active');
+document.body.style.overflow='';
+}
+function closeModalOutside(event, id){
+if(event.target.id === id) closeModal(id);
+}
+document.addEventListener('keydown',(e)=>{
+if(e.key==='Escape'){
+closeModal('modalService');
+closeModal('modalCatalog');
+}
 });
 
+// Отправка формы на услугу
+document.getElementById('serviceForm').addEventListener('submit', async function(e){
+e.preventDefault();
+const form = e.target;
+const status = document.getElementById('formStatus');
+const btn = form.querySelector('button[type="submit"]');
+const name = form.name.value.trim();
+const phone = form.phone.value.trim();
+const service = form.service.value;
+const message = form.message.value.trim();
+const text = `❄️ Новая заявка на услугу с сайта!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
+btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
+try {
+const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
+const data = await response.json();
+if (data.ok) { status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset(); }
+else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+} catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
+});
+
+// Отправка формы на каталог
+document.getElementById('catalogForm').addEventListener('submit', async function(e){
+e.preventDefault();
+const form = e.target;
+const status = document.getElementById('catalogStatus');
+const btn = form.querySelector('button[type="submit"]');
+const name = form.name.value.trim();
+const phone = form.phone.value.trim();
+const contact_method = form.contact_method.value;
+const text = `📄 ЗАПРОС КАТАЛОГА с сайта!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📱 Связь через: ${contact_method}`;
+btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
+try {
+const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
+const data = await response.json();
+if (data.ok) { status.textContent = '✅ Запрос отправлен! Мы вышлем вам каталог.'; status.className = 'form-status success'; form.reset(); }
+else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+} catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+finally { btn.disabled = false; btn.textContent = 'Получить каталог'; }
+});
+
+// Анимация появления
 const revealElements=document.querySelectorAll('.reveal');
 const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.1});
 revealElements.forEach(el=>observer.observe(el));
