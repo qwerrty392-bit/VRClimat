@@ -84,55 +84,18 @@ section{padding:140px 0;position:relative}
 .about-content em{color:#008080;font-style:italic;font-weight:700}
 .about-content strong{color:#1a1a1a;font-weight:700}
 
-/* БРЕНДЫ */
-<!-- БРЕНДЫ -->
-<section class="brands-section" id="brands" style="background:#111">
-<div class="container">
-<div class="section-header reveal">
-<span class="section-label">Бренды</span>
-<h2 class="section-title">Работаем с <em>лучшими</em></h2>
-<p class="section-subtitle">Подберем кондиционер под ваш бюджет и задачи</p>
-</div>
+/* БРЕНДЫ - НОВЫЙ ДИЗАЙН */
+.brands-section{background:#f8f9fa}
+.brand-category{margin-bottom:70px;text-align:center}
+.brand-category:last-child{margin-bottom:0}
+.brand-cat-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#1a1a1a;margin-bottom:40px;display:inline-block;position:relative;padding-bottom:15px}
+.brand-cat-title::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#008080}
+.brands-row{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;max-width:1100px;margin:0 auto}
+.brand-item{background:#fff;padding:30px 40px;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02);transition:all 0.4s;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:180px}
+.brand-item:hover{transform:translateY(-5px);border-color:#008080;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
+.brand-item h4{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:5px}
+.brand-item p{color:#999;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
 
-<!-- ПРЕМИУМ -->
-<div class="brand-category reveal">
-<h3 class="brand-cat-title">Премиум-класс</h3>
-<div class="brands-grid">
-<div class="brand-card"><h4>Daikin</h4><p>Япония</p></div>
-<div class="brand-card"><h4>Mitsubishi</h4><p>Япония</p></div>
-<div class="brand-card"><h4>Panasonic</h4><p>Япония</p></div>
-<div class="brand-card"><h4>Toshiba</h4><p>Япония</p></div>
-<div class="brand-card"><h4>LG</h4><p>Корея</p></div>
-<div class="brand-card"><h4>Samsung</h4><p>Корея</p></div>
-</div>
-</div>
-
-<!-- СРЕДНИЙ КЛАСС -->
-<div class="brand-category reveal">
-<h3 class="brand-cat-title">Средний класс</h3>
-<div class="brands-grid">
-<div class="brand-card"><h4>Gree</h4><p>Китай</p></div>
-<div class="brand-card"><h4>Midea</h4><p>Китай</p></div>
-<div class="brand-card"><h4>Electrolux</h4><p>Швеция</p></div>
-<div class="brand-card"><h4>Zanussi</h4><p>Италия</p></div>
-<div class="brand-card"><h4>Loriot</h4><p>Китай</p></div>
-<div class="brand-card"><h4>Neoclima</h4><p>Китай</p></div>
-</div>
-</div>
-
-<!-- БЮДЖЕТНЫЙ КЛАСС -->
-<div class="brand-category reveal">
-<h3 class="brand-cat-title">Бюджетный класс</h3>
-<div class="brands-grid">
-<div class="brand-card"><h4>Ballu</h4><p>Россия/Китай</p></div>
-<div class="brand-card"><h4>Breeon</h4><p>Китай</p></div>
-<div class="brand-card"><h4>Rix</h4><p>Китай</p></div>
-<div class="brand-card"><h4>TCL</h4><p>Китай</p></div>
-</div>
-</div>
-
-</div>
-</section>
 /* КОНТАКТЫ */
 .contacts-section{background:#f8f9fa}
 .contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:0 auto}
@@ -219,9 +182,9 @@ section{padding:80px 0}
 .feature{padding:20px 10px}
 .feature h3{font-size:22px}
 .about-content p{font-size:20px}
-.brands-grid{grid-template-columns:repeat(2,1fr);gap:20px}
-.brand-card{padding:35px 15px}
-.brand-card h4{font-size:22px}
+.brand-cat-title{font-size:26px}
+.brand-item{padding:25px 30px;min-width:140px}
+.brand-item h4{font-size:22px}
 .contacts-grid{grid-template-columns:1fr;gap:20px}
 .contact-card{padding:35px 20px}
 .contact-card p,.contact-card a{font-size:20px}
@@ -245,13 +208,10 @@ header h1{font-size:38px}
 .section-title{font-size:30px}
 .btn-primary{padding:14px 30px;font-size:10px}
 .service-card{padding:30px 20px}
-.brands-grid{grid-template-columns:1fr}
+.brand-item{padding:20px 25px;min-width:120px}
 .floating-buttons{bottom:15px;right:15px}
 .floating-btn-main,.floating-btn-catalog{padding:12px 18px;font-size:9px}
 }
-
-.reveal{opacity:0;transform:translateY(50px);transition:opacity 1s ease,transform 1s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
 </style>
 </head>
 <body>
@@ -371,21 +331,49 @@ header h1{font-size:38px}
 </div>
 </section>
 
-<section style="background:#f8f9fa">
+<!-- БРЕНДЫ -->
+<section class="brands-section" id="brands">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Бренды</span>
 <h2 class="section-title">Работаем с <em>лучшими</em></h2>
+<p class="section-subtitle">Подберем кондиционер под ваш бюджет и задачи</p>
 </div>
-<div class="brands-grid">
-<div class="brand-card reveal"><h4>Daikin</h4><p>Япония</p></div>
-<div class="brand-card reveal"><h4>Mitsubishi</h4><p>Япония</p></div>
-<div class="brand-card reveal"><h4>Panasonic</h4><p>Япония</p></div>
-<div class="brand-card reveal"><h4>Toshiba</h4><p>Япония</p></div>
-<div class="brand-card reveal"><h4>LG</h4><p>Корея</p></div>
-<div class="brand-card reveal"><h4>Samsung</h4><p>Корея</p></div>
-<div class="brand-card reveal"><h4>TCL</h4><p>Китай</p></div>
+
+<div class="brand-category reveal">
+<h3 class="brand-cat-title">Премиум-класс</h3>
+<div class="brands-row">
+<div class="brand-item"><h4>Daikin</h4><p>Япония</p></div>
+<div class="brand-item"><h4>Mitsubishi</h4><p>Япония</p></div>
+<div class="brand-item"><h4>Panasonic</h4><p>Япония</p></div>
+<div class="brand-item"><h4>Toshiba</h4><p>Япония</p></div>
+<div class="brand-item"><h4>LG</h4><p>Корея</p></div>
+<div class="brand-item"><h4>Samsung</h4><p>Корея</p></div>
 </div>
+</div>
+
+<div class="brand-category reveal">
+<h3 class="brand-cat-title">Средний класс</h3>
+<div class="brands-row">
+<div class="brand-item"><h4>Gree</h4><p>Китай</p></div>
+<div class="brand-item"><h4>Midea</h4><p>Китай</p></div>
+<div class="brand-item"><h4>Electrolux</h4><p>Швеция</p></div>
+<div class="brand-item"><h4>Zanussi</h4><p>Италия</p></div>
+<div class="brand-item"><h4>Loriot</h4><p>Китай</p></div>
+<div class="brand-item"><h4>Neoclima</h4><p>Китай</p></div>
+</div>
+</div>
+
+<div class="brand-category reveal">
+<h3 class="brand-cat-title">Бюджетный класс</h3>
+<div class="brands-row">
+<div class="brand-item"><h4>Ballu</h4><p>Россия/Китай</p></div>
+<div class="brand-item"><h4>Breeon</h4><p>Китай</p></div>
+<div class="brand-item"><h4>Rix</h4><p>Китай</p></div>
+<div class="brand-item"><h4>TCL</h4><p>Китай</p></div>
+</div>
+</div>
+
 </div>
 </section>
 
