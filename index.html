@@ -8,11 +8,12 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}
-body{font-family:'Montserrat',sans-serif;background:#f7f9fa;color:#1a1a1a;line-height:1.6;overflow-x:hidden;width:100%}
+body{font-family:'Montserrat',sans-serif;background:#fcfcfc;color:#1a1a1a;line-height:1.6;overflow-x:hidden;width:100%}
 .container{max-width:1300px;margin:0 auto;padding:0 30px;width:100%}
 
-header{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at center,#ffffff 0%,#f0f4f8 100%);overflow:hidden;padding:20px}
-header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(0,128,128,0.05) 0%,transparent 60%);animation:rotate 40s linear infinite}
+/* ШАПКА */
+header{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#fcfcfc 0%,#f0f4f8 50%,#fcfcfc 100%);overflow:hidden;padding:20px}
+header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(0,128,128,0.06) 0%,transparent 60%);animation:rotate 40s linear infinite}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
 .header-content{position:relative;z-index:2;max-width:1000px;padding:0 20px;width:100%}
 .header-badge{display:inline-block;font-size:11px;font-weight:600;letter-spacing:8px;text-transform:uppercase;color:#008080;margin-bottom:40px;animation:fadeInUp 1s ease 0.3s both}
@@ -24,6 +25,7 @@ header p{font-size:18px;color:#555;font-weight:400;max-width:600px;margin:0 auto
 .btn-primary:hover{background:#006666;transform:translateY(-2px);box-shadow:0 15px 40px rgba(0,128,128,0.4)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
+/* СЕКЦИИ */
 section{padding:140px 0;position:relative}
 .section-header{text-align:center;margin-bottom:90px}
 .section-label{font-size:11px;font-weight:600;letter-spacing:8px;text-transform:uppercase;color:#008080;margin-bottom:25px;display:block}
@@ -31,8 +33,9 @@ section{padding:140px 0;position:relative}
 .section-title em{font-style:italic;font-weight:700;color:#008080}
 .section-subtitle{color:#666;font-size:18px;font-weight:400;max-width:600px;margin:0 auto;letter-spacing:0.5px}
 
+/* УСЛУГИ */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
-.service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;border:1px solid #eef2f5;border-top:4px solid transparent;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
+.service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;border:1px solid #f0f0f0;border-top:4px solid transparent;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
 .service-card:hover{border-top-color:#008080;transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.08)}
 .service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#008080;letter-spacing:3px;margin-bottom:30px;display:block}
 .service-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#1a1a1a;margin-bottom:20px;line-height:1.2}
@@ -40,45 +43,52 @@ section{padding:140px 0;position:relative}
 .service-card .price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:#008080}
 .service-card .price small{font-family:'Montserrat',sans-serif;font-size:12px;color:#999;font-weight:500;letter-spacing:2px}
 
+/* ПРЕИМУЩЕСТВА */
 .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
 .feature{text-align:center;padding:40px 20px}
 .feature .icon{font-size:36px;color:#008080;margin-bottom:25px;display:block;font-weight:300}
 .feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:15px}
 .feature p{color:#666;font-size:15px;font-weight:400;line-height:1.8}
 
-.about-section{background:#eef4f6}
+/* О НАС */
+.about-section{background:#f8f9fa}
 .about-content{max-width:850px;margin:0 auto;text-align:center}
 .about-content p{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;line-height:1.8;color:#333;margin-bottom:30px}
 .about-content em{color:#008080;font-style:italic;font-weight:700}
 .about-content strong{color:#1a1a1a;font-weight:700}
 
-.brands-section{background:#eef4f6}
+/* БРЕНДЫ */
+.brands-section{background:#f8f9fa}
 .brands-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;max-width:1100px;margin:0 auto}
-.brand-card{background:#fff;padding:50px 30px;text-align:center;transition:all 0.4s;border:1px solid #eef2f5;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
+.brand-card{background:#fff;padding:50px 30px;text-align:center;transition:all 0.4s;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
 .brand-card:hover{transform:translateY(-5px);border-color:#008080;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
 .brand-card h4{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#1a1a1a}
 .brand-card p{color:#999;font-size:12px;letter-spacing:2px;text-transform:uppercase;margin-top:10px;font-weight:500}
 
-.contacts-section{background:#eef4f6}
+/* КОНТАКТЫ */
+.contacts-section{background:#f8f9fa}
 .contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:0 auto}
-.contact-card{background:#fff;text-align:center;padding:50px 25px;transition:all 0.4s;border:1px solid #eef2f5;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
+.contact-card{background:#fff;text-align:center;padding:50px 25px;transition:all 0.4s;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
 .contact-card:hover{transform:translateY(-5px);border-color:#008080;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
 .contact-card .contact-icon{font-size:26px;color:#008080;margin-bottom:20px;display:block}
 .contact-card h4{font-family:'Montserrat',sans-serif;color:#008080;font-size:11px;font-weight:700;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
 .contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:700}
 .contact-card a:hover{color:#008080}
 
+/* ПОДВАЛ */
 footer{background:#1a1a1a;padding:60px 0;text-align:center;color:#888;font-size:13px;letter-spacing:2px;border-top:1px solid #333}
 footer .gold{color:#008080;font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;margin-bottom:15px}
 
+/* ПЛАВАЮЩАЯ КНОПКА */
 .floating-btn{position:fixed;bottom:40px;right:40px;z-index:999;background:#008080;color:#fff;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(0,128,128,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
 .floating-btn:hover{background:#006666;transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,128,128,0.5)}
 .floating-btn .btn-icon{font-size:18px}
 
+/* МОДАЛЬНОЕ ОКНО */
 .modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,26,26,0.6);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease;overflow-y:auto}
 .modal-overlay.active{display:flex}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal-content{background:#fff;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);border:1px solid #eef2f5;box-shadow:0 30px 80px rgba(0,0,0,0.15)}
+.modal-content{background:#fff;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);border:1px solid #f0f0f0;box-shadow:0 30px 80px rgba(0,0,0,0.15)}
 @keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
 .modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#999;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:300;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
 .modal-close:hover{color:#008080}
@@ -98,6 +108,7 @@ footer .gold{color:#008080;font-family:'Cormorant Garamond',serif;font-size:22px
 .form-status.success{color:#008080}
 .form-status.error{color:#d32f2f}
 
+/* АДАПТИВ */
 @media (max-width:1024px){
 header h1{font-size:72px}
 .section-title{font-size:52px}
@@ -188,7 +199,7 @@ header h1{font-size:38px}
 </div>
 </section>
 
-<section style="background:#eef4f6">
+<section style="background:#f8f9fa">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Преимущества</span>
@@ -219,7 +230,7 @@ header h1{font-size:38px}
 </div>
 </section>
 
-<section style="background:#eef4f6">
+<section style="background:#f8f9fa">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Бренды</span>
