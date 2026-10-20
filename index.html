@@ -46,20 +46,6 @@ section{padding:140px 0;position:relative}
 .section-title em{font-style:italic;font-weight:700;color:#008080}
 .section-subtitle{color:#666;font-size:18px;font-weight:400;max-width:600px;margin:0 auto;letter-spacing:0.5px}
 
-/* ТОП-3 */
-.top-products{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;max-width:1100px;margin:0 auto}
-.product-card{background:#fff;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02);transition:all 0.4s;position:relative;overflow:hidden;padding:50px 40px}
-.product-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(0,0,0,0.08);border-color:#008080}
-.product-rank{position:absolute;top:20px;right:20px;font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:700;color:rgba(0,128,128,0.1);line-height:1}
-.product-card h3{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#1a1a1a;margin-bottom:15px;line-height:1.3;padding-right:50px}
-.product-desc{color:#666;font-size:14px;line-height:1.7;margin-bottom:25px}
-.product-specs{list-style:none;margin-bottom:25px;padding:0}
-.product-specs li{font-size:13px;color:#555;padding:8px 0;border-bottom:1px solid #f5f5f5;display:flex;justify-content:space-between}
-.product-specs li span:first-child{color:#999}
-.product-specs li span:last-child{font-weight:600;color:#1a1a1a}
-.product-price{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:#008080;margin-top:20px}
-.product-price small{font-family:'Montserrat',sans-serif;font-size:11px;color:#999;font-weight:500;letter-spacing:2px;display:block;margin-top:5px}
-
 /* УСЛУГИ */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
 .service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;border:1px solid #f0f0f0;border-top:4px solid transparent;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
@@ -172,7 +158,6 @@ footer .footer-copy{margin-top:20px;font-size:11px;color:#555;letter-spacing:2px
 header h1{font-size:72px}
 .section-title{font-size:52px}
 .services{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.top-products{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 }
 
 @media (max-width:768px){
@@ -199,11 +184,6 @@ section{padding:80px 0}
 .service-card h3{font-size:26px}
 .service-card p{font-size:14px}
 .service-card .price{font-size:32px}
-.top-products{grid-template-columns:1fr;gap:20px}
-.product-card{padding:40px 30px}
-.product-rank{font-size:45px;top:15px;right:15px}
-.product-card h3{font-size:24px}
-.product-price{font-size:26px}
 .features{grid-template-columns:1fr;gap:30px}
 .feature{padding:20px 10px}
 .feature h3{font-size:22px}
@@ -264,57 +244,6 @@ header h1{font-size:38px}
 <h2>Гарантия до 10 лет</h2>
 <p>На оборудование и все виды работ</p>
 </div>
-
-<section id="top-products" style="background:#fcfcfc">
-<div class="container">
-<div class="section-header reveal">
-<span class="section-label">Топ-3</span>
-<h2 class="section-title">Лучшие <em>модели</em></h2>
-<p class="section-subtitle">Наш выбор для частных домов — проверенные временем</p>
-</div>
-<div class="top-products">
-<!-- Модель 1 -->
-<div class="product-card reveal">
-<div class="product-rank">01</div>
-<h3>Loriot LAC-09TPRI</h3>
-<div class="product-desc">Инверторная модель среднего класса с ионизатором воздуха. Тихая и экономичная.</div>
-<ul class="product-specs">
-<li><span>Мощность:</span><span>2.64 кВт</span></li>
-<li><span>Площадь:</span><span>до 25 м²</span></li>
-<li><span>Режим:</span><span>охлаждение/обогрев</span></li>
-<li><span>Гарантия:</span><span>4 года</span></li>
-</ul>
-<div class="product-price">Цена по запросу</div>
-</div>
-<!-- Модель 2 -->
-<div class="product-card reveal">
-<div class="product-rank">02</div>
-<h3>Electrolux EACS/I-09HM/N</h3>
-<div class="product-desc">Премиум-серия Monaco. Работа на обогрев до -22°C. Фреон R32.</div>
-<ul class="product-specs">
-<li><span>Мощность:</span><span>2.6 кВт</span></li>
-<li><span>Площадь:</span><span>до 25 м²</span></li>
-<li><span>Режим:</span><span>охлаждение/обогрев</span></li>
-<li><span>Гарантия:</span><span>5 лет</span></li>
-</ul>
-<div class="product-price">Цена по запросу</div>
-</div>
-<!-- Модель 3 -->
-<div class="product-card reveal">
-<div class="product-rank">03</div>
-<h3>Zanussi ZACS/I-09 HPF</h3>
-<div class="product-desc">Серия Perfecto. Надежный инвертор с длинной гарантией и классом А++.</div>
-<ul class="product-specs">
-<li><span>Мощность:</span><span>2.6 кВт</span></li>
-<li><span>Площадь:</span><span>до 25 м²</span></li>
-<li><span>Режим:</span><span>охлаждение/обогрев</span></li>
-<li><span>Гарантия:</span><span>5 лет</span></li>
-</ul>
-<div class="product-price">Цена по запросу</div>
-</div>
-</div>
-</div>
-</section>
 
 <!-- БЛОК АКЦИИ -->
 <section class="promo-section" id="promo">
