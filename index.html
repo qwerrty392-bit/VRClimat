@@ -119,7 +119,7 @@ section{padding:140px 0;position:relative}
 .contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:700}
 .contact-card a:hover{color:#008080}
 
-/* ПОДВАЛ (ИСПРАВЛЕН) */
+/* ПОДВАЛ */
 footer{background:#1a1a1a;padding:60px 0 40px;text-align:center;color:#888;font-size:13px;letter-spacing:1px;border-top:1px solid #333}
 footer .footer-brand{color:#008080;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:20px}
 footer .footer-req{margin-bottom:15px;line-height:1.8;font-size:12px}
@@ -214,7 +214,7 @@ section{padding:80px 0}
 .form-group label{font-size:10px;letter-spacing:2px}
 .form-group input,.form-group select,.form-group textarea{font-size:16px}
 .modal-close{top:10px;right:10px}
-footer{padding:40px 20px 130px;} /* Отступ для кнопок */
+footer{padding:40px 20px 130px;}
 footer .footer-brand{font-size:20px}
 footer .footer-req{font-size:11px}
 }
@@ -311,6 +311,15 @@ header h1{font-size:38px}
 <a href="#" onclick="openModal('service'); return false;" class="btn-primary promo-btn">Забрать подарок</a>
 </div>
 </div>
+</div>
+</section>
+
+<!-- БЛОК КАЛЬКУЛЯТОРА -->
+<section style="padding: 60px 0; background: #fcfcfc; text-align: center;">
+<div class="container">
+<h2 class="section-title">Не знаете, что выбрать?</h2>
+<p class="section-subtitle" style="margin-bottom: 30px;">Пройдите тест за 30 секунд и получите рекомендацию</p>
+<button onclick="openModal('quiz')" class="btn-primary">Пройти тест на подбор</button>
 </div>
 </section>
 
@@ -439,6 +448,7 @@ header h1{font-size:38px}
 </button>
 </div>
 
+<!-- МОДАЛЬНОЕ ОКНО УСЛУГИ -->
 <div class="modal-overlay" id="modalService" onclick="closeModalOutside(event, 'modalService')">
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal('modalService')">×</button>
@@ -466,6 +476,7 @@ header h1{font-size:38px}
 </div>
 </div>
 
+<!-- МОДАЛЬНОЕ ОКНО КАТАЛОГА -->
 <div class="modal-overlay" id="modalCatalog" onclick="closeModalOutside(event, 'modalCatalog')">
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal('modalCatalog')">×</button>
@@ -488,70 +499,203 @@ header h1{font-size:38px}
 </div>
 </div>
 
+<!-- МОДАЛЬНОЕ ОКНО СТАТЬИ -->
+<div class="modal-overlay" id="modalArticle" onclick="closeModalOutside(event, 'modalArticle')">
+<div class="modal-content" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeModal('modalArticle')">×</button>
+<h2>Почему обычный кондиционер <em>не работает зимой</em></h2>
+<div style="font-size: 15px; color: #555; line-height: 1.8;">
+<p>Многие владельцы частных домов задаются вопросом: «Можно ли использовать обычный кондиционер для обогрева зимой?». Ответ экспертов VRSClimat однозначен: <strong>нет, если это стандартная модель без зимнего комплекта.</strong></p>
+<p><strong>1. Замерзание масла в компрессоре.</strong> При температуре ниже -5°C масло густеет. Запуск кондиционера в мороз приведет к поломке компрессора за несколько минут.</p>
+<p><strong>2. Ледяная пробка в дренаже.</strong> Вода замерзает в трубке, и конденсат начинает течь в комнату, повреждая ремонт.</p>
+<p><strong>3. Переохлаждение наружного блока.</strong> Система работает на износ, что приводит к выходу из строя электроники.</p>
+<p><strong>✅ Решение:</strong> Установить «Зимний комплект» (подогрев картера, дренажа и регулятор давления). Он спасает технику и позволяет греть дом даже в -20°C.</p>
+<p style="margin-top: 20px; font-weight: 600; color: #008080;">В VRSClimat мы дарим зимний комплект при заказе установки под ключ до 31 декабря. Не рискуйте техникой!</p>
+</div>
+<div style="text-align: center; margin-top: 30px;">
+<button onclick="closeModal('modalArticle'); openModal('service');" class="btn-primary">Оставить заявку</button>
+</div>
+</div>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ТЕСТА -->
+<div class="modal-overlay" id="modalQuiz" onclick="closeModalOutside(event, 'modalQuiz')">
+<div class="modal-content" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeModal('modalQuiz')">×</button>
+<h2>Подбор <em>кондиционера</em></h2>
+<p class="form-subtitle">Ответьте на 3 вопроса, и мы подберем идеальный вариант</p>
+<form id="quizForm">
+<div class="form-group">
+<label>1. Какая площадь помещения?</label>
+<select name="area" required>
+<option value="">Выберите площадь</option>
+<option value="small">До 25 м² (спальня, детская)</option>
+<option value="medium">25-40 м² (гостиная)</option>
+<option value="large">Более 40 м² (большая комната, студия)</option>
+</select>
+</div>
+<div class="form-group">
+<label>2. Нужен ли обогрев зимой?</label>
+<select name="winter" required>
+<option value="">Выберите вариант</option>
+<option value="no">Нет, только летом (охлаждение)</option>
+<option value="yes_soft">Да, но не в сильные морозы (до -5°C)</option>
+<option value="yes_hard">Да, хочу греться даже в -20°C</option>
+</select>
+</div>
+<div class="form-group">
+<label>3. Ваш бюджет (примерно)?</label>
+<select name="budget" required>
+<option value="">Выберите бюджет</option>
+<option value="low">До 1000 BYN</option>
+<option value="mid">1000 - 2000 BYN</option>
+<option value="high">Более 2000 BYN</option>
+</select>
+</div>
+<div class="form-group">
+<label>Ваше имя</label>
+<input type="text" name="name" placeholder="Иван" required>
+</div>
+<div class="form-group">
+<label>Телефон</label>
+<input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required>
+</div>
+<button type="submit" class="btn-primary">Получить рекомендацию</button>
+</form>
+<div id="quizResult" style="display: none; text-align: center; margin-top: 30px;">
+<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #008080; margin-bottom: 15px;">Ваша рекомендация:</h3>
+<p id="recommendationText" style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 20px;"></p>
+<button onclick="closeModal('modalQuiz'); openModal('service');" class="btn-primary">Оставить заявку на подбор</button>
+</div>
+</div>
+</div>
 <script>
 const TELEGRAM_BOT_TOKEN="8608601758:AAHqKHl1UshkTT1hrB8yjhWZOpTkwTOO8oQ";
 const TELEGRAM_CHAT_ID="545995986";
 
+// Универсальная функция открытия модальных окон
 function openModal(type){
-const id = type === 'service' ? 'modalService' : 'modalCatalog';
-document.getElementById(id).classList.add('active');
-document.body.style.overflow='hidden';
+    let id;
+    if (type === 'service') id = 'modalService';
+    else if (type === 'catalog') id = 'modalCatalog';
+    else if (type === 'article') id = 'modalArticle';
+    else if (type === 'quiz') id = 'modalQuiz';
+    
+    if (id) {
+        document.getElementById(id).classList.add('active');
+        document.body.style.overflow='hidden';
+    }
 }
+
 function closeModal(id){
-document.getElementById(id).classList.remove('active');
-document.body.style.overflow='';
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow='';
 }
+
 function closeModalOutside(event, id){
-if(event.target.id === id) closeModal(id);
+    if(event.target.id === id) closeModal(id);
 }
+
 document.addEventListener('keydown',(e)=>{
-if(e.key==='Escape'){
-closeModal('modalService');
-closeModal('modalCatalog');
-}
+    if(e.key==='Escape'){
+        closeModal('modalService');
+        closeModal('modalCatalog');
+        closeModal('modalArticle');
+        closeModal('modalQuiz');
+    }
 });
 
 // Отправка формы на услугу
 document.getElementById('serviceForm').addEventListener('submit', async function(e){
-e.preventDefault();
-const form = e.target;
-const status = document.getElementById('formStatus');
-const btn = form.querySelector('button[type="submit"]');
-const name = form.name.value.trim();
-const phone = form.phone.value.trim();
-const service = form.service.value;
-const message = form.message.value.trim();
-const text = `❄️ Новая заявка на услугу с сайта VRSClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
-btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
-try {
-const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
-const data = await response.json();
-if (data.ok) { status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset(); }
-else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
-} catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
-finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('formStatus');
+    const btn = form.querySelector('button[type="submit"]');
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const service = form.service.value;
+    const message = form.message.value.trim();
+    const text = `❄️ Новая заявка на услугу с сайта VRSClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
+    
+    btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
+    try {
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
+        const data = await response.json();
+        if (data.ok) { status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset(); }
+        else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+    finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
 });
 
 // Отправка формы на каталог
 document.getElementById('catalogForm').addEventListener('submit', async function(e){
-e.preventDefault();
-const form = e.target;
-const status = document.getElementById('catalogStatus');
-const btn = form.querySelector('button[type="submit"]');
-const name = form.name.value.trim();
-const phone = form.phone.value.trim();
-const contact_method = form.contact_method.value;
-const text = `📄 ЗАПРОС КАТАЛОГА с сайта VRSClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📱 Связь через: ${contact_method}`;
-btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
-try {
-const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
-const data = await response.json();
-if (data.ok) { status.textContent = '✅ Запрос отправлен! Мы вышлем вам каталог.'; status.className = 'form-status success'; form.reset(); }
-else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
-} catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
-finally { btn.disabled = false; btn.textContent = 'Получить каталог'; }
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('catalogStatus');
+    const btn = form.querySelector('button[type="submit"]');
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const contact_method = form.contact_method.value;
+    const text = `📄 ЗАПРОС КАТАЛОГА с сайта VRSClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📱 Связь через: ${contact_method}`;
+    
+    btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
+    try {
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
+        const data = await response.json();
+        if (data.ok) { status.textContent = '✅ Запрос отправлен! Мы вышлем вам каталог.'; status.className = 'form-status success'; form.reset(); }
+        else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+    finally { btn.disabled = false; btn.textContent = 'Получить каталог'; }
+});
+
+// Логика калькулятора и отправка в Telegram
+document.getElementById('quizForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const area = form.area.value;
+    const winter = form.winter.value;
+    const budget = form.budget.value;
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+
+    let recommendation = "";
+    let recShort = ""; // Короткая рекомендация для вас
+
+    // Логика подбора (без конкретных моделей)
+    if (budget === "low" && winter === "no") {
+        recommendation = "Вам подойдет бюджетная модель On/Off. Она отлично справится с охлаждением. Но помните: на обогрев зимой она не рассчитана.";
+        recShort = "Бюджетный On/Off (до 1000 BYN), только охлаждение.";
+    } else if (budget === "mid" && winter === "no") {
+        recommendation = "Отличный выбор — инверторная модель среднего класса. Она тихая, экономичная и прослужит долго.";
+        recShort = "Инвертор среднего класса (1000-2000 BYN), только охлаждение.";
+    } else if (winter === "yes_hard") {
+        recommendation = "Вам нужна инверторная модель с зимним комплектом. Обязательно установите зимний комплект — он позволит греться даже в -20°C без риска поломки.";
+        recShort = "Инвертор с зимним комплектом (до -20°C). Бюджет: " + budget;
+    } else {
+        recommendation = "Вам подойдет качественная инверторная модель среднего сегмента. Она обеспечит комфорт и в жару, и в межсезонье.";
+        recShort = "Инвертор средний+, межсезонье. Бюджет: " + budget;
+    }
+
+    // Показываем результат клиенту
+    document.getElementById('quizResult').style.display = 'block';
+    document.getElementById('recommendationText').textContent = recommendation;
+    form.style.display = 'none';
+
+    // Отправляем заявку вам в Telegram
+    const text = `🎯 НОВЫЙ ЗАПРОС НА ПОДБОР!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n\n📐 Площадь: ${area === 'small' ? 'До 25 м²' : area === 'medium' ? '25-40 м²' : 'Более 40 м²'}\n❄️ Обогрев зимой: ${winter === 'no' ? 'Нет' : winter === 'yes_soft' ? 'До -5°C' : 'До -20°C'}\n💰 Бюджет: ${budget === 'low' ? 'До 1000' : budget === 'mid' ? '1000-2000' : 'Более 2000'}\n\n💡 Рекомендация: ${recShort}`;
+
+    try {
+        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+        await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text })
+        });
+    } catch (err) {
+        console.error('Ошибка отправки:', err);
+    }
 });
 
 // Анимация появления
