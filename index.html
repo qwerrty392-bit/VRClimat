@@ -119,6 +119,16 @@ section{padding:140px 0;position:relative}
 .contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:700}
 .contact-card a:hover{color:#008080}
 
+/* НОВОСТИ */
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
+.news-card { background: #fff; padding: 35px 30px; border: 1px solid #f0f0f0; box-shadow: 0 5px 20px rgba(0,0,0,0.02); transition: all 0.4s; display: flex; flex-direction: column; }
+.news-card:hover { transform: translateY(-5px); border-color: #008080; box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+.news-date { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+.news-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; line-height: 1.3; }
+.news-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+.news-link { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #008080; text-decoration: none; transition: color 0.3s; }
+.news-link:hover { color: #006666; }
+
 /* ПОДВАЛ */
 footer{background:#1a1a1a;padding:60px 0 40px;text-align:center;color:#888;font-size:13px;letter-spacing:1px;border-top:1px solid #333}
 footer .footer-brand{color:#008080;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:20px}
@@ -319,7 +329,7 @@ header h1{font-size:38px}
 <div class="container">
 <h2 class="section-title">Не знаете, что выбрать?</h2>
 <p class="section-subtitle" style="margin-bottom: 30px;">Пройдите тест за 30 секунд и получите рекомендацию</p>
-<button onclick="openModal('quiz')" class="btn-primary">Пройти тест на подбор</button>
+<button onclick="openModal('quiz')" class="btn-primary" style="padding: 15px 40px;">Пройти тест</button>
 </div>
 </section>
 
@@ -412,6 +422,30 @@ header h1{font-size:38px}
 </div>
 </section>
 
+<!-- БЛОК НОВОСТЕЙ И СТАТЕЙ -->
+<section class="news-section" id="news" style="background:#fcfcfc; padding: 60px 0;">
+<div class="container">
+<div class="section-header reveal" style="margin-bottom: 40px;">
+<span class="section-label">Новости и статьи</span>
+<h2 class="section-title">Полезная <em>информация</em></h2>
+</div>
+<div class="news-grid">
+<div class="news-card reveal">
+<div class="news-date">Полезная статья</div>
+<h3>Почему обычный кондиционер не работает зимой</h3>
+<p>Разрушаем мифы и рассказываем, почему без зимнего комплекта кондиционер сломается в мороз.</p>
+<a href="#" onclick="openModal('article'); return false;" class="news-link">Читать статью →</a>
+</div>
+<div class="news-card reveal">
+<div class="news-date">Акция</div>
+<h3>Зимний комплект в подарок</h3>
+<p>При заказе установки под ключ до 31 декабря дарим зимний комплект для безопасной работы в морозы.</p>
+<a href="#" onclick="openModal('service'); return false;" class="news-link">Забрать подарок →</a>
+</div>
+</div>
+</div>
+</section>
+
 <section class="contacts-section" id="contacts">
 <div class="container">
 <div class="section-header reveal">
@@ -420,8 +454,8 @@ header h1{font-size:38px}
 </div>
 <div class="contacts-grid reveal">
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Телефон</h4><a href="tel:+375256439632">+375 (25) 643-96-32</a></div>
+<div class="contact-card"><span class="contact-icon">◆</span><h4>Telegram / Viber</h4><a href="https://t.me/+375256439632">Написать в Telegram</a></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Зона работы</h4><p>Минск и Минский район, область</p></div>
-<div class="contact-card"><span class="contact-icon">◆</span><h4>Доставка</h4><p>Бесплатная доставка по всей РБ</p></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Время работы</h4><p>Пн–Вс: 9:00 – 21:00</p></div>
 </div>
 </div>
@@ -570,8 +604,11 @@ header h1{font-size:38px}
 </div>
 </div>
 <script>
+// Токен бота
 const TELEGRAM_BOT_TOKEN="8608601758:AAHqKHl1UshkTT1hrB8yjhWZOpTkwTOO8oQ";
-const TELEGRAM_CHAT_ID="545995986";
+// Два ID для получения заявок
+const TELEGRAM_CHAT_ID_1 = "545995986";
+const TELEGRAM_CHAT_ID_2 = "1144833390";
 
 // Универсальная функция открытия модальных окон
 function openModal(type){
@@ -605,6 +642,25 @@ document.addEventListener('keydown',(e)=>{
     }
 });
 
+// Функция для отправки сообщения на два ID
+async function sendToTelegram(text) {
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    
+    // Отправка на первый ID
+    await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_1, text: text })
+    });
+
+    // Отправка на второй ID
+    await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_2, text: text })
+    });
+}
+
 // Отправка формы на услугу
 document.getElementById('serviceForm').addEventListener('submit', async function(e){
     e.preventDefault();
@@ -619,12 +675,11 @@ document.getElementById('serviceForm').addEventListener('submit', async function
     
     btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
     try {
-        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-        const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
-        const data = await response.json();
-        if (data.ok) { status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset(); }
-        else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
-    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+        await sendToTelegram(text);
+        status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset();
+    } catch (err) { 
+        status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; 
+    }
     finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
 });
 
@@ -641,12 +696,11 @@ document.getElementById('catalogForm').addEventListener('submit', async function
     
     btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
     try {
-        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-        const response = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text }) });
-        const data = await response.json();
-        if (data.ok) { status.textContent = '✅ Запрос отправлен! Мы вышлем вам каталог.'; status.className = 'form-status success'; form.reset(); }
-        else { status.textContent = '❌ Ошибка отправки. Попробуйте ещё раз.'; status.className = 'form-status error'; }
-    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+        await sendToTelegram(text);
+        status.textContent = '✅ Запрос отправлен! Мы вышлем вам каталог.'; status.className = 'form-status success'; form.reset();
+    } catch (err) { 
+        status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; 
+    }
     finally { btn.disabled = false; btn.textContent = 'Получить каталог'; }
 });
 
@@ -661,7 +715,7 @@ document.getElementById('quizForm').addEventListener('submit', async function(e)
     const phone = form.phone.value.trim();
 
     let recommendation = "";
-    let recShort = ""; // Короткая рекомендация для вас
+    let recShort = "";
 
     // Логика подбора (без конкретных моделей)
     if (budget === "low" && winter === "no") {
@@ -687,12 +741,7 @@ document.getElementById('quizForm').addEventListener('submit', async function(e)
     const text = `🎯 НОВЫЙ ЗАПРОС НА ПОДБОР!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n\n📐 Площадь: ${area === 'small' ? 'До 25 м²' : area === 'medium' ? '25-40 м²' : 'Более 40 м²'}\n❄️ Обогрев зимой: ${winter === 'no' ? 'Нет' : winter === 'yes_soft' ? 'До -5°C' : 'До -20°C'}\n💰 Бюджет: ${budget === 'low' ? 'До 1000' : budget === 'mid' ? '1000-2000' : 'Более 2000'}\n\n💡 Рекомендация: ${recShort}`;
 
     try {
-        const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-        await fetch(url, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text: text })
-        });
+        await sendToTelegram(text);
     } catch (err) {
         console.error('Ошибка отправки:', err);
     }
