@@ -2,8 +2,9 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>VRClimat — Кондиционеры и тепловые насосы под ключ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VRClimat — Тепловые насосы и кондиционеры под ключ</title>
+<meta name="description" content="Тепловые насосы и кондиционеры под ключ для частных домов. Бесплатный расчёт и подбор. Гарантия до 10 лет. Работаем по всей Беларуси.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -43,10 +44,10 @@ header p{font-size:18px;color:#555;font-weight:400;max-width:600px;margin:0 auto
 .btn-primary:hover{background:#006666;transform:translateY(-2px);box-shadow:0 15px 40px rgba(0,128,128,0.4)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-/* ВЫДЕЛЕННЫЙ БЛОК ГАРАНТИИ */
-.warranty-badge{background:#008080;color:#fff;padding:40px 20px;text-align:center;position:relative;z-index:5}
-.warranty-badge h2{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:700;margin-bottom:10px}
-.warranty-badge p{font-size:16px;font-weight:400;letter-spacing:1px;opacity:0.9}
+/* ГАРАНТИЯ — ОДНА СТРОКА */
+.warranty-badge{background:#008080;color:#fff;padding:30px 20px;text-align:center;position:relative;z-index:5}
+.warranty-badge h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;margin:0}
+.warranty-badge h2 em{font-style:italic;color:#f4e5a1}
 
 /* СЕКЦИИ */
 section{padding:100px 0;position:relative}
@@ -56,6 +57,10 @@ section{padding:100px 0;position:relative}
 .section-title em{font-style:italic;font-weight:700;color:#008080}
 .section-subtitle{color:#666;font-size:18px;font-weight:400;max-width:600px;margin:0 auto;letter-spacing:0.5px}
 
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
 /* УСЛУГИ */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
 .service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;border:1px solid #f0f0f0;border-top:4px solid transparent;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
@@ -63,8 +68,7 @@ section{padding:100px 0;position:relative}
 .service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#008080;letter-spacing:3px;margin-bottom:30px;display:block}
 .service-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#1a1a1a;margin-bottom:20px;line-height:1.2}
 .service-card p{color:#666;font-size:15px;font-weight:400;margin-bottom:30px;line-height:1.8}
-.service-card .price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:#008080}
-.service-card .price small{font-family:'Montserrat',sans-serif;font-size:12px;color:#999;font-weight:500;letter-spacing:2px}
+.service-card .price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#008080}
 
 /* БЛОК ТЕПЛОВЫХ НАСОСОВ */
 .hp-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 60px; }
@@ -82,18 +86,24 @@ section{padding:100px 0;position:relative}
 .hp-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #e0e0e0; font-size: 16px; color: #333; }
 .hp-row:last-child { border-bottom: none; }
 .hp-highlight { font-weight: 700; color: #008080; font-size: 18px; background: #fff; padding: 15px 20px; border-radius: 12px; margin-top: 10px; border: none; box-shadow: 0 5px 15px rgba(0,128,128,0.1); }
+.hp-payback { text-align:center; margin-top:25px; font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:700; color:#008080; }
+.hp-payback small{display:block; font-family:'Montserrat',sans-serif; font-size:12px; color:#999; font-weight:500; letter-spacing:2px; text-transform:uppercase; margin-top:8px;}
 
-/* ПРЕИМУЩЕСТВА */
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
-.feature{text-align:center;padding:40px 20px}
-.feature .icon{font-size:36px;color:#008080;margin-bottom:25px;display:block;font-weight:300}
-.feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:15px}
-.feature p{color:#666;font-size:15px;font-weight:400;line-height:1.8}
+/* ТАБЛИЦА НАСОС VS КОНДИЦИОНЕР */
+.compare-wrap{max-width:900px;margin:0 auto;overflow-x:auto}
+.compare-table{width:100%;border-collapse:collapse;background:#fff;box-shadow:0 5px 30px rgba(0,0,0,0.05);border-radius:20px;overflow:hidden}
+.compare-table th,.compare-table td{padding:18px 20px;text-align:left;font-size:15px;border-bottom:1px solid #f0f0f0}
+.compare-table th{background:#008080;color:#fff;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase}
+.compare-table th:first-child{background:#006666}
+.compare-table tr:last-child td{border-bottom:none}
+.compare-table td:first-child{font-weight:600;color:#1a1a1a;background:#fafafa}
+.compare-table td:nth-child(2){color:#888}
+.compare-table td:nth-child(3){color:#008080;font-weight:600}
 
-/* АКЦИЯ */
+/* АКЦИЯ — БЕСПЛАТНЫЙ РАСЧЁТ */
 .promo-section { padding: 80px 0; background: #fcfcfc; }
 .promo-box { background: linear-gradient(135deg, #008080 0%, #006666 100%); border-radius: 30px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 128, 128, 0.3); }
-.promo-box::before { content: '🎁'; position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.1; transform: rotate(15deg); }
+.promo-box::before { content: '📐'; position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.1; transform: rotate(15deg); }
 .promo-content { position: relative; z-index: 2; }
 .promo-badge { display: inline-block; background: rgba(255, 255, 255, 0.2); color: #fff; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
 .promo-title { font-family: 'Cormorant Garamond', serif; font-size: 54px; font-weight: 700; color: #fff; margin-bottom: 20px; }
@@ -103,6 +113,23 @@ section{padding:100px 0;position:relative}
 .promo-btn { background: #fff; color: #008080; padding: 18px 50px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s; border: 2px solid #fff; }
 .promo-btn:hover { background: transparent; color: #fff; transform: translateY(-3px); }
 
+/* FAQ */
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid #f0f0f0;border-radius:12px;margin-bottom:15px;overflow:hidden;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:22px 25px;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:600;color:#1a1a1a;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.faq-q:hover{color:#008080}
+.faq-q .faq-icon{color:#008080;font-size:20px;transition:transform 0.3s;flex-shrink:0}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding:0 25px;color:#666;font-size:15px;line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:22px}
+
+/* ПРЕИМУЩЕСТВА */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
+.feature{text-align:center;padding:40px 20px}
+.feature .icon{font-size:36px;color:#008080;margin-bottom:25px;display:block;font-weight:300}
+.feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:15px}
+.feature p{color:#666;font-size:15px;font-weight:400;line-height:1.8}
+
 /* О НАС */
 .about-section{background:#f8f9fa}
 .about-content{max-width:850px;margin:0 auto;text-align:center}
@@ -110,17 +137,16 @@ section{padding:100px 0;position:relative}
 .about-content em{color:#008080;font-style:italic;font-weight:700}
 .about-content strong{color:#1a1a1a;font-weight:700}
 
-/* БРЕНДЫ */
+/* БРЕНДЫ — 2 КОЛОНКИ */
 .brands-section{background:#f8f9fa}
-.brand-category{margin-bottom:70px;text-align:center}
-.brand-category:last-child{margin-bottom:0}
-.brand-cat-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#1a1a1a;margin-bottom:40px;display:inline-block;position:relative;padding-bottom:15px}
-.brand-cat-title::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#008080}
-.brands-row{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;max-width:1100px;margin:0 auto}
-.brand-item{background:#fff;padding:30px 40px;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02);transition:all 0.4s;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:180px}
-.brand-item:hover{transform:translateY(-5px);border-color:#008080;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
-.brand-item h4{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:5px}
-.brand-item p{color:#999;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+.brands-columns{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;margin:0 auto}
+.brands-col-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#1a1a1a;text-align:center;margin-bottom:30px;padding-bottom:15px;border-bottom:2px solid #008080}
+.brand-tier{margin-bottom:30px}
+.brand-tier-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#008080;margin-bottom:12px}
+.brand-tier-list{display:flex;flex-wrap:wrap;gap:10px}
+.brand-chip{background:#fff;border:1px solid #e0e0e0;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;color:#1a1a1a;transition:all 0.3s}
+.brand-chip:hover{border-color:#008080;color:#008080}
+.brands-note{text-align:center;margin-top:40px;font-size:14px;color:#666;max-width:700px;margin-left:auto;margin-right:auto}
 
 /* КОНТАКТЫ */
 .contacts-section{background:#f8f9fa}
@@ -143,10 +169,13 @@ section{padding:100px 0;position:relative}
 .news-link:hover { color: #006666; }
 
 /* ПОДВАЛ */
-footer{background:#1a1a1a;padding:60px 0 40px;text-align:center;color:#888;font-size:13px;letter-spacing:1px;border-top:1px solid #333}
+footer{background:#1a1a1a;padding:60px 0 130px;text-align:center;color:#888;font-size:13px;letter-spacing:1px;border-top:1px solid #333}
 footer .footer-brand{color:#008080;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:20px}
 footer .footer-req{margin-bottom:15px;line-height:1.8;font-size:12px}
 footer .footer-req strong{color:#fff;font-weight:600}
+footer .footer-links{margin:15px 0;font-size:12px}
+footer .footer-links a{color:#888;text-decoration:none;margin:0 10px;transition:color 0.3s}
+footer .footer-links a:hover{color:#008080}
 footer .footer-copy{margin-top:20px;font-size:11px;color:#555;letter-spacing:2px}
 
 /* ПЛАВАЮЩИЕ КНОПКИ */
@@ -179,14 +208,18 @@ footer .footer-copy{margin-top:20px;font-size:11px;color:#555;letter-spacing:2px
 .form-status{margin-top:25px;text-align:center;font-size:14px;min-height:20px;letter-spacing:1px;font-weight:600}
 .form-status.success{color:#008080}
 .form-status.error{color:#d32f2f}
+.consent{display:flex;align-items:flex-start;gap:10px;margin:15px 0 5px;font-size:12px;color:#888;line-height:1.5}
+.consent input{width:auto;margin-top:3px;flex-shrink:0}
+.consent a{color:#008080;text-decoration:none}
+.consent a:hover{text-decoration:underline}
 
 /* АДАПТИВ */
 @media (max-width:1024px){
 header h1{font-size:72px}
 .section-title{font-size:52px}
 .services{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.brands-columns{grid-template-columns:1fr;gap:40px}
 }
-
 @media (max-width:768px){
 .top-bar-content{flex-direction:column;gap:5px;text-align:center}
 .top-bar-info{text-align:center;flex-direction:column;gap:10px;}
@@ -202,7 +235,7 @@ section{padding:80px 0}
 .section-label{font-size:10px;letter-spacing:5px;margin-bottom:20px}
 .section-title{font-size:36px;letter-spacing:-0.5px}
 .section-subtitle{font-size:15px;padding:0 10px}
-.warranty-badge h2{font-size:36px}
+.warranty-badge h2{font-size:24px}
 .promo-box { padding: 40px 25px; }
 .promo-title { font-size: 36px; }
 .promo-text { font-size: 16px; }
@@ -210,7 +243,7 @@ section{padding:80px 0}
 .service-card{padding:40px 30px}
 .service-card h3{font-size:26px}
 .service-card p{font-size:14px}
-.service-card .price{font-size:32px}
+.service-card .price{font-size:24px}
 .features{grid-template-columns:1fr;gap:30px}
 .feature{padding:20px 10px}
 .feature h3{font-size:22px}
@@ -238,8 +271,12 @@ footer .footer-req{font-size:11px}
 .hp-card{padding: 30px 15px;}
 .hp-savings { padding: 30px 20px; }
 .hp-save-text h3 { font-size: 26px; }
+.hp-payback{font-size:22px}
+.compare-table th,.compare-table td{padding:12px 12px;font-size:13px}
+.faq-q{font-size:14px;padding:18px 18px}
+.faq-a{font-size:14px;padding:0 18px}
+.faq-item.open .faq-a{padding-bottom:18px}
 }
-
 @media (max-width:380px){
 header h1{font-size:38px}
 .section-title{font-size:30px}
@@ -269,10 +306,11 @@ header h1{font-size:38px}
 <nav class="main-nav">
 <div class="container">
 <ul class="nav-list">
-<li><a href="#services" class="nav-link">Услуги</a></li>
 <li><a href="#heat-pumps" class="nav-link">Тепловые насосы</a></li>
+<li><a href="#compare" class="nav-link">Сравнение</a></li>
+<li><a href="#services" class="nav-link">Услуги</a></li>
 <li><a href="#brands" class="nav-link">Бренды</a></li>
-<li><a href="#news" class="nav-link">Статьи</a></li>
+<li><a href="#faq" class="nav-link">FAQ</a></li>
 <li><a href="#contacts" class="nav-link">Контакты</a></li>
 </ul>
 </div>
@@ -281,55 +319,26 @@ header h1{font-size:38px}
 <header>
 <div class="header-content">
 <div class="header-badge">VRClimat Systems</div>
-<h1>Кондиционеры и <em>тепловые насосы</em> под ключ</h1>
-<p>Профессиональная установка и обслуживание климатической техники для загородных домов, коттеджей и дач. Работаем по всей Беларуси.</p>
-<button onclick="openModal('service')" class="btn-primary">Оставить заявку</button>
+<h1>Тепловые насосы и <em>кондиционеры</em> под ключ</h1>
+<p>Отопление и охлаждение частного дома. Бесплатный расчёт и подбор. Работаем по всей Беларуси.</p>
+<button onclick="openModal('service')" class="btn-primary">Получить расчёт</button>
 </div>
 </header>
 
 <div class="warranty-badge">
-<h2>Гарантия до 10 лет</h2>
-<p>На оборудование и все виды работ</p>
+<h2>Гарантия <em>до 10 лет</em> на всё</h2>
 </div>
 
-<!-- БЛОК АКЦИИ -->
+<!-- АКЦИЯ — БЕСПЛАТНЫЙ РАСЧЁТ -->
 <section class="promo-section" id="promo">
 <div class="container">
 <div class="promo-box reveal">
 <div class="promo-content">
-<span class="promo-badge">Специальное предложение</span>
-<h2 class="promo-title">Зимний комплект <em>в подарок</em></h2>
-<p class="promo-text">При заказе установки кондиционера под ключ до 31 декабря дарим <strong>зимний комплект</strong>. Ваш кондиционер будет работать на обогрев даже в сильные морозы, а вы сэкономите на его защите. <br><em>Для владельцев домов — особые условия на монтаж тепловых насосов.</em></p>
-<a href="#" onclick="openModal('service'); return false;" class="btn-primary promo-btn">Забрать подарок</a>
+<span class="promo-badge">Бесплатно</span>
+<h2 class="promo-title">Расчёт и подбор <em>теплового насоса</em></h2>
+<p class="promo-text">Считаем мощность, стоимость и окупаемость под ваш дом. <strong>Бесплатно.</strong></p>
+<a href="#" onclick="openModal('service'); return false;" class="btn-primary promo-btn">Получить расчёт</a>
 </div>
-</div>
-</div>
-</section>
-
-<!-- БЛОК ПОДБОРА -->
-<section style="padding: 60px 0; background: #fcfcfc; text-align: center;">
-<div class="container">
-<h2 class="section-title">Не знаете, что выбрать?</h2>
-<p class="section-subtitle" style="margin-bottom: 30px;">Пройдите тест за 30 секунд и получите рекомендацию</p>
-<button onclick="openModal('quiz')" class="btn-primary" style="padding: 15px 40px;">Пройти тест</button>
-</div>
-</section>
-
-<!-- УСЛУГИ -->
-<section id="services">
-<div class="container">
-<div class="section-header reveal">
-<span class="section-label">Услуги</span>
-<h2 class="section-title">Наши <em>услуги</em></h2>
-<p class="section-subtitle">Полный спектр работ для вашего дома</p>
-</div>
-<div class="services">
-<div class="service-card reveal"><span class="service-number">01</span><h3>Установка кондиционеров</h3><p>Полный монтаж бытового кондиционера из нашего каталога.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">02</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка в частных домах и коттеджах.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">03</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">04</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">05</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">06</span><h3>Тепловые насосы под ключ</h3><p>Проектирование, поставка и монтаж тепловых насосов для отопления и горячего водоснабжения частного дома.</p><div class="price">по запросу</div></div>
 </div>
 </div>
 </section>
@@ -340,17 +349,17 @@ header h1{font-size:38px}
 <div class="section-header reveal">
 <span class="section-label">Энергоэффективность</span>
 <h2 class="section-title">Тепловые насосы <em>под ключ</em></h2>
-<p class="section-subtitle">Современное решение для отопления и горячей воды без газа и дров</p>
+<p class="section-subtitle">Отопление и горячая вода без газа и дров</p>
 </div>
 
 <div class="hp-features">
-<div class="hp-card reveal"><div class="hp-icon">1</div><h3>Берет тепло из природы</h3><p>Насос извлекает тепло из воздуха, земли или воды даже в морозы.</p></div>
-<div class="hp-card reveal"><div class="hp-icon">2</div><h3>Передает в дом</h3><p>Преобразует эту энергию в тепло для радиаторов и теплых полов.</p></div>
-<div class="hp-card reveal"><div class="hp-icon">3</div><h3>Экономит до 70%</h3><p>На 1 кВт электричества выдает 3-5 кВт тепла. Это в 3 раза выгоднее газа.</p></div>
+<div class="hp-card reveal"><div class="hp-icon">1</div><h3>Берёт тепло из природы</h3><p>Из воздуха, земли или воды — даже в морозы.</p></div>
+<div class="hp-card reveal"><div class="hp-icon">2</div><h3>Передаёт в дом</h3><p>В радиаторы, тёплый пол и бойлер.</p></div>
+<div class="hp-card reveal"><div class="hp-icon">3</div><h3>Экономит до 70%</h3><p>1 кВт электричества → 3–5 кВт тепла.</p></div>
 </div>
 
 <div class="hp-homes reveal">
-<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 30px; color: #1a1a1a;">Идеально подходит для:</h3>
+<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 30px; color: #1a1a1a;">Подходит для:</h3>
 <div class="hp-tags">
 <span class="hp-tag">Частные дома и коттеджи</span>
 <span class="hp-tag">Модульные дома</span>
@@ -363,28 +372,67 @@ header h1{font-size:38px}
 <div class="hp-savings reveal">
 <div class="hp-save-text">
 <h3>Сколько вы экономите?</h3>
-<p>Примерная стоимость отопления дома площадью 100 м² в месяц:</p>
+<p>Отопление дома 100 м² в месяц:</p>
 </div>
 <div class="hp-save-table">
 <div class="hp-row"><span>Газ</span><span>~300 BYN</span></div>
 <div class="hp-row"><span>Электричество</span><span>~800 BYN</span></div>
 <div class="hp-row hp-highlight"><span>Тепловой насос</span><span>~100 BYN</span></div>
 </div>
-<p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">Окупаемость системы — от 3 до 5 лет. Дальше — только чистая экономия.</p>
+<div class="hp-payback">Окупаемость: 3–4 года<small>Дальше — только экономия</small></div>
 </div>
 
-<!-- БЛОК ПРЕИМУЩЕСТВА ТЕПЛОВОГО НАСОСА -->
 <div class="hp-calc-text reveal" style="max-width: 800px; margin: 40px auto 0; background: #f8f9fa; padding: 40px; border-radius: 20px; border: 1px solid #eef2f5; text-align: center;">
 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #1a1a1a; margin-bottom: 20px;">Почему тепловой насос выгоднее?</h3>
-<p style="font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 20px;">
-Тепловой насос не сжигает топливо, а «перекачивает» тепло с улицы. На 1 кВт потраченного электричества он выдает 3–5 кВт тепла. Это делает его в 3–4 раза эффективнее обычных электрических обогревателей и зачастую выгоднее газа в долгосрочной перспективе.
-</p>
-<p style="font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 30px;">
-<strong>Точная окупаемость зависит от площади дома, утепления и тарифов.</strong> Мы бесплатно рассчитаем выгоду именно для вашего дома.
-</p>
-<a href="#" onclick="openModal('service'); return false;" class="btn-primary" style="padding: 15px 40px;">Получить бесплатный расчет</a>
+<p style="font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 30px;">Не сжигает топливо, а перекачивает тепло с улицы. На 1 кВт электричества — 3–5 кВт тепла. В 3–4 раза эффективнее обычных обогревателей.</p>
+<a href="#" onclick="openModal('service'); return false;" class="btn-primary" style="padding: 15px 40px;">Получить расчёт</a>
 </div>
 
+</div>
+</section>
+
+<!-- ТАБЛИЦА: ТЕПЛОВОЙ НАСОС VS КОНДИЦИОНЕР -->
+<section id="compare" style="background:#fcfcfc;">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-label">Сравнение</span>
+<h2 class="section-title">Тепловой насос <em>vs кондиционер</em></h2>
+<p class="section-subtitle">Один принцип — разные возможности</p>
+</div>
+<div class="compare-wrap reveal">
+<table class="compare-table">
+<thead>
+<tr><th>Параметр</th><th>Кондиционер</th><th>Тепловой насос</th></tr>
+</thead>
+<tbody>
+<tr><td>Охлаждение летом</td><td>да</td><td>да</td></tr>
+<tr><td>Отопление зимой</td><td>до −5…−7 °C</td><td>до −25 °C</td></tr>
+<tr><td>Горячая вода</td><td>нет</td><td>да</td></tr>
+<tr><td>1 кВт электричества →</td><td>1 кВт тепла</td><td>3–5 кВт тепла</td></tr>
+<tr><td>Роль в доме</td><td>дополнение</td><td>основное отопление</td></tr>
+<tr><td>Монтаж</td><td>1 день</td><td>2–3 дня</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+
+<!-- УСЛУГИ -->
+<section id="services">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-label">Услуги</span>
+<h2 class="section-title">Наши <em>услуги</em></h2>
+<p class="section-subtitle">Полный спектр работ для вашего дома</p>
+</div>
+<div class="services">
+<div class="service-card reveal"><span class="service-number">01</span><h3>Тепловые насосы под ключ</h3><p>Проектирование, поставка и монтаж тепловых насосов для отопления и горячего водоснабжения.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">02</span><h3>Установка кондиционеров</h3><p>Полный монтаж бытового кондиционера из нашего каталога.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">03</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка в частных домах и коттеджах.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">04</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">05</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности.</p><div class="price">по запросу</div></div>
+<div class="service-card reveal"><span class="service-number">06</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента.</p><div class="price">по запросу</div></div>
+</div>
 </div>
 </section>
 <!-- ПРЕИМУЩЕСТВА -->
@@ -396,8 +444,8 @@ header h1{font-size:38px}
 </div>
 <div class="features">
 <div class="feature reveal"><span class="icon">◆</span><h3>Опыт более 8 лет</h3><p>Более 2000 установленных систем.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Гарантия до 10 лет</h3><p>Официальная гарантия на оборудование и работы.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Бесплатная доставка по РБ</h3><p>Доставим технику в любой уголок Беларуси.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Гарантия до 10 лет</h3><p>На оборудование и работы.</p></div>
+<div class="feature reveal"><span class="icon">◆</span><h3>Бесплатная доставка по РБ</h3><p>В любой уголок Беларуси.</p></div>
 <div class="feature reveal"><span class="icon">◆</span><h3>Только частные дома</h3><p>Специализируемся на загородных домах и дачах.</p></div>
 </div>
 </div>
@@ -411,50 +459,117 @@ header h1{font-size:38px}
 <h2 class="section-title">Компания <em>VRClimat</em></h2>
 </div>
 <div class="about-content reveal">
-<p>Мы — команда профессионалов, которая занимается <em>кондиционированием и отоплением частных домов</em> уже <strong>более 8 лет</strong>.</p>
-<p>Мы работаем с проверенными брендами и даем <strong>официальную гарантию</strong> на всё оборудование и монтаж. Наш главный принцип — честность и качество.</p>
-<p>Выбор моделей и цены — <strong>по запросу</strong>. Оставьте заявку, и мы вышлем вам актуальный каталог с ценами.</p>
+<p>Ставим <em>тепловые насосы и кондиционеры</em> в частных домах <strong>более 8 лет</strong>.</p>
+<p>Работаем с проверенными брендами. Даём <strong>гарантию до 10 лет</strong> на оборудование и монтаж.</p>
+<p>Стоимость — <strong>по запросу</strong>. Считаем под ваш дом за 1 день.</p>
 </div>
 </div>
 </section>
 
-<!-- БРЕНДЫ -->
+<!-- БРЕНДЫ — 2 КОЛОНКИ -->
 <section class="brands-section" id="brands">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label">Бренды</span>
 <h2 class="section-title">Работаем с <em>лучшими</em></h2>
-<p class="section-subtitle">Подберем технику под ваш бюджет и задачи</p>
+<p class="section-subtitle">Подберём технику под бюджет и задачу</p>
 </div>
-<div class="brand-category reveal">
-<h3 class="brand-cat-title">Премиум-класс</h3>
-<div class="brands-row">
-<div class="brand-item"><h4>Daikin</h4><p>Япония</p></div>
-<div class="brand-item"><h4>Mitsubishi</h4><p>Япония</p></div>
-<div class="brand-item"><h4>Panasonic</h4><p>Япония</p></div>
-<div class="brand-item"><h4>Toshiba</h4><p>Япония</p></div>
-<div class="brand-item"><h4>LG</h4><p>Корея</p></div>
-<div class="brand-item"><h4>Samsung</h4><p>Корея</p></div>
-</div>
-</div>
-<div class="brand-category reveal">
-<h3 class="brand-cat-title">Средний класс</h3>
-<div class="brands-row">
-<div class="brand-item"><h4>Gree</h4><p>Китай</p></div>
-<div class="brand-item"><h4>Midea</h4><p>Китай</p></div>
-<div class="brand-item"><h4>Electrolux</h4><p>Швеция</p></div>
-<div class="brand-item"><h4>Zanussi</h4><p>Италия</p></div>
-<div class="brand-item"><h4>Loriot</h4><p>Китай</p></div>
-<div class="brand-item"><h4>Neoclima</h4><p>Китай</p></div>
+<div class="brands-columns reveal">
+
+<div class="brands-col">
+<h3 class="brands-col-title">Тепловые насосы</h3>
+<div class="brand-tier">
+<div class="brand-tier-label">Премиум</div>
+<div class="brand-tier-list">
+<span class="brand-chip">Daikin</span>
+<span class="brand-chip">Mitsubishi Electric</span>
+<span class="brand-chip">NIBE</span>
 </div>
 </div>
-<div class="brand-category reveal">
-<h3 class="brand-cat-title">Бюджетный класс</h3>
-<div class="brands-row">
-<div class="brand-item"><h4>Ballu</h4><p>Россия/Китай</p></div>
-<div class="brand-item"><h4>Breeon</h4><p>Китай</p></div>
-<div class="brand-item"><h4>Rix</h4><p>Китай</p></div>
-<div class="brand-item"><h4>TCL</h4><p>Китай</p></div>
+<div class="brand-tier">
+<div class="brand-tier-label">Средний класс</div>
+<div class="brand-tier-list">
+<span class="brand-chip">Gree</span>
+<span class="brand-chip">Haier</span>
+<span class="brand-chip">Electrolux</span>
+<span class="brand-chip">TCL</span>
+</div>
+</div>
+<div class="brand-tier">
+<div class="brand-tier-label">Бюджет</div>
+<div class="brand-tier-list">
+<span class="brand-chip">KOTLOV GE</span>
+<span class="brand-chip">Kospel</span>
+<span class="brand-chip">VETERO</span>
+</div>
+</div>
+</div>
+
+<div class="brands-col">
+<h3 class="brands-col-title">Кондиционеры</h3>
+<div class="brand-tier">
+<div class="brand-tier-label">Премиум</div>
+<div class="brand-tier-list">
+<span class="brand-chip">Daikin</span>
+<span class="brand-chip">Mitsubishi Electric</span>
+<span class="brand-chip">Panasonic</span>
+</div>
+</div>
+<div class="brand-tier">
+<div class="brand-tier-label">Средний класс</div>
+<div class="brand-tier-list">
+<span class="brand-chip">LG</span>
+<span class="brand-chip">Samsung</span>
+<span class="brand-chip">Gree</span>
+<span class="brand-chip">Midea</span>
+<span class="brand-chip">Haier</span>
+<span class="brand-chip">Electrolux</span>
+</div>
+</div>
+<div class="brand-tier">
+<div class="brand-tier-label">Бюджет</div>
+<div class="brand-tier-list">
+<span class="brand-chip">Ballu</span>
+<span class="brand-chip">TCL</span>
+<span class="brand-chip">DEXP</span>
+<span class="brand-chip">Aceline</span>
+<span class="brand-chip">Tadilux</span>
+</div>
+</div>
+</div>
+
+</div>
+<p class="brands-note">Все бренды доступны к заказу в РБ. Подбираем под бюджет и задачу.</p>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" style="background:#fff;">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-label">FAQ</span>
+<h2 class="section-title">Частые <em>вопросы</em></h2>
+</div>
+<div class="faq-list reveal">
+<div class="faq-item">
+<button class="faq-q">Работает в −25 °C?<span class="faq-icon">+</span></button>
+<div class="faq-a">Да. Воздушный тепловой насос — до −25 °C. Геотермальный — без ограничений.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Нужен ли газ?<span class="faq-icon">+</span></button>
+<div class="faq-a">Нет. Тепловой насос заменяет котёл.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Хватит ли электричества?<span class="faq-icon">+</span></button>
+<div class="faq-a">Считаем по вашему вводу. Для насоса 8 кВт нужно 10–15 кВт ввода.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Шумит?<span class="faq-icon">+</span></button>
+<div class="faq-a">40–50 дБ на расстоянии 1 м. Как холодильник.</div>
+</div>
+<div class="faq-item">
+<button class="faq-q">Что с гарантией?<span class="faq-icon">+</span></button>
+<div class="faq-a">До 10 лет на оборудование и монтаж.</div>
 </div>
 </div>
 </div>
@@ -475,10 +590,10 @@ header h1{font-size:38px}
 <a href="#" onclick="openModal('article'); return false;" class="news-link">Читать статью →</a>
 </div>
 <div class="news-card reveal">
-<div class="news-date">Акция</div>
-<h3>Зимний комплект в подарок</h3>
-<p>При заказе установки под ключ до 31 декабря дарим зимний комплект для безопасной работы в морозы.</p>
-<a href="#" onclick="openModal('service'); return false;" class="news-link">Забрать подарок →</a>
+<div class="news-date">Расчёт</div>
+<h3>Бесплатный расчёт теплового насоса</h3>
+<p>Считаем мощность, стоимость и окупаемость под ваш дом.</p>
+<a href="#" onclick="openModal('service'); return false;" class="news-link">Получить расчёт →</a>
 </div>
 </div>
 </div>
@@ -493,7 +608,7 @@ header h1{font-size:38px}
 </div>
 <div class="contacts-grid reveal">
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Телефон</h4><a href="tel:+375256439632">+375 (25) 643-96-32</a></div>
-<div class="contact-card"><span class="contact-icon">◆</span><h4>Telegram / Viber</h4><a href="https://t.me/+375256439632">Написать в Telegram</a></div>
+<div class="contact-card"><span class="contact-icon">◆</span><h4>Telegram / Viber</h4><a href="viber://chat?number=%2B375256439632">Написать в Viber</a></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Зона работы</h4><p>Минск и Минский район, область</p></div>
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Время работы</h4><p>Пн–Вс: 9:00 – 21:00</p></div>
 </div>
@@ -508,6 +623,9 @@ header h1{font-size:38px}
 УНП: 693462668<br>
 <!-- Сюда можно будет добавить банковский счет -->
 </div>
+<div class="footer-links">
+<a href="#" onclick="openModal('privacy'); return false;">Политика конфиденциальности</a>
+</div>
 <div class="footer-copy">© VRClimat. Все права защищены.</div>
 </div>
 </footer>
@@ -517,7 +635,7 @@ header h1{font-size:38px}
 <span>📄</span> Запросить каталог
 </button>
 <button class="floating-btn-main" onclick="openModal('service')">
-<span>✦</span> Оставить заявку
+<span>✦</span> Получить расчёт
 </button>
 </div>
 
@@ -525,25 +643,26 @@ header h1{font-size:38px}
 <div class="modal-overlay" id="modalService" onclick="closeModalOutside(event, 'modalService')">
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal('modalService')">×</button>
-<h2>Оставить <em>заявку</em></h2>
-<p class="form-subtitle">Мы свяжемся с вами в течение 15 минут</p>
+<h2>Получить <em>расчёт</em></h2>
+<p class="form-subtitle">Свяжемся в течение 15 минут</p>
 <form id="serviceForm">
 <div class="form-group"><label>Ваше имя</label><input type="text" name="name" placeholder="Иван" required></div>
 <div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required></div>
 <div class="form-group"><label>Услуга</label>
 <select name="service" required>
 <option value="">Выберите услугу</option>
+<option>Тепловые насосы под ключ</option>
 <option>Установка кондиционера</option>
 <option>Монтаж кондиционера</option>
 <option>Обслуживание и чистка</option>
 <option>Ремонт кондиционера</option>
 <option>Заправка фреоном</option>
-<option>Тепловые насосы под ключ</option>
 <option>Подбор оборудования (каталог)</option>
 <option>Консультация</option>
 </select>
 </div>
 <div class="form-group"><label>Комментарий</label><textarea name="message" placeholder="Тип дома, площадь, пожелания..."></textarea></div>
+<label class="consent"><input type="checkbox" required> Согласен с <a href="#" onclick="openModal('privacy'); return false;">политикой конфиденциальности</a></label>
 <button type="submit" class="btn-primary">Отправить заявку</button>
 <div class="form-status" id="formStatus"></div>
 </form>
@@ -555,7 +674,7 @@ header h1{font-size:38px}
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal('modalCatalog')">×</button>
 <h2>Запросить <em>каталог</em></h2>
-<p class="form-subtitle">Мы вышлем вам актуальные модели и цены</p>
+<p class="form-subtitle">Вышлем актуальные модели и цены</p>
 <form id="catalogForm">
 <div class="form-group"><label>Ваше имя</label><input type="text" name="name" placeholder="Иван" required></div>
 <div class="form-group"><label>Телефон</label><input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required></div>
@@ -567,6 +686,7 @@ header h1{font-size:38px}
 <option>Звонок</option>
 </select>
 </div>
+<label class="consent"><input type="checkbox" required> Согласен с <a href="#" onclick="openModal('privacy'); return false;">политикой конфиденциальности</a></label>
 <button type="submit" class="btn-primary">Получить каталог</button>
 <div class="form-status" id="catalogStatus"></div>
 </form>
@@ -579,52 +699,53 @@ header h1{font-size:38px}
 <button class="modal-close" onclick="closeModal('modalArticle')">×</button>
 <h2>Почему обычный кондиционер <em>не работает зимой</em></h2>
 <div style="font-size: 15px; color: #555; line-height: 1.8;">
-<p>Многие владельцы частных домов задаются вопросом: «Можно ли использовать обычный кондиционер для обогрева зимой?». Ответ экспертов VRClimat однозначен: <strong>нет, если это стандартная модель без зимнего комплекта.</strong></p>
-<p><strong>1. Замерзание масла в компрессоре.</strong> При температуре ниже -5°C масло густеет. Запуск кондиционера в мороз приведет к поломке компрессора за несколько минут.</p>
-<p><strong>2. Ледяная пробка в дренаже.</strong> Вода замерзает в трубке, и конденсат начинает течь в комнату, повреждая ремонт.</p>
-<p><strong>3. Переохлаждение наружного блока.</strong> Система работает на износ, что приводит к выходу из строя электроники.</p>
-<p><strong>✅ Решение:</strong> Установить «Зимний комплект» (подогрев картера, дренажа и регулятор давления). Он спасает технику и позволяет греть дом даже в -20°C.</p>
-<p style="margin-top: 20px; font-weight: 600; color: #008080;">В VRClimat мы дарим зимний комплект при заказе установки под ключ до 31 декабря. Не рискуйте техникой!</p>
+<p>Многие владельцы частных домов задаются вопросом: «Можно ли использовать обычный кондиционер для обогрева зимой?». Ответ: <strong>нет, если это стандартная модель без зимнего комплекта.</strong></p>
+<p><strong>1. Замерзание масла в компрессоре.</strong> При температуре ниже −5 °C масло густеет. Запуск в мороз приведёт к поломке компрессора.</p>
+<p><strong>2. Ледяная пробка в дренаже.</strong> Вода замерзает в трубке, конденсат течёт в комнату.</p>
+<p><strong>3. Переохлаждение наружного блока.</strong> Система работает на износ.</p>
+<p><strong>✅ Решение:</strong> зимний комплект (подогрев картера, дренажа и регулятор давления). Позволяет греть дом даже в −20 °C.</p>
+<p style="margin-top: 20px; font-weight: 600; color: #008080;">Для полного отопления дома без газа и дров — тепловой насос.</p>
 </div>
 <div style="text-align: center; margin-top: 30px;">
-<button onclick="closeModal('modalArticle'); openModal('service');" class="btn-primary">Оставить заявку</button>
+<button onclick="closeModal('modalArticle'); openModal('service');" class="btn-primary">Получить расчёт</button>
 </div>
 </div>
 </div>
 
-<!-- МОДАЛЬНОЕ ОКНО ТЕСТА -->
+<!-- МОДАЛЬНОЕ ОКНО ПОДБОРА -->
 <div class="modal-overlay" id="modalQuiz" onclick="closeModalOutside(event, 'modalQuiz')">
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal('modalQuiz')">×</button>
-<h2>Подбор <em>техники</em></h2>
-<p class="form-subtitle">Ответьте на 3 вопроса, и мы подберем идеальный вариант</p>
+<h2>Подбор <em>мощности</em></h2>
+<p class="form-subtitle">Ответьте на 3 вопроса</p>
 <form id="quizForm">
 <div class="form-group">
-<label>1. Какая площадь помещения?</label>
+<label>1. Площадь дома, м²</label>
 <select name="area" required>
 <option value="">Выберите площадь</option>
-<option value="small">До 25 м² (спальня, детская)</option>
-<option value="medium">25-40 м² (гостиная)</option>
-<option value="large">Более 40 м² (большая комната, студия)</option>
+<option value="small">До 80 м²</option>
+<option value="medium">80–150 м²</option>
+<option value="large">Более 150 м²</option>
 </select>
 </div>
 <div class="form-group">
-<label>2. Нужен ли обогрев зимой?</label>
+<label>2. Чем греете сейчас?</label>
+<select name="heating" required>
+<option value="">Выберите вариант</option>
+<option value="gas">Газ</option>
+<option value="electric">Электричество</option>
+<option value="wood">Дрова</option>
+<option value="none">Нет отопления</option>
+</select>
+</div>
+<div class="form-group">
+<label>3. Нужен ли обогрев зимой?</label>
 <select name="winter" required>
 <option value="">Выберите вариант</option>
-<option value="no">Нет, только летом (охлаждение)</option>
-<option value="yes_soft">Да, но не в сильные морозы (до -5°C)</option>
-<option value="yes_hard">Да, хочу греться даже в -20°C</option>
-<option value="heat_pump">Хочу полностью отказаться от газа/дров (тепловой насос)</option>
-</select>
-</div>
-<div class="form-group">
-<label>3. Ваш бюджет (примерно)?</label>
-<select name="budget" required>
-<option value="">Выберите бюджет</option>
-<option value="low">До 1000 BYN</option>
-<option value="mid">1000 - 2000 BYN</option>
-<option value="high">Более 2000 BYN</option>
+<option value="no">Нет, только охлаждение</option>
+<option value="yes_soft">Да, до −5 °C</option>
+<option value="yes_hard">Да, до −25 °C</option>
+<option value="heat_pump">Полностью отказаться от газа/дров</option>
 </select>
 </div>
 <div class="form-group">
@@ -635,34 +756,51 @@ header h1{font-size:38px}
 <label>Телефон</label>
 <input type="tel" name="phone" placeholder="+375 (__) ___-__-__" required>
 </div>
+<label class="consent"><input type="checkbox" required> Согласен с <a href="#" onclick="openModal('privacy'); return false;">политикой конфиденциальности</a></label>
 <button type="submit" class="btn-primary">Получить рекомендацию</button>
 </form>
 <div id="quizResult" style="display: none; text-align: center; margin-top: 30px;">
-<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #008080; margin-bottom: 15px;">Ваша рекомендация:</h3>
+<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #008080; margin-bottom: 15px;">Рекомендация:</h3>
 <p id="recommendationText" style="font-size: 16px; color: #333; line-height: 1.6; margin-bottom: 20px;"></p>
-<button onclick="closeModal('modalQuiz'); openModal('service');" class="btn-primary">Оставить заявку на подбор</button>
+<button onclick="closeModal('modalQuiz'); openModal('service');" class="btn-primary">Получить расчёт</button>
+</div>
+</div>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО ПОЛИТИКИ -->
+<div class="modal-overlay" id="modalPrivacy" onclick="closeModalOutside(event, 'modalPrivacy')">
+<div class="modal-content" onclick="event.stopPropagation()">
+<button class="modal-close" onclick="closeModal('modalPrivacy')">×</button>
+<h2>Политика <em>конфиденциальности</em></h2>
+<div style="font-size: 14px; color: #555; line-height: 1.8;">
+<p>Мы собираем имя и телефон только для связи по заявке. Данные не передаются третьим лицам.</p>
+<p>По запросу удалим ваши данные. Контакт: +375 (25) 643-96-32.</p>
 </div>
 </div>
 </div>
 
 <script>
-// Токен бота
 const TELEGRAM_BOT_TOKEN="8608601758:AAHqKHl1UshkTT1hrB8yjhWZOpTkwTOO8oQ";
-// Два ID для получения заявок
 const TELEGRAM_CHAT_ID_1 = "545995986";
 const TELEGRAM_CHAT_ID_2 = "1144833390";
 
-// Универсальная функция открытия модальных окон
 function openModal(type){
     let id;
     if (type === 'service') id = 'modalService';
     else if (type === 'catalog') id = 'modalCatalog';
     else if (type === 'article') id = 'modalArticle';
     else if (type === 'quiz') id = 'modalQuiz';
-    
+    else if (type === 'privacy') id = 'modalPrivacy';
     if (id) {
         document.getElementById(id).classList.add('active');
         document.body.style.overflow='hidden';
+        // Сброс квиза при повторном открытии
+        if (type === 'quiz') {
+            const qf = document.getElementById('quizForm');
+            const qr = document.getElementById('quizResult');
+            if (qf) qf.style.display = '';
+            if (qr) qr.style.display = 'none';
+        }
     }
 }
 
@@ -681,27 +819,17 @@ document.addEventListener('keydown',(e)=>{
         closeModal('modalCatalog');
         closeModal('modalArticle');
         closeModal('modalQuiz');
+        closeModal('modalPrivacy');
     }
 });
 
-// Функция для отправки сообщения на два ID
 async function sendToTelegram(text) {
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
-    
-    await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_1, text: text })
-    });
-
-    await fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_2, text: text })
-    });
+    const res1 = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_1, text: text }) });
+    const res2 = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_2, text: text }) });
+    if (!res1.ok && !res2.ok) throw new Error('Telegram error');
 }
 
-// Отправка формы на услугу
 document.getElementById('serviceForm').addEventListener('submit', async function(e){
     e.preventDefault();
     const form = e.target;
@@ -711,19 +839,15 @@ document.getElementById('serviceForm').addEventListener('submit', async function
     const phone = form.phone.value.trim();
     const service = form.service.value;
     const message = form.message.value.trim();
-    const text = `❄️ Новая заявка на услугу с сайта VRClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
-    
+    const text = `❄️ Заявка с сайта VRClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
     btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
     try {
         await sendToTelegram(text);
         status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset();
-    } catch (err) { 
-        status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; 
-    }
+    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
     finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
 });
 
-// Отправка формы на каталог
 document.getElementById('catalogForm').addEventListener('submit', async function(e){
     e.preventDefault();
     const form = e.target;
@@ -733,24 +857,20 @@ document.getElementById('catalogForm').addEventListener('submit', async function
     const phone = form.phone.value.trim();
     const contact_method = form.contact_method.value;
     const text = `📄 ЗАПРОС КАТАЛОГА с сайта VRClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📱 Связь через: ${contact_method}`;
-    
     btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
     try {
         await sendToTelegram(text);
         status.textContent = '✅ Запрос отправлен! Мы вышлем вам каталог.'; status.className = 'form-status success'; form.reset();
-    } catch (err) { 
-        status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; 
-    }
+    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
     finally { btn.disabled = false; btn.textContent = 'Получить каталог'; }
 });
 
-// Логика калькулятора подбора и отправка в Telegram
 document.getElementById('quizForm').addEventListener('submit', async function(e) {
     e.preventDefault();
     const form = e.target;
     const area = form.area.value;
+    const heating = form.heating.value;
     const winter = form.winter.value;
-    const budget = form.budget.value;
     const name = form.name.value.trim();
     const phone = form.phone.value.trim();
 
@@ -758,27 +878,127 @@ document.getElementById('quizForm').addEventListener('submit', async function(e)
     let recShort = "";
 
     if (winter === "heat_pump") {
-        recommendation = "Вам подойдет тепловой насос. Это решение для полного отопления дома без газа и дров. Оставьте заявку, и мы рассчитаем мощность и стоимость под ваш дом.";
-        recShort = "Тепловой насос (отопление дома). Бюджет: " + budget;
-    } else if (budget === "low" && winter === "no") {
-        recommendation = "Вам подойдет бюджетная модель On/Off. Она отлично справится с охлаждением. Но помните: на обогрев зимой она не рассчитана.";
-        recShort = "Бюджетный On/Off (до 1000 BYN), только охлаждение.";
-    } else if (budget === "mid" && winter === "no") {
-        recommendation = "Отличный выбор — инверторная модель среднего класса. Она тихая, экономичная и прослужит долго.";
-        recShort = "Инвертор среднего класса (1000-2000 BYN), только охлаждение.";
+        recommendation = "Вам подойдёт тепловой насос. Полное отопление дома без газа и дров. Оставьте заявку — рассчитаем мощность и стоимость под ваш дом.";
+       <script>
+const TELEGRAM_BOT_TOKEN="8608601758:AAHqKHl1UshkTT1hrB8yjhWZOpTkwTOO8oQ";
+const TELEGRAM_CHAT_ID_1 = "545995986";
+const TELEGRAM_CHAT_ID_2 = "1144833390";
+
+function openModal(type){
+    let id;
+    if (type === 'service') id = 'modalService';
+    else if (type === 'catalog') id = 'modalCatalog';
+    else if (type === 'article') id = 'modalArticle';
+    else if (type === 'quiz') id = 'modalQuiz';
+    else if (type === 'privacy') id = 'modalPrivacy';
+    if (id) {
+        document.getElementById(id).classList.add('active');
+        document.body.style.overflow='hidden';
+        if (type === 'quiz') {
+            const qf = document.getElementById('quizForm');
+            const qr = document.getElementById('quizResult');
+            if (qf) qf.style.display = '';
+            if (qr) qr.style.display = 'none';
+        }
+    }
+}
+
+function closeModal(id){
+    document.getElementById(id).classList.remove('active');
+    document.body.style.overflow='';
+}
+
+function closeModalOutside(event, id){
+    if(event.target.id === id) closeModal(id);
+}
+
+document.addEventListener('keydown',(e)=>{
+    if(e.key==='Escape'){
+        closeModal('modalService');
+        closeModal('modalCatalog');
+        closeModal('modalArticle');
+        closeModal('modalQuiz');
+        closeModal('modalPrivacy');
+    }
+});
+
+async function sendToTelegram(text) {
+    const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+    const res1 = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_1, text: text }) });
+    const res2 = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_2, text: text }) });
+    if (!res1.ok && !res2.ok) throw new Error('Telegram error');
+}
+
+document.getElementById('serviceForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('formStatus');
+    const btn = form.querySelector('button[type="submit"]');
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const service = form.service.value;
+    const message = form.message.value.trim();
+    const text = `❄️ Заявка с сайта VRClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n🔧 Услуга: ${service}\n💬 Комментарий: ${message || '—'}`;
+    btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
+    try {
+        await sendToTelegram(text);
+        status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset();
+    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+    finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
+});
+
+document.getElementById('catalogForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const form = e.target;
+    const status = document.getElementById('catalogStatus');
+    const btn = form.querySelector('button[type="submit"]');
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+    const contact_method = form.contact_method.value;
+    const text = `📄 ЗАПРОС КАТАЛОГА с сайта VRClimat!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n📱 Связь через: ${contact_method}`;
+    btn.disabled = true; btn.textContent = 'Отправка...'; status.textContent = ''; status.className = 'form-status';
+    try {
+        await sendToTelegram(text);
+        status.textContent = '✅ Запрос отправлен! Мы вышлем вам каталог.'; status.className = 'form-status success'; form.reset();
+    } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
+    finally { btn.disabled = false; btn.textContent = 'Получить каталог'; }
+});
+
+document.getElementById('quizForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const area = form.area.value;
+    const heating = form.heating.value;
+    const winter = form.winter.value;
+    const name = form.name.value.trim();
+    const phone = form.phone.value.trim();
+
+    let recommendation = "";
+    let recShort = "";
+
+    if (winter === "heat_pump") {
+        recommendation = "Вам подойдёт тепловой насос. Полное отопление дома без газа и дров. Оставьте заявку — рассчитаем мощность и стоимость под ваш дом.";
+        recShort = "Тепловой насос (отопление дома).";
     } else if (winter === "yes_hard") {
-        recommendation = "Вам нужна инверторная модель с зимним комплектом. Обязательно установите зимний комплект — он позволит греться даже в -20°C без риска поломки.";
-        recShort = "Инвертор с зимним комплектом (до -20°C). Бюджет: " + budget;
+        recommendation = "Вам нужна инверторная модель с зимним комплектом. Позволит греться даже в −25 °C без риска поломки.";
+        recShort = "Инвертор с зимним комплектом (до −25 °C).";
+    } else if (winter === "yes_soft") {
+        recommendation = "Вам подойдёт качественная инверторная модель. Комфорт и в жару, и в межсезонье.";
+        recShort = "Инвертор, межсезонье (до −5 °C).";
     } else {
-        recommendation = "Вам подойдет качественная инверторная модель среднего сегмента. Она обеспечит комфорт и в жару, и в межсезонье.";
-        recShort = "Инвертор средний+, межсезонье. Бюджет: " + budget;
+        recommendation = "Вам подойдёт инверторная модель для охлаждения. Тихая и экономичная.";
+        recShort = "Инвертор, только охлаждение.";
     }
 
     document.getElementById('quizResult').style.display = 'block';
     document.getElementById('recommendationText').textContent = recommendation;
     form.style.display = 'none';
 
-    const text = `🎯 НОВЫЙ ЗАПРОС НА ПОДБОР!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n\n📐 Площадь: ${area === 'small' ? 'До 25 м²' : area === 'medium' ? '25-40 м²' : 'Более 40 м²'}\n❄️ Обогрев зимой: ${winter === 'no' ? 'Нет' : winter === 'yes_soft' ? 'До -5°C' : winter === 'yes_hard' ? 'До -20°C' : 'Тепловой насос'}\n💰 Бюджет: ${budget === 'low' ? 'До 1000' : budget === 'mid' ? '1000-2000' : 'Более 2000'}\n\n💡 Рекомендация: ${recShort}`;
+    const areaText = area === 'small' ? 'До 80 м²' : area === 'medium' ? '80–150 м²' : 'Более 150 м²';
+    const heatingText = heating === 'gas' ? 'Газ' : heating === 'electric' ? 'Электричество' : heating === 'wood' ? 'Дрова' : 'Нет отопления';
+    const winterText = winter === 'no' ? 'Нет, только охлаждение' : winter === 'yes_soft' ? 'Да, до −5 °C' : winter === 'yes_hard' ? 'Да, до −25 °C' : 'Тепловой насос';
+
+    const text = `🎯 ЗАПРОС НА ПОДБОР!\n\n👤 Имя: ${name}\n📞 Телефон: ${phone}\n\n📐 Площадь: ${areaText}\n🔥 Отопление сейчас: ${heatingText}\n❄️ Обогрев зимой: ${winterText}\n\n💡 Рекомендация: ${recShort}`;
 
     try {
         await sendToTelegram(text);
@@ -787,10 +1007,22 @@ document.getElementById('quizForm').addEventListener('submit', async function(e)
     }
 });
 
-// Анимация появления
-const revealElements=document.querySelectorAll('.reveal');
-const observer=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible')}})},{threshold:0.1});
-revealElements.forEach(el=>observer.observe(el));
+// FAQ аккордеон
+document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    });
+});
+
+// Reveal анимация
+const revealElements = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+revealElements.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
