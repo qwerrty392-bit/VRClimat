@@ -16,8 +16,8 @@ body{font-family:'Montserrat',sans-serif;background:#F7F5F2;color:#0B1F3A;line-h
 .top-bar{background:#0B1F3A;color:#fff;padding:12px 0;font-size:13px;font-weight:500;letter-spacing:1px;position:relative;z-index:10}
 .top-bar-content{max-width:1300px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .top-bar-phone{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;transition:color 0.3s}
-.top-bar-phone:hover{color:#B33A3A}
-.top-bar-phone .phone-icon{font-size:16px;color:#B33A3A}
+.top-bar-phone:hover{color:#E8C87A}
+.top-bar-phone .phone-icon{font-size:16px;color:#E8C87A}
 .top-bar-info{color:#8A9BB0;font-size:12px;letter-spacing:1px;text-align:right;display:flex;align-items:center;gap:15px;}
 .btn-callback{background:#B33A3A;color:#fff;padding:8px 15px;border-radius:50px;text-decoration:none;font-size:11px;font-weight:600;transition:all 0.3s;border:none;cursor:pointer;}
 .btn-callback:hover{background:#8E2C2C;transform:translateY(-1px);}
@@ -42,52 +42,72 @@ header h1 em{font-style:italic;font-weight:700;color:#B33A3A}
 header p{font-size:18px;color:#4A5A6D;font-weight:400;max-width:600px;margin:0 auto 50px;letter-spacing:0.5px;animation:fadeInUp 1s ease 0.7s both}
 .btn-primary{display:inline-block;background:#B33A3A;color:#fff;padding:20px 55px;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:4px;text-transform:uppercase;transition:all 0.4s;border:none;cursor:pointer;animation:fadeInUp 1s ease 0.9s both;box-shadow:0 10px 30px rgba(179,58,58,0.25)}
 .btn-primary:hover{background:#8E2C2C;transform:translateY(-2px);box-shadow:0 15px 40px rgba(179,58,58,0.4)}
+.btn-blue{display:inline-block;background:#1E4A7A;color:#fff;padding:20px 55px;text-decoration:none;font-weight:600;font-size:12px;letter-spacing:4px;text-transform:uppercase;transition:all 0.4s;border:none;cursor:pointer;box-shadow:0 10px 30px rgba(30,74,122,0.25)}
+.btn-blue:hover{background:#153A61;transform:translateY(-2px);box-shadow:0 15px 40px rgba(30,74,122,0.4)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
 /* ГАРАНТИЯ */
-.warranty-badge{background:#0B1F3A;color:#fff;padding:30px 20px;text-align:center;position:relative;z-index:5}
+.warranty-badge{background:#0B1F3A;color:#fff;padding:30px 20px;text-align:center;position:relative;z-index:5;border-top:1px solid #16324F;border-bottom:1px solid #16324F}
 .warranty-badge h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;margin:0}
 .warranty-badge h2 em{font-style:italic;color:#E8C87A}
 
 /* СЕКЦИИ */
 section{padding:100px 0;position:relative}
 .section-header{text-align:center;margin-bottom:60px}
-.section-label{font-size:11px;font-weight:600;letter-spacing:8px;text-transform:uppercase;color:#B33A3A;margin-bottom:25px;display:block}
+.section-label{font-size:11px;font-weight:600;letter-spacing:8px;text-transform:uppercase;margin-bottom:25px;display:block}
+.section-label.red{color:#B33A3A}
+.section-label.blue{color:#1E4A7A}
 .section-title{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:600;line-height:1.1;letter-spacing:-1px;margin-bottom:25px;color:#0B1F3A}
-.section-title em{font-style:italic;font-weight:700;color:#B33A3A}
+.section-title em.red{font-style:italic;font-weight:700;color:#B33A3A}
+.section-title em.blue{font-style:italic;font-weight:700;color:#1E4A7A}
 .section-subtitle{color:#4A5A6D;font-size:18px;font-weight:400;max-width:600px;margin:0 auto;letter-spacing:0.5px}
 
 /* REVEAL */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* УСЛУГИ */
-.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
-.service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;border:1px solid #E5DFD5;border-top:4px solid transparent;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
-.service-card:hover{border-top-color:#B33A3A;transform:translateY(-5px);box-shadow:0 20px 50px rgba(11,31,58,0.08)}
-.service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;color:#B33A3A;letter-spacing:3px;margin-bottom:30px;display:block}
-.service-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#0B1F3A;margin-bottom:20px;line-height:1.2}
-.service-card p{color:#4A5A6D;font-size:15px;font-weight:400;margin-bottom:30px;line-height:1.8}
-.service-card .price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#B33A3A}
-
-/* ТЕПЛОВЫЕ НАСОСЫ */
+/* ТЕПЛОВЫЕ НАСОСЫ — КРАСНАЯ ВЕТКА */
 .hp-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 60px; }
-.hp-card { text-align: center; padding: 40px 25px; background: #EFEBE4; border-radius: 20px; border: 1px solid #E5DFD5; transition: all 0.3s; }
-.hp-card:hover { border-color: #B33A3A; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(179,58,58,0.1); }
+.hp-card { text-align: center; padding: 40px 25px; background: #F9EFEF; border-radius: 20px; border: 1px solid #EBD5D5; transition: all 0.3s; }
+.hp-card:hover { border-color: #B33A3A; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(179,58,58,0.12); }
 .hp-icon { width: 50px; height: 50px; background: #B33A3A; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; margin: 0 auto 20px; }
 .hp-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #0B1F3A; margin-bottom: 15px; }
 .hp-card p { font-size: 15px; color: #4A5A6D; line-height: 1.6; }
 .hp-homes { margin-bottom: 60px; }
 .hp-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 900px; margin: 0 auto; }
-.hp-tag { background: #F2E4E4; color: #B33A3A; padding: 12px 25px; border-radius: 50px; font-size: 14px; font-weight: 600; border: 1px solid #E5CACA; }
-.hp-savings { background: #EFEBE4; max-width: 800px; margin: 0 auto; padding: 50px; border-radius: 30px; border: 1px solid #E5DFD5; }
+.hp-tag { background: #F4E2E2; color: #B33A3A; padding: 12px 25px; border-radius: 50px; font-size: 14px; font-weight: 600; border: 1px solid #E5CACA; }
+.hp-savings { background: #F9EFEF; max-width: 800px; margin: 0 auto; padding: 50px; border-radius: 30px; border: 1px solid #EBD5D5; }
 .hp-save-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; color: #0B1F3A; text-align: center; margin-bottom: 10px; }
 .hp-save-text p { text-align: center; color: #4A5A6D; margin-bottom: 30px; }
-.hp-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #DDD5C8; font-size: 16px; color: #0B1F3A; }
+.hp-row { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #E0CACA; font-size: 16px; color: #0B1F3A; }
 .hp-row:last-child { border-bottom: none; }
-.hp-highlight { font-weight: 700; color: #B33A3A; font-size: 18px; background: #fff; padding: 15px 20px; border-radius: 12px; margin-top: 10px; border: none; box-shadow: 0 5px 15px rgba(179,58,58,0.1); }
+.hp-highlight { font-weight: 700; color: #B33A3A; font-size: 18px; background: #fff; padding: 15px 20px; border-radius: 12px; margin-top: 10px; border: none; box-shadow: 0 5px 15px rgba(179,58,58,0.12); }
 .hp-payback { text-align:center; margin-top:25px; font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:700; color:#B33A3A; }
 .hp-payback small{display:block; font-family:'Montserrat',sans-serif; font-size:12px; color:#8A96A5; font-weight:500; letter-spacing:2px; text-transform:uppercase; margin-top:8px;}
+
+/* КОНДИЦИОНЕРЫ — СИНЯЯ ВЕТКА */
+.ac-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 60px; }
+.ac-card { text-align: center; padding: 40px 25px; background: #EDF2F8; border-radius: 20px; border: 1px solid #D5E0EC; transition: all 0.3s; }
+.ac-card:hover { border-color: #1E4A7A; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(30,74,122,0.12); }
+.ac-icon { width: 50px; height: 50px; background: #1E4A7A; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; margin: 0 auto 20px; }
+.ac-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #0B1F3A; margin-bottom: 15px; }
+.ac-card p { font-size: 15px; color: #4A5A6D; line-height: 1.6; }
+.ac-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 900px; margin: 0 auto; }
+.ac-tag { background: #E2EAF4; color: #1E4A7A; padding: 12px 25px; border-radius: 50px; font-size: 14px; font-weight: 600; border: 1px solid #C8D6E6; }
+
+/* УСЛУГИ */
+.services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
+.service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;border:1px solid #E5DFD5;border-top:4px solid transparent;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
+.service-card.red:hover{border-top-color:#B33A3A;transform:translateY(-5px);box-shadow:0 20px 50px rgba(179,58,58,0.1)}
+.service-card.blue:hover{border-top-color:#1E4A7A;transform:translateY(-5px);box-shadow:0 20px 50px rgba(30,74,122,0.1)}
+.service-number{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:600;letter-spacing:3px;margin-bottom:30px;display:block}
+.service-card.red .service-number{color:#B33A3A}
+.service-card.blue .service-number{color:#1E4A7A}
+.service-card h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#0B1F3A;margin-bottom:20px;line-height:1.2}
+.service-card p{color:#4A5A6D;font-size:15px;font-weight:400;margin-bottom:30px;line-height:1.8}
+.service-card .price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700}
+.service-card.red .price{color:#B33A3A}
+.service-card.blue .price{color:#1E4A7A}
 
 /* ТАБЛИЦА */
 .compare-wrap{max-width:900px;margin:0 auto}
@@ -95,116 +115,20 @@ section{padding:100px 0;position:relative}
 .compare-table th,.compare-table td{padding:18px 20px;text-align:left;font-size:15px;border-bottom:1px solid #EFEBE4}
 .compare-table th{background:#0B1F3A;color:#fff;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase}
 .compare-table th:first-child{background:#16324F}
+.compare-table th:nth-child(2){background:#1E4A7A}
+.compare-table th:nth-child(3){background:#B33A3A}
 .compare-table tr:last-child td{border-bottom:none}
 .compare-table td:first-child{font-weight:600;color:#0B1F3A;background:#F7F5F2}
-.compare-table td:nth-child(2){color:#8A96A5}
+.compare-table td:nth-child(2){color:#1E4A7A}
 .compare-table td:nth-child(3){color:#B33A3A;font-weight:600}
 .compare-cards{display:none}
 .compare-card{background:#fff;border:1px solid #E5DFD5;border-radius:12px;padding:18px 20px;margin-bottom:12px;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
 .compare-card-title{font-weight:700;color:#0B1F3A;font-size:15px;margin-bottom:12px;padding-bottom:10px;border-bottom:1px solid #EFEBE4}
 .compare-card-row{display:flex;justify-content:space-between;gap:15px;font-size:14px;padding:6px 0}
 .compare-card-row span:first-child{color:#8A96A5}
-.compare-card-row span:last-child{color:#B33A3A;font-weight:600;text-align:right}
-
-/* АКЦИЯ */
-.promo-section { padding: 80px 0; background: #F7F5F2; }
-.promo-box { background: linear-gradient(135deg, #0B1F3A 0%, #16324F 100%); border-radius: 30px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(11,31,58,0.35); border: 1px solid #B33A3A; }
-.promo-box::before { content: '📐'; position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.08; transform: rotate(15deg); }
-.promo-content { position: relative; z-index: 2; }
-.promo-badge { display: inline-block; background: rgba(179,58,58,0.25); color: #E8A0A0; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; border: 1px solid rgba(179,58,58,0.5); }
-.promo-title { font-family: 'Cormorant Garamond', serif; font-size: 54px; font-weight: 700; color: #fff; margin-bottom: 20px; }
-.promo-title em { font-style: italic; color: #E8C87A; }
-.promo-text { font-size: 18px; color: #C8D2DE; max-width: 700px; margin: 0 auto 40px; line-height: 1.6; }
-.promo-text strong { color: #fff; }
-.promo-btn { background: #B33A3A; color: #fff; padding: 18px 50px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s; border: 2px solid #B33A3A; }
-.promo-btn:hover { background: #fff; color: #B33A3A; border-color: #fff; transform: translateY(-3px); }
-
-/* FAQ */
-.faq-list{max-width:800px;margin:0 auto}
-.faq-item{background:#fff;border:1px solid #E5DFD5;border-radius:12px;margin-bottom:15px;overflow:hidden;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
-.faq-q{width:100%;text-align:left;background:none;border:none;padding:22px 25px;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:600;color:#0B1F3A;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px}
-.faq-q:hover{color:#B33A3A}
-.faq-q .faq-icon{color:#B33A3A;font-size:20px;transition:transform 0.3s;flex-shrink:0}
-.faq-item.open .faq-icon{transform:rotate(45deg)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding:0 25px;color:#4A5A6D;font-size:15px;line-height:1.7}
-.faq-item.open .faq-a{max-height:200px;padding-bottom:22px}
-
-/* ПРЕИМУЩЕСТВА */
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
-.feature{text-align:center;padding:40px 20px}
-.feature .icon{font-size:36px;color:#B33A3A;margin-bottom:25px;display:block;font-weight:300}
-.feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#0B1F3A;margin-bottom:15px}
-.feature p{color:#4A5A6D;font-size:15px;font-weight:400;line-height:1.8}
-
-/* О НАС */
-.about-section{background:#EFEBE4}
-.about-content{max-width:850px;margin:0 auto;text-align:center}
-.about-content p{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;line-height:1.8;color:#0B1F3A;margin-bottom:30px}
-.about-content em{color:#B33A3A;font-style:italic;font-weight:700}
-.about-content strong{color:#0B1F3A;font-weight:700}
-
-/* БРЕНДЫ */
-.brands-section{background:#EFEBE4}
-.brands-columns{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;margin:0 auto}
-.brands-col-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#0B1F3A;text-align:center;margin-bottom:30px;padding-bottom:15px;border-bottom:2px solid #B33A3A}
-.brand-tier{margin-bottom:30px}
-.brand-tier-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#B33A3A;margin-bottom:12px}
-.brand-tier-list{display:flex;flex-wrap:wrap;gap:10px}
-.brand-chip{background:#fff;border:1px solid #DDD5C8;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;color:#0B1F3A;transition:all 0.3s}
-.brand-chip:hover{border-color:#B33A3A;color:#B33A3A}
-.brands-note{text-align:center;margin-top:40px;font-size:14px;color:#4A5A6D;max-width:700px;margin-left:auto;margin-right:auto}
-
-/* КОНТАКТЫ */
-.contacts-section{background:#EFEBE4}
-.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:0 auto}
-.contact-card{background:#fff;text-align:center;padding:50px 25px;transition:all 0.4s;border:1px solid #E5DFD5;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
-.contact-card:hover{transform:translateY(-5px);border-color:#B33A3A;box-shadow:0 20px 50px rgba(11,31,58,0.08)}
-.contact-card .contact-icon{font-size:26px;color:#B33A3A;margin-bottom:20px;display:block}
-.contact-card h4{font-family:'Montserrat',sans-serif;color:#B33A3A;font-size:11px;font-weight:700;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
-.contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#0B1F3A;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:700}
-.contact-card a:hover{color:#B33A3A}
-
-/* НОВОСТИ */
-.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
-.news-card { background: #fff; padding: 35px 30px; border: 1px solid #E5DFD5; box-shadow: 0 5px 20px rgba(11,31,58,0.03); transition: all 0.4s; display: flex; flex-direction: column; }
-.news-card:hover { transform: translateY(-5px); border-color: #B33A3A; box-shadow: 0 20px 50px rgba(11,31,58,0.08); }
-.news-date { font-size: 11px; color: #8A96A5; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
-.news-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #0B1F3A; margin-bottom: 15px; line-height: 1.3; }
-.news-card p { font-size: 14px; color: #4A5A6D; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
-.news-link { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #B33A3A; text-decoration: none; transition: color 0.3s; }
-.news-link:hover { color: #8E2C2C; }
-
-/* ПОДВАЛ */
-footer{background:#0B1F3A;padding:60px 0 130px;text-align:center;color:#8A9BB0;font-size:13px;letter-spacing:1px;border-top:1px solid #16324F}
-footer .footer-brand{color:#E8C87A;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:20px}
-footer .footer-req{margin-bottom:15px;line-height:1.8;font-size:12px}
-footer .footer-req strong{color:#fff;font-weight:600}
-footer .footer-links{margin:15px 0;font-size:12px}
-footer .footer-links a{color:#8A9BB0;text-decoration:none;margin:0 10px;transition:color 0.3s}
-footer .footer-links a:hover{color:#B33A3A}
-footer .footer-copy{margin-top:20px;font-size:11px;color:#5A6B80;letter-spacing:2px}
-
-/* ПЛАВАЮЩИЕ КНОПКИ */
-.floating-buttons{position:fixed;bottom:40px;right:40px;z-index:999;display:flex;flex-direction:column;gap:15px}
-.floating-btn-main{background:#B33A3A;color:#fff;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(179,58,58,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
-.floating-btn-main:hover{background:#8E2C2C;transform:translateY(-3px);box-shadow:0 20px 60px rgba(179,58,58,0.5)}
-.floating-btn-catalog{background:#fff;color:#B33A3A;border:2px solid #B33A3A;padding:15px 30px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 30px rgba(11,31,58,0.1);transition:all 0.4s;display:flex;align-items:center;gap:10px}
-.floating-btn-catalog:hover{background:#B33A3A;color:#fff;transform:translateY(-3px)}
-
-/* МОДАЛЬНЫЕ ОКНА */
-.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(11,31,58,0.6);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease;overflow-y:auto}
-.modal-overlay.active{display:flex}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.modal-content{background:#fff;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);border:1px solid #E5DFD5;box-shadow:0 30px 80px rgba(11,31,58,0.2)}
-@keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
-.modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#8A96A5;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:300;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
-.modal-close:hover{color:#B33A3A}
-.modal-content h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:42px;font-weight:600;margin-bottom:10px;color:#0B1F3A}
-.modal-content h2 em{font-style:italic;font-weight:700;color:#B33A3A}
-.modal-content .form-subtitle{text-align:center;color:#8A96A5;margin-bottom:40px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
-.form-group{margin-bottom:22px}
-.form-group label{display:block;margin-bottom:10px;color:#4A5A6D;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase}
-.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #C8BFB2;color:#0B1F3A;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:600;outline:none;transition:border-color 0.4s;-webkit-appearance:none;appearance:none;border-radius:0}
+.compare-card-row.blue span:last-child{color:#1E4A7A;font-weight:600;text-align:right}
+.compare-card-row.red span:last-child{color:#B33A3A;font-weight:600;text-align:right}
+ #0B1F3A;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:600;outline:none;transition:border-color 0.4s;-webkit-appearance:none;appearance:none;border-radius:0}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#B33A3A}
 .form-group textarea{resize:vertical;min-height:80px}
 .form-group select{cursor:pointer;color:#0B1F3A}
@@ -235,7 +159,7 @@ header h1{font-size:48px;letter-spacing:-1px}
 header p{font-size:15px;padding:0 10px}
 .header-badge{font-size:9px;letter-spacing:4px;margin-bottom:30px}
 .header-badge::before,.header-badge::after{width:20px;margin:0 8px}
-.btn-primary{padding:16px 40px;font-size:11px;letter-spacing:3px}
+.btn-primary,.btn-blue{padding:16px 40px;font-size:11px;letter-spacing:3px}
 section{padding:80px 0}
 .section-header{margin-bottom:60px}
 .section-label{font-size:10px;letter-spacing:5px;margin-bottom:20px}
@@ -245,6 +169,8 @@ section{padding:80px 0}
 .promo-box { padding: 40px 25px; }
 .promo-title { font-size: 36px; }
 .promo-text { font-size: 16px; }
+.promo-buttons{flex-direction:column;align-items:center}
+.promo-btn-red,.promo-btn-blue{width:100%;max-width:280px;text-align:center;padding:16px 20px;font-size:12px}
 .services{grid-template-columns:1fr;gap:20px}
 .service-card{padding:40px 30px}
 .service-card h3{font-size:26px}
@@ -270,12 +196,11 @@ section{padding:80px 0}
 footer{padding:40px 20px 130px;}
 footer .footer-brand{font-size:20px}
 footer .footer-req{font-size:11px}
-.hp-card{padding: 30px 15px;}
+.hp-card,.ac-card{padding: 30px 15px;}
 .hp-savings { padding: 30px 20px; }
 .hp-save-text h3 { font-size: 26px; }
 .hp-payback{font-size:22px}
-.compare-table{display:none
- }
+.compare-table{display:none}
 .compare-cards{display:block}
 .faq-q{font-size:14px;padding:18px 18px}
 .faq-a{font-size:14px;padding:0 18px}
@@ -284,14 +209,14 @@ footer .footer-req{font-size:11px}
 @media (max-width:380px){
 header h1{font-size:38px}
 .section-title{font-size:30px}
-.btn-primary{padding:14px 30px;font-size:10px}
+.btn-primary,.btn-blue{padding:14px 30px;font-size:10px}
 .service-card{padding:30px 20px}
 .floating-buttons{bottom:15px;right:15px}
 .floating-btn-main,.floating-btn-catalog{padding:12px 18px;font-size:9px}
 }
 </style>
 </head>
-    <body>
+<body>
 
 <div class="top-bar">
 <div class="top-bar-content">
@@ -309,6 +234,7 @@ header h1{font-size:38px}
 <div class="container">
 <ul class="nav-list">
 <li><a href="#heat-pumps" class="nav-link">Тепловые насосы</a></li>
+<li><a href="#air-conditioners" class="nav-link">Кондиционеры</a></li>
 <li><a href="#compare" class="nav-link">Сравнение</a></li>
 <li><a href="#services" class="nav-link">Услуги</a></li>
 <li><a href="#brands" class="nav-link">Бренды</a></li>
@@ -336,9 +262,12 @@ header h1{font-size:38px}
 <div class="promo-box reveal">
 <div class="promo-content">
 <span class="promo-badge">Бесплатно</span>
-<h2 class="promo-title">Расчёт и подбор <em>теплового насоса и кондиционера</em></h2>
+<h2 class="promo-title">Расчёт и подбор <em class="red">теплового насоса</em> и <em class="blue">кондиционера</em></h2>
 <p class="promo-text">Считаем мощность и стоимость под ваш дом. <strong>Бесплатно.</strong></p>
-<a href="#" onclick="openModal('service'); return false;" class="btn-primary promo-btn">Получить расчёт</a>
+<div class="promo-buttons">
+<a href="#" onclick="openModal('service'); return false;" class="promo-btn-red">Расчёт теплового насоса</a>
+<a href="#" onclick="openModal('service'); return false;" class="promo-btn-blue">Расчёт кондиционера</a>
+</div>
 </div>
 </div>
 </div>
@@ -347,8 +276,8 @@ header h1{font-size:38px}
 <section id="heat-pumps" style="background:#fff; padding: 100px 0;">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">Энергоэффективность</span>
-<h2 class="section-title">Тепловые насосы <em>под ключ</em></h2>
+<span class="section-label red">Энергоэффективность</span>
+<h2 class="section-title">Тепловые насосы <em class="red">под ключ</em></h2>
 <p class="section-subtitle">Отопление дома без газа и дров</p>
 </div>
 
@@ -382,7 +311,7 @@ header h1{font-size:38px}
 <div class="hp-payback">Окупаемость: 3–4 года<small>Дальше — только экономия</small></div>
 </div>
 
-<div class="hp-calc-text reveal" style="max-width: 800px; margin: 40px auto 0; background: #EFEBE4; padding: 40px; border-radius: 20px; border: 1px solid #E5DFD5; text-align: center;">
+<div class="hp-calc-text reveal" style="max-width: 800px; margin: 40px auto 0; background: #F9EFEF; padding: 40px; border-radius: 20px; border: 1px solid #EBD5D5; text-align: center;">
 <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #0B1F3A; margin-bottom: 20px;">Почему тепловой насос выгоднее?</h3>
 <p style="font-size: 16px; color: #4A5A6D; line-height: 1.8; margin-bottom: 30px;">Не сжигает топливо, а перекачивает тепло с улицы. На 1 кВт электричества — 3–5 кВт тепла. В 3–4 раза эффективнее обычных обогревателей.</p>
 <a href="#" onclick="openModal('service'); return false;" class="btn-primary" style="padding: 15px 40px;">Получить расчёт</a>
@@ -391,11 +320,45 @@ header h1{font-size:38px}
 </div>
 </section>
 
-<section id="compare" style="background:#F7F5F2;">
+<section id="air-conditioners" style="background:#F7F5F2; padding: 100px 0;">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">Сравнение</span>
-<h2 class="section-title">Тепловой насос <em>vs кондиционер</em></h2>
+<span class="section-label blue">Комфорт</span>
+<h2 class="section-title">Кондиционеры <em class="blue">под ключ</em></h2>
+<p class="section-subtitle">Охлаждение и обогрев в межсезонье</p>
+</div>
+
+<div class="ac-features">
+<div class="ac-card reveal"><div class="ac-icon">1</div><h3>Охлаждение летом</h3><p>Комфорт в жару.</p></div>
+<div class="ac-card reveal"><div class="ac-icon">2</div><h3>Обогрев в межсезонье</h3><p>До −5…−7 °C.</p></div>
+<div class="ac-card reveal"><div class="ac-icon">3</div><h3>Тихая работа</h3><p>Инверторные модели.</p></div>
+</div>
+
+<div class="hp-homes reveal">
+<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 700; text-align: center; margin-bottom: 30px; color: #0B1F3A;">Подходит для:</h3>
+<div class="ac-tags">
+<span class="ac-tag">Квартиры</span>
+<span class="ac-tag">Частные дома</span>
+<span class="ac-tag">Коттеджи</span>
+<span class="ac-tag">Дачи</span>
+<span class="ac-tag">Офисы</span>
+</div>
+</div>
+
+<div class="hp-calc-text reveal" style="max-width: 800px; margin: 40px auto 0; background: #EDF2F8; padding: 40px; border-radius: 20px; border: 1px solid #D5E0EC; text-align: center;">
+<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #0B1F3A; margin-bottom: 20px;">Подберём кондиционер под вашу площадь</h3>
+<p style="font-size: 16px; color: #4A5A6D; line-height: 1.8; margin-bottom: 30px;">Считаем мощность, стоимость и монтаж под ваш дом или квартиру.</p>
+<a href="#" onclick="openModal('service'); return false;" class="btn-blue" style="padding: 15px 40px;">Получить расчёт</a>
+</div>
+
+</div>
+</section>
+
+<section id="compare" style="background:#fff;">
+<div class="container">
+<div class="section-header reveal">
+<span class="section-label red">Сравнение</span>
+<h2 class="section-title">Тепловой насос <em class="red">vs</em> <em class="blue">кондиционер</em></h2>
 <p class="section-subtitle">Один принцип — разные возможности</p>
 </div>
 <div class="compare-wrap reveal">
@@ -416,28 +379,28 @@ header h1{font-size:38px}
 <div class="compare-cards">
 <div class="compare-card">
 <div class="compare-card-title">Охлаждение летом</div>
-<div class="compare-card-row"><span>Кондиционер</span><span>да</span></div>
-<div class="compare-card-row"><span>Тепловой насос</span><span>да</span></div>
+<div class="compare-card-row blue"><span>Кондиционер</span><span>да</span></div>
+<div class="compare-card-row red"><span>Тепловой насос</span><span>да</span></div>
 </div>
 <div class="compare-card">
 <div class="compare-card-title">Отопление зимой</div>
-<div class="compare-card-row"><span>Кондиционер</span><span>до −5…−7 °C</span></div>
-<div class="compare-card-row"><span>Тепловой насос</span><span>до −25 °C</span></div>
+<div class="compare-card-row blue"><span>Кондиционер</span><span>до −5…−7 °C</span></div>
+<div class="compare-card-row red"><span>Тепловой насос</span><span>до −25 °C</span></div>
 </div>
 <div class="compare-card">
 <div class="compare-card-title">1 кВт электричества →</div>
-<div class="compare-card-row"><span>Кондиционер</span><span>1 кВт тепла</span></div>
-<div class="compare-card-row"><span>Тепловой насос</span><span>3–5 кВт тепла</span></div>
+<div class="compare-card-row blue"><span>Кондиционер</span><span>1 кВт тепла</span></div>
+<div class="compare-card-row red"><span>Тепловой насос</span><span>3–5 кВт тепла</span></div>
 </div>
 <div class="compare-card">
 <div class="compare-card-title">Роль в доме</div>
-<div class="compare-card-row"><span>Кондиционер</span><span>дополнение</span></div>
-<div class="compare-card-row"><span>Тепловой насос</span><span>основное отопление</span></div>
+<div class="compare-card-row blue"><span>Кондиционер</span><span>дополнение</span></div>
+<div class="compare-card-row red"><span>Тепловой насос</span><span>основное отопление</span></div>
 </div>
 <div class="compare-card">
 <div class="compare-card-title">Монтаж</div>
-<div class="compare-card-row"><span>Кондиционер</span><span>1 день</span></div>
-<div class="compare-card-row"><span>Тепловой насос</span><span>2–3 дня</span></div>
+<div class="compare-card-row blue"><span>Кондиционер</span><span>1 день</span></div>
+<div class="compare-card-row red"><span>Тепловой насос</span><span>2–3 дня</span></div>
 </div>
 </div>
 
@@ -448,31 +411,31 @@ header h1{font-size:38px}
 <section id="services">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">Услуги</span>
-<h2 class="section-title">Наши <em>услуги</em></h2>
+<span class="section-label red">Услуги</span>
+<h2 class="section-title">Наши <em class="red">услуги</em></h2>
 <p class="section-subtitle">Полный спектр работ для вашего дома</p>
 </div>
 <div class="services">
-<div class="service-card reveal"><span class="service-number">01</span><h3>Тепловые насосы под ключ</h3><p>Проектирование, поставка и монтаж воздушных тепловых насосов для отопления дома.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">02</span><h3>Установка кондиционеров</h3><p>Полный монтаж бытового кондиционера из нашего каталога.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">03</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка в частных домах и коттеджах.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">04</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">05</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности.</p><div class="price">по запросу</div></div>
-<div class="service-card reveal"><span class="service-number">06</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента.</p><div class="price">по запросу</div></div>
+<div class="service-card red reveal"><span class="service-number">01</span><h3>Тепловые насосы под ключ</h3><p>Проектирование, поставка и монтаж воздушных тепловых насосов для отопления дома.</p><div class="price">по запросу</div></div>
+<div class="service-card blue reveal"><span class="service-number">02</span><h3>Установка кондиционеров</h3><p>Полный монтаж бытового кондиционера из нашего каталога.</p><div class="price">по запросу</div></div>
+<div class="service-card blue reveal"><span class="service-number">03</span><h3>Монтаж кондиционеров</h3><p>Профессиональная установка в частных домах и коттеджах.</p><div class="price">по запросу</div></div>
+<div class="service-card blue reveal"><span class="service-number">04</span><h3>Обслуживание и чистка</h3><p>Регулярное сервисное обслуживание, антибактериальная чистка.</p><div class="price">по запросу</div></div>
+<div class="service-card blue reveal"><span class="service-number">05</span><h3>Ремонт кондиционеров</h3><p>Диагностика и ремонт любой сложности.</p><div class="price">по запросу</div></div>
+<div class="service-card blue reveal"><span class="service-number">06</span><h3>Заправка фреоном</h3><p>Дозаправка и полная замена хладагента.</p><div class="price">по запросу</div></div>
 </div>
 </div>
 </section>
-   <section style="background:#EFEBE4">
+<section style="background:#EFEBE4">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">Преимущества</span>
-<h2 class="section-title">Почему <em>выбирают нас</em></h2>
+<span class="section-label red">Преимущества</span>
+<h2 class="section-title">Почему <em class="red">выбирают нас</em></h2>
 </div>
 <div class="features">
-<div class="feature reveal"><span class="icon">◆</span><h3>Опыт более 8 лет</h3><p>Более 2000 установленных систем.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Гарантия до 10 лет</h3><p>На оборудование и работы.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Бесплатная доставка по РБ</h3><p>В любой уголок Беларуси.</p></div>
-<div class="feature reveal"><span class="icon">◆</span><h3>Только частные дома</h3><p>Специализируемся на загородных домах и дачах.</p></div>
+<div class="feature red reveal"><span class="icon">◆</span><h3>Опыт более 8 лет</h3><p>Более 2000 установленных систем.</p></div>
+<div class="feature blue reveal"><span class="icon">◆</span><h3>Гарантия до 10 лет</h3><p>На оборудование и работы.</p></div>
+<div class="feature red reveal"><span class="icon">◆</span><h3>Бесплатная доставка по РБ</h3><p>В любой уголок Беларуси.</p></div>
+<div class="feature blue reveal"><span class="icon">◆</span><h3>Только частные дома</h3><p>Специализируемся на загородных домах и дачах.</p></div>
 </div>
 </div>
 </section>
@@ -480,11 +443,11 @@ header h1{font-size:38px}
 <section class="about-section" id="about">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">О нас</span>
-<h2 class="section-title">Компания <em>VRClimat</em></h2>
+<span class="section-label red">О нас</span>
+<h2 class="section-title">Компания <em class="red">VRClimat</em></h2>
 </div>
 <div class="about-content reveal">
-<p>Ставим <em>тепловые насосы и кондиционеры</em> в частных домах <strong>более 8 лет</strong>.</p>
+<p>Ставим <em class="red">тепловые насосы</em> и <em class="blue">кондиционеры</em> в частных домах <strong>более 8 лет</strong>.</p>
 <p>Работаем с проверенными брендами. Даём <strong>гарантию до 10 лет</strong> на оборудование и монтаж.</p>
 <p>Стоимость — <strong>по запросу</strong>. Считаем под ваш дом за 1 день.</p>
 </div>
@@ -494,70 +457,70 @@ header h1{font-size:38px}
 <section class="brands-section" id="brands">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">Бренды</span>
-<h2 class="section-title">Работаем с <em>лучшими</em></h2>
+<span class="section-label red">Бренды</span>
+<h2 class="section-title">Работаем с <em class="red">лучшими</em></h2>
 <p class="section-subtitle">Подберём технику под бюджет и задачу</p>
 </div>
 <div class="brands-columns reveal">
 
 <div class="brands-col">
-<h3 class="brands-col-title">Тепловые насосы</h3>
+<h3 class="brands-col-title red">Тепловые насосы</h3>
 <div class="brand-tier">
-<div class="brand-tier-label">Премиум</div>
+<div class="brand-tier-label red">Премиум</div>
 <div class="brand-tier-list">
-<span class="brand-chip">Daikin</span>
-<span class="brand-chip">Mitsubishi Electric</span>
-<span class="brand-chip">NIBE</span>
-</div>
-</div>
-<div class="brand-tier">
-<div class="brand-tier-label">Средний класс</div>
-<div class="brand-tier-list">
-<span class="brand-chip">Gree</span>
-<span class="brand-chip">Haier</span>
-<span class="brand-chip">Electrolux</span>
-<span class="brand-chip">TCL</span>
+<span class="brand-chip red">Daikin</span>
+<span class="brand-chip red">Mitsubishi Electric</span>
+<span class="brand-chip red">NIBE</span>
 </div>
 </div>
 <div class="brand-tier">
-<div class="brand-tier-label">Бюджет</div>
+<div class="brand-tier-label red">Средний класс</div>
 <div class="brand-tier-list">
-<span class="brand-chip">KOTLOV GE</span>
-<span class="brand-chip">Kospel</span>
-<span class="brand-chip">VETERO</span>
+<span class="brand-chip red">Gree</span>
+<span class="brand-chip red">Haier</span>
+<span class="brand-chip red">Electrolux</span>
+<span class="brand-chip red">TCL</span>
+</div>
+</div>
+<div class="brand-tier">
+<div class="brand-tier-label red">Бюджет</div>
+<div class="brand-tier-list">
+<span class="brand-chip red">KOTLOV GE</span>
+<span class="brand-chip red">Kospel</span>
+<span class="brand-chip red">VETERO</span>
 </div>
 </div>
 </div>
 
 <div class="brands-col">
-<h3 class="brands-col-title">Кондиционеры</h3>
+<h3 class="brands-col-title blue">Кондиционеры</h3>
 <div class="brand-tier">
-<div class="brand-tier-label">Премиум</div>
+<div class="brand-tier-label blue">Премиум</div>
 <div class="brand-tier-list">
-<span class="brand-chip">Daikin</span>
-<span class="brand-chip">Mitsubishi Electric</span>
-<span class="brand-chip">Panasonic</span>
-</div>
-</div>
-<div class="brand-tier">
-<div class="brand-tier-label">Средний класс</div>
-<div class="brand-tier-list">
-<span class="brand-chip">LG</span>
-<span class="brand-chip">Samsung</span>
-<span class="brand-chip">Gree</span>
-<span class="brand-chip">Midea</span>
-<span class="brand-chip">Haier</span>
-<span class="brand-chip">Electrolux</span>
+<span class="brand-chip blue">Daikin</span>
+<span class="brand-chip blue">Mitsubishi Electric</span>
+<span class="brand-chip blue">Panasonic</span>
 </div>
 </div>
 <div class="brand-tier">
-<div class="brand-tier-label">Бюджет</div>
+<div class="brand-tier-label blue">Средний класс</div>
 <div class="brand-tier-list">
-<span class="brand-chip">Ballu</span>
-<span class="brand-chip">TCL</span>
-<span class="brand-chip">DEXP</span>
-<span class="brand-chip">Aceline</span>
-<span class="brand-chip">Tadilux</span>
+<span class="brand-chip blue">LG</span>
+<span class="brand-chip blue">Samsung</span>
+<span class="brand-chip blue">Gree</span>
+<span class="brand-chip blue">Midea</span>
+<span class="brand-chip blue">Haier</span>
+<span class="brand-chip blue">Electrolux</span>
+</div>
+</div>
+<div class="brand-tier">
+<div class="brand-tier-label blue">Бюджет</div>
+<div class="brand-tier-list">
+<span class="brand-chip blue">Ballu</span>
+<span class="brand-chip blue">TCL</span>
+<span class="brand-chip blue">DEXP</span>
+<span class="brand-chip blue">Aceline</span>
+<span class="brand-chip blue">Tadilux</span>
 </div>
 </div>
 </div>
@@ -570,8 +533,8 @@ header h1{font-size:38px}
 <section id="faq" style="background:#fff;">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">FAQ</span>
-<h2 class="section-title">Частые <em>вопросы</em></h2>
+<span class="section-label red">FAQ</span>
+<h2 class="section-title">Частые <em class="red">вопросы</em></h2>
 </div>
 <div class="faq-list reveal">
 <div class="faq-item">
@@ -601,21 +564,21 @@ header h1{font-size:38px}
 <section class="news-section" id="news" style="background:#F7F5F2; padding: 60px 0;">
 <div class="container">
 <div class="section-header reveal" style="margin-bottom: 40px;">
-<span class="section-label">Новости и статьи</span>
-<h2 class="section-title">Полезная <em>информация</em></h2>
+<span class="section-label red">Новости и статьи</span>
+<h2 class="section-title">Полезная <em class="red">информация</em></h2>
 </div>
 <div class="news-grid">
-<div class="news-card reveal">
+<div class="news-card blue reveal">
 <div class="news-date">Полезная статья</div>
 <h3>Почему обычный кондиционер не работает зимой</h3>
 <p>Разрушаем мифы и рассказываем, почему без зимнего комплекта кондиционер сломается в мороз.</p>
-<a href="#" onclick="openModal('article'); return false;" class="news-link">Читать статью →</a>
+<a href="#" onclick="openModal('article'); return false;" class="news-link blue">Читать статью →</a>
 </div>
-<div class="news-card reveal">
+<div class="news-card red reveal">
 <div class="news-date">Расчёт</div>
 <h3>Бесплатный расчёт теплового насоса и кондиционера</h3>
 <p>Считаем мощность и стоимость под ваш дом.</p>
-<a href="#" onclick="openModal('service'); return false;" class="news-link">Получить расчёт →</a>
+<a href="#" onclick="openModal('service'); return false;" class="news-link red">Получить расчёт →</a>
 </div>
 </div>
 </div>
@@ -624,8 +587,8 @@ header h1{font-size:38px}
 <section class="contacts-section" id="contacts">
 <div class="container">
 <div class="section-header reveal">
-<span class="section-label">Контакты</span>
-<h2 class="section-title">Свяжитесь с <em>нами</em></h2>
+<span class="section-label red">Контакты</span>
+<h2 class="section-title">Свяжитесь с <em class="red">нами</em></h2>
 </div>
 <div class="contacts-grid reveal">
 <div class="contact-card"><span class="contact-icon">◆</span><h4>Телефон</h4><a href="tel:+375256439632">+375 (25) 643-96-32</a></div>
@@ -729,8 +692,7 @@ header h1{font-size:38px}
 </div>
 </div>
 </div>
-
-<div class="modal-overlay" id="modalQuiz" onclick="closeModalOutside(event, 'modalQuiz')">
+ <div class="modal-overlay" id="modalQuiz" onclick="closeModalOutside(event, 'modalQuiz')">
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal('modalQuiz')">×</button>
 <h2>Подбор <em>мощности</em></h2>
@@ -860,8 +822,7 @@ document.getElementById('serviceForm').addEventListener('submit', async function
         await sendToTelegram(text);
         status.textContent = '✅ Заявка отправлена! Мы свяжемся с вами.'; status.className = 'form-status success'; form.reset();
     } catch (err) { status.textContent = '❌ Ошибка сети. Попробуйте ещё раз.'; status.className = 'form-status error'; }
-    finally { btn.disabled = false; btn.text
-            finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
+    finally { btn.disabled = false; btn.textContent = 'Отправить заявку'; }
 });
 
 document.getElementById('catalogForm').addEventListener('submit', async function(e){
@@ -940,5 +901,5 @@ const observer = new IntersectionObserver((entries) => {
 revealElements.forEach(el => observer.observe(el));
 </script>
 </body>
-</html>     
-               
+</html>
+ 
