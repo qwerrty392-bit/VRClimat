@@ -83,13 +83,174 @@ section{padding:100px 0;position:relative}
 .hp-row:last-child { border-bottom: none; }
 .hp-highlight { font-weight: 700; color: #008080; font-size: 18px; background: #fff; padding: 15px 20px; border-radius: 12px; margin-top: 10px; border: none; box-shadow: 0 5px 15px rgba(0,128,128,0.1); }
 
-<!-- КАЛЬКУЛЯТОР ЭКОНОМИИ -->
-<div class="calc-box reveal">
-<h3>Рассчитайте выгоду</h3>
-<label style="font-size: 14px; color: #666; display: block; margin-bottom: 10px;">Площадь дома (м²):</label>
-<input type="number" id="areaInput" class="calc-input" placeholder="Например, 150" value="150">
-<div class="calc-result" id="calcResult"></div>
-</div>
+/* ПРЕИМУЩЕСТВА */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
+.feature{text-align:center;padding:40px 20px}
+.feature .icon{font-size:36px;color:#008080;margin-bottom:25px;display:block;font-weight:300}
+.feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:15px}
+.feature p{color:#666;font-size:15px;font-weight:400;line-height:1.8}
+
+/* АКЦИЯ */
+.promo-section { padding: 80px 0; background: #fcfcfc; }
+.promo-box { background: linear-gradient(135deg, #008080 0%, #006666 100%); border-radius: 30px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0, 128, 128, 0.3); }
+.promo-box::before { content: '🎁'; position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.1; transform: rotate(15deg); }
+.promo-content { position: relative; z-index: 2; }
+.promo-badge { display: inline-block; background: rgba(255, 255, 255, 0.2); color: #fff; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.promo-title { font-family: 'Cormorant Garamond', serif; font-size: 54px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+.promo-title em { font-style: italic; color: #f4e5a1; }
+.promo-text { font-size: 18px; color: #e0e0e0; max-width: 700px; margin: 0 auto 40px; line-height: 1.6; }
+.promo-text strong { color: #fff; }
+.promo-btn { background: #fff; color: #008080; padding: 18px 50px; border-radius: 50px; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s; border: 2px solid #fff; }
+.promo-btn:hover { background: transparent; color: #fff; transform: translateY(-3px); }
+
+/* О НАС */
+.about-section{background:#f8f9fa}
+.about-content{max-width:850px;margin:0 auto;text-align:center}
+.about-content p{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;line-height:1.8;color:#333;margin-bottom:30px}
+.about-content em{color:#008080;font-style:italic;font-weight:700}
+.about-content strong{color:#1a1a1a;font-weight:700}
+
+/* БРЕНДЫ */
+.brands-section{background:#f8f9fa}
+.brand-category{margin-bottom:70px;text-align:center}
+.brand-category:last-child{margin-bottom:0}
+.brand-cat-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#1a1a1a;margin-bottom:40px;display:inline-block;position:relative;padding-bottom:15px}
+.brand-cat-title::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background:#008080}
+.brands-row{display:flex;justify-content:center;flex-wrap:wrap;gap:20px;max-width:1100px;margin:0 auto}
+.brand-item{background:#fff;padding:30px 40px;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02);transition:all 0.4s;display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:180px}
+.brand-item:hover{transform:translateY(-5px);border-color:#008080;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
+.brand-item h4{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#1a1a1a;margin-bottom:5px}
+.brand-item p{color:#999;font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:500}
+
+/* КОНТАКТЫ */
+.contacts-section{background:#f8f9fa}
+.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:0 auto}
+.contact-card{background:#fff;text-align:center;padding:50px 25px;transition:all 0.4s;border:1px solid #f0f0f0;box-shadow:0 5px 20px rgba(0,0,0,0.02)}
+.contact-card:hover{transform:translateY(-5px);border-color:#008080;box-shadow:0 20px 50px rgba(0,0,0,0.08)}
+.contact-card .contact-icon{font-size:26px;color:#008080;margin-bottom:20px;display:block}
+.contact-card h4{font-family:'Montserrat',sans-serif;color:#008080;font-size:11px;font-weight:700;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
+.contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#1a1a1a;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:700}
+.contact-card a:hover{color:#008080}
+
+/* НОВОСТИ */
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
+.news-card { background: #fff; padding: 35px 30px; border: 1px solid #f0f0f0; box-shadow: 0 5px 20px rgba(0,0,0,0.02); transition: all 0.4s; display: flex; flex-direction: column; }
+.news-card:hover { transform: translateY(-5px); border-color: #008080; box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
+.news-date { font-size: 11px; color: #999; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+.news-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #1a1a1a; margin-bottom: 15px; line-height: 1.3; }
+.news-card p { font-size: 14px; color: #666; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+.news-link { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #008080; text-decoration: none; transition: color 0.3s; }
+.news-link:hover { color: #006666; }
+
+/* ПОДВАЛ */
+footer{background:#1a1a1a;padding:60px 0 40px;text-align:center;color:#888;font-size:13px;letter-spacing:1px;border-top:1px solid #333}
+footer .footer-brand{color:#008080;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:20px}
+footer .footer-req{margin-bottom:15px;line-height:1.8;font-size:12px}
+footer .footer-req strong{color:#fff;font-weight:600}
+footer .footer-copy{margin-top:20px;font-size:11px;color:#555;letter-spacing:2px}
+
+/* ПЛАВАЮЩИЕ КНОПКИ */
+.floating-buttons{position:fixed;bottom:40px;right:40px;z-index:999;display:flex;flex-direction:column;gap:15px}
+.floating-btn-main{background:#008080;color:#fff;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(0,128,128,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
+.floating-btn-main:hover{background:#006666;transform:translateY(-3px);box-shadow:0 20px 60px rgba(0,128,128,0.5)}
+.floating-btn-catalog{background:#fff;color:#008080;border:2px solid #008080;padding:15px 30px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.1);transition:all 0.4s;display:flex;align-items:center;gap:10px}
+.floating-btn-catalog:hover{background:#008080;color:#fff;transform:translateY(-3px)}
+
+/* МОДАЛЬНЫЕ ОКНА */
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(26,26,26,0.6);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease;overflow-y:auto}
+.modal-overlay.active{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-content{background:#fff;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);border:1px solid #f0f0f0;box-shadow:0 30px 80px rgba(0,0,0,0.15)}
+@keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#999;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:300;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{color:#008080}
+.modal-content h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:42px;font-weight:600;margin-bottom:10px;color:#1a1a1a}
+.modal-content h2 em{font-style:italic;font-weight:700;color:#008080}
+.modal-content .form-subtitle{text-align:center;color:#888;margin-bottom:40px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.form-group{margin-bottom:22px}
+.form-group label{display:block;margin-bottom:10px;color:#666;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #ccc;color:#1a1a1a;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:600;outline:none;transition:border-color 0.4s;-webkit-appearance:none;appearance:none;border-radius:0}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#008080}
+.form-group textarea{resize:vertical;min-height:80px}
+.form-group select{cursor:pointer;color:#1a1a1a}
+.form-group select option{background:#fff;color:#1a1a1a}
+.modal-content .btn-primary{width:100%;margin-top:20px;padding:20px;background:#008080;color:#fff;border:none;font-size:12px;letter-spacing:4px;font-weight:700}
+.modal-content .btn-primary:hover{background:#006666}
+.form-status{margin-top:25px;text-align:center;font-size:14px;min-height:20px;letter-spacing:1px;font-weight:600}
+.form-status.success{color:#008080}
+.form-status.error{color:#d32f2f}
+
+/* АДАПТИВ */
+@media (max-width:1024px){
+header h1{font-size:72px}
+.section-title{font-size:52px}
+.services{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+}
+
+@media (max-width:768px){
+.top-bar-content{flex-direction:column;gap:5px;text-align:center}
+.top-bar-info{text-align:center;flex-direction:column;gap:10px;}
+.container{padding:0 20px}
+header{min-height:auto;padding:100px 0}
+header h1{font-size:48px;letter-spacing:-1px}
+header p{font-size:15px;padding:0 10px}
+.header-badge{font-size:9px;letter-spacing:4px;margin-bottom:30px}
+.header-badge::before,.header-badge::after{width:20px;margin:0 8px}
+.btn-primary{padding:16px 40px;font-size:11px;letter-spacing:3px}
+section{padding:80px 0}
+.section-header{margin-bottom:60px}
+.section-label{font-size:10px;letter-spacing:5px;margin-bottom:20px}
+.section-title{font-size:36px;letter-spacing:-0.5px}
+.section-subtitle{font-size:15px;padding:0 10px}
+.warranty-badge h2{font-size:36px}
+.promo-box { padding: 40px 25px; }
+.promo-title { font-size: 36px; }
+.promo-text { font-size: 16px; }
+.services{grid-template-columns:1fr;gap:20px}
+.service-card{padding:40px 30px}
+.service-card h3{font-size:26px}
+.service-card p{font-size:14px}
+.service-card .price{font-size:32px}
+.features{grid-template-columns:1fr;gap:30px}
+.feature{padding:20px 10px}
+.feature h3{font-size:22px}
+.about-content p{font-size:20px}
+.brand-cat-title{font-size:26px}
+.brands-row{flex-direction:column;align-items:center;}
+.brand-item{padding:25px 30px;min-width:100%;max-width:300px;}
+.brand-item h4{font-size:22px}
+.contacts-grid{grid-template-columns:1fr;gap:20px}
+.contact-card{padding:35px 20px}
+.contact-card p,.contact-card a{font-size:20px}
+.floating-buttons{bottom:20px;right:20px;gap:10px}
+.floating-btn-main,.floating-btn-catalog{padding:14px 22px;font-size:10px;letter-spacing:2px}
+.modal-overlay{padding:10px;align-items:flex-start;padding-top:30px}
+.modal-content{padding:50px 25px;max-height:95vh}
+.modal-content h2{font-size:32px}
+.modal-content .form-subtitle{font-size:11px;margin-bottom:30px}
+.form-group{margin-bottom:18px}
+.form-group label{font-size:10px;letter-spacing:2px}
+.form-group input,.form-group select,.form-group textarea{font-size:16px}
+.modal-close{top:10px;right:10px}
+footer{padding:40px 20px 130px;}
+footer .footer-brand{font-size:20px}
+footer .footer-req{font-size:11px}
+.hp-card{padding: 30px 15px;}
+.hp-savings { padding: 30px 20px; }
+.hp-save-text h3 { font-size: 26px; }
+}
+
+@media (max-width:380px){
+header h1{font-size:38px}
+.section-title{font-size:30px}
+.btn-primary{padding:14px 30px;font-size:10px}
+.service-card{padding:30px 20px}
+.floating-buttons{bottom:15px;right:15px}
+.floating-btn-main,.floating-btn-catalog{padding:12px 18px;font-size:9px}
+}
+</style>
+</head>
+<body>
 
 <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
 <div class="top-bar">
@@ -145,7 +306,7 @@ section{padding:100px 0;position:relative}
 </div>
 </section>
 
-<!-- БЛОК КАЛЬКУЛЯТОРА ПОДБОРА -->
+<!-- БЛОК ПОДБОРА -->
 <section style="padding: 60px 0; background: #fcfcfc; text-align: center;">
 <div class="container">
 <h2 class="section-title">Не знаете, что выбрать?</h2>
@@ -173,7 +334,7 @@ section{padding:100px 0;position:relative}
 </div>
 </section>
 
-<!-- БЛОК ПРО ТЕПЛОВЫЕ НАСОСЫ -->
+<!-- БЛОК ТЕПЛОВЫХ НАСОСОВ -->
 <section id="heat-pumps" style="background:#fff; padding: 100px 0;">
 <div class="container">
 <div class="section-header reveal">
@@ -212,12 +373,16 @@ section{padding:100px 0;position:relative}
 <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #666;">Окупаемость системы — от 3 до 5 лет. Дальше — только чистая экономия.</p>
 </div>
 
-<!-- КАЛЬКУЛЯТОР ЭКОНОМИИ -->
-<div class="calc-box reveal">
-<h3>Рассчитайте выгоду</h3>
-<label style="font-size: 14px; color: #666; display: block; margin-bottom: 10px;">Площадь дома (м²):</label>
-<input type="number" id="areaInput" class="calc-input" placeholder="Например, 150" value="150">
-<div class="calc-result" id="calcResult"></div>
+<!-- БЛОК ПРЕИМУЩЕСТВА ТЕПЛОВОГО НАСОСА -->
+<div class="hp-calc-text reveal" style="max-width: 800px; margin: 40px auto 0; background: #f8f9fa; padding: 40px; border-radius: 20px; border: 1px solid #eef2f5; text-align: center;">
+<h3 style="font-family: 'Cormorant Garamond', serif; font-size: 28px; color: #1a1a1a; margin-bottom: 20px;">Почему тепловой насос выгоднее?</h3>
+<p style="font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 20px;">
+Тепловой насос не сжигает топливо, а «перекачивает» тепло с улицы. На 1 кВт потраченного электричества он выдает 3–5 кВт тепла. Это делает его в 3–4 раза эффективнее обычных электрических обогревателей и зачастую выгоднее газа в долгосрочной перспективе.
+</p>
+<p style="font-size: 16px; color: #555; line-height: 1.8; margin-bottom: 30px;">
+<strong>Точная окупаемость зависит от площади дома, утепления и тарифов.</strong> Мы бесплатно рассчитаем выгоду именно для вашего дома.
+</p>
+<a href="#" onclick="openModal('service'); return false;" class="btn-primary" style="padding: 15px 40px;">Получить бесплатный расчет</a>
 </div>
 
 </div>
@@ -479,6 +644,7 @@ section{padding:100px 0;position:relative}
 </div>
 </div>
 </div>
+
 <script>
 // Токен бота
 const TELEGRAM_BOT_TOKEN="8608601758:AAHqKHl1UshkTT1hrB8yjhWZOpTkwTOO8oQ";
@@ -522,14 +688,12 @@ document.addEventListener('keydown',(e)=>{
 async function sendToTelegram(text) {
     const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
     
-    // Отправка на первый ID
     await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID_1, text: text })
     });
 
-    // Отправка на второй ID
     await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -622,26 +786,6 @@ document.getElementById('quizForm').addEventListener('submit', async function(e)
         console.error('Ошибка отправки:', err);
     }
 });
-
-// Логика калькулятора экономии (Тепловые насосы)
-const areaInput = document.getElementById('areaInput');
-const calcResult = document.getElementById('calcResult');
-
-function calculateSavings() {
-    const area = parseInt(areaInput.value);
-    if (!isNaN(area) && area > 0) {
-        // Примерный расчет: газ 3 руб/м2, насос 1 руб/м2 (разница 2 руб/м2)
-        const savings = area * 2; 
-        calcResult.textContent = `Ваша примерная экономия: ~${savings} BYN в месяц`;
-    } else {
-        calcResult.textContent = '';
-    }
-}
-
-if (areaInput) {
-    areaInput.addEventListener('input', calculateSavings);
-    calculateSavings(); // Расчет при загрузке
-}
 
 // Анимация появления
 const revealElements=document.querySelectorAll('.reveal');
