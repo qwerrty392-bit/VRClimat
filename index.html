@@ -83,15 +83,13 @@ section{padding:100px 0;position:relative}
 .hp-row:last-child { border-bottom: none; }
 .hp-highlight { font-weight: 700; color: #008080; font-size: 18px; background: #fff; padding: 15px 20px; border-radius: 12px; margin-top: 10px; border: none; box-shadow: 0 5px 15px rgba(0,128,128,0.1); }
 
-/* КАЛЬКУЛЯТОР ЭКОНОМИИ */
-.calc-box { background: #fff; max-width: 600px; margin: 40px auto 0; padding: 40px; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); text-align: center; border: 1px solid #eef2f5; }
-.calc-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 28px; margin-bottom: 20px; }
-.calc-input { width: 100%; padding: 15px; font-size: 16px; border: 1px solid #ccc; border-radius: 10px; margin-bottom: 20px; font-family: 'Montserrat', sans-serif; outline: none; transition: border-color 0.3s; }
-.calc-input:focus { border-color: #008080; }
-.calc-result { font-size: 20px; font-weight: 600; color: #008080; margin-top: 20px; min-height: 30px; }
- </style>
-</head>
-<body>
+<!-- КАЛЬКУЛЯТОР ЭКОНОМИИ -->
+<div class="calc-box reveal">
+<h3>Рассчитайте выгоду</h3>
+<label style="font-size: 14px; color: #666; display: block; margin-bottom: 10px;">Площадь дома (м²):</label>
+<input type="number" id="areaInput" class="calc-input" placeholder="Например, 150" value="150">
+<div class="calc-result" id="calcResult"></div>
+</div>
 
 <!-- ВЕРХНЯЯ ПАНЕЛЬ -->
 <div class="top-bar">
