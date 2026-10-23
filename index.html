@@ -12,7 +12,6 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;scroll-behavior:smo
 body{font-family:'Montserrat',sans-serif;background:#F7F5F2;color:#0B1F3A;line-height:1.6;overflow-x:hidden;width:100%}
 .container{max-width:1300px;margin:0 auto;padding:0 30px;width:100%}
 
-/* ВЕРХНЯЯ ПАНЕЛЬ */
 .top-bar{background:#0B1F3A;color:#fff;padding:12px 0;font-size:13px;font-weight:500;letter-spacing:1px;position:relative;z-index:10}
 .top-bar-content{max-width:1300px;margin:0 auto;padding:0 30px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
 .top-bar-phone{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff;transition:color 0.3s}
@@ -22,7 +21,6 @@ body{font-family:'Montserrat',sans-serif;background:#F7F5F2;color:#0B1F3A;line-h
 .btn-callback{background:#B33A3A;color:#fff;padding:8px 15px;border-radius:50px;text-decoration:none;font-size:11px;font-weight:600;transition:all 0.3s;border:none;cursor:pointer;}
 .btn-callback:hover{background:#8E2C2C;transform:translateY(-1px);}
 
-/* МЕНЮ */
 .main-nav{background:#fff;box-shadow:0 2px 10px rgba(11,31,58,0.06);position:sticky;top:0;z-index:99;}
 .nav-list{display:flex;justify-content:center;list-style:none;gap:30px;padding:15px 0;flex-wrap:wrap;}
 .nav-link{text-decoration:none;color:#0B1F3A;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1px;transition:color 0.3s;position:relative;}
@@ -30,7 +28,6 @@ body{font-family:'Montserrat',sans-serif;background:#F7F5F2;color:#0B1F3A;line-h
 .nav-link::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:#B33A3A;transition:width 0.3s;}
 .nav-link:hover::after{width:100%;}
 
-/* ШАПКА */
 header{position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(135deg,#F7F5F2 0%,#EDE9E3 50%,#F7F5F2 100%);overflow:hidden;padding:40px 20px}
 header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(179,58,58,0.05) 0%,transparent 60%);animation:rotate 40s linear infinite}
 @keyframes rotate{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
@@ -46,12 +43,10 @@ header p{font-size:18px;color:#4A5A6D;font-weight:400;max-width:600px;margin:0 a
 .btn-blue:hover{background:#153A61;transform:translateY(-2px);box-shadow:0 15px 40px rgba(30,74,122,0.4)}
 @keyframes fadeInUp{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:translateY(0)}}
 
-/* ГАРАНТИЯ */
 .warranty-badge{background:#0B1F3A;color:#fff;padding:30px 20px;text-align:center;position:relative;z-index:5;border-top:1px solid #16324F;border-bottom:1px solid #16324F}
 .warranty-badge h2{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;margin:0}
 .warranty-badge h2 em{font-style:italic;color:#E8C87A}
 
-/* СЕКЦИИ */
 section{padding:100px 0;position:relative}
 .section-header{text-align:center;margin-bottom:60px}
 .section-label{font-size:11px;font-weight:600;letter-spacing:8px;text-transform:uppercase;margin-bottom:25px;display:block}
@@ -62,11 +57,9 @@ section{padding:100px 0;position:relative}
 .section-title em.blue{font-style:italic;font-weight:700;color:#1E4A7A}
 .section-subtitle{color:#4A5A6D;font-size:18px;font-weight:400;max-width:600px;margin:0 auto;letter-spacing:0.5px}
 
-/* REVEAL */
 .reveal{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
-/* ТЕПЛОВЫЕ НАСОСЫ — КРАСНАЯ ВЕТКА */
 .hp-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 60px; }
 .hp-card { text-align: center; padding: 40px 25px; background: #F9EFEF; border-radius: 20px; border: 1px solid #EBD5D5; transition: all 0.3s; }
 .hp-card:hover { border-color: #B33A3A; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(179,58,58,0.12); }
@@ -85,7 +78,6 @@ section{padding:100px 0;position:relative}
 .hp-payback { text-align:center; margin-top:25px; font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:700; color:#B33A3A; }
 .hp-payback small{display:block; font-family:'Montserrat',sans-serif; font-size:12px; color:#8A96A5; font-weight:500; letter-spacing:2px; text-transform:uppercase; margin-top:8px;}
 
-/* КОНДИЦИОНЕРЫ — СИНЯЯ ВЕТКА */
 .ac-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto 60px; }
 .ac-card { text-align: center; padding: 40px 25px; background: #EDF2F8; border-radius: 20px; border: 1px solid #D5E0EC; transition: all 0.3s; }
 .ac-card:hover { border-color: #1E4A7A; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(30,74,122,0.12); }
@@ -95,7 +87,6 @@ section{padding:100px 0;position:relative}
 .ac-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; max-width: 900px; margin: 0 auto; }
 .ac-tag { background: #E2EAF4; color: #1E4A7A; padding: 12px 25px; border-radius: 50px; font-size: 14px; font-weight: 600; border: 1px solid #C8D6E6; }
 
-/* УСЛУГИ */
 .services{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px}
 .service-card{background:#fff;padding:60px 45px;transition:all 0.4s;position:relative;overflow:hidden;border:1px solid #E5DFD5;border-top:4px solid transparent;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
 .service-card.red:hover{border-top-color:#B33A3A;transform:translateY(-5px);box-shadow:0 20px 50px rgba(179,58,58,0.1)}
@@ -108,9 +99,7 @@ section{padding:100px 0;position:relative}
 .service-card .price{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700}
 .service-card.red .price{color:#B33A3A}
 .service-card.blue .price{color:#1E4A7A}
-
-/* ТАБЛИЦА */
-.compare-wrap{max-width:900px;margin:0 auto}
+ .compare-wrap{max-width:900px;margin:0 auto}
 .compare-table{width:100%;border-collapse:collapse;background:#fff;box-shadow:0 5px 30px rgba(11,31,58,0.06);border-radius:20px;overflow:hidden}
 .compare-table th,.compare-table td{padding:18px 20px;text-align:left;font-size:15px;border-bottom:1px solid #EFEBE4}
 .compare-table th{background:#0B1F3A;color:#fff;font-weight:600;font-size:13px;letter-spacing:1px;text-transform:uppercase}
@@ -128,7 +117,112 @@ section{padding:100px 0;position:relative}
 .compare-card-row span:first-child{color:#8A96A5}
 .compare-card-row.blue span:last-child{color:#1E4A7A;font-weight:600;text-align:right}
 .compare-card-row.red span:last-child{color:#B33A3A;font-weight:600;text-align:right}
- #0B1F3A;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:600;outline:none;transition:border-color 0.4s;-webkit-appearance:none;appearance:none;border-radius:0}
+
+.promo-section { padding: 80px 0; background: #F7F5F2; }
+.promo-box { background: linear-gradient(135deg, #0B1F3A 0%, #16324F 50%, #1E4A7A 100%); border-radius: 30px; padding: 60px 40px; text-align: center; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(11,31,58,0.35); border: 1px solid #B33A3A; }
+.promo-box::before { content: '📐'; position: absolute; top: -20px; right: -20px; font-size: 150px; opacity: 0.08; transform: rotate(15deg); }
+.promo-content { position: relative; z-index: 2; }
+.promo-badge { display: inline-block; background: rgba(232,200,122,0.15); color: #E8C87A; padding: 8px 20px; border-radius: 50px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; border: 1px solid rgba(232,200,122,0.35); }
+.promo-title { font-family: 'Cormorant Garamond', serif; font-size: 54px; font-weight: 700; color: #fff; margin-bottom: 20px; }
+.promo-title em.red { font-style: italic; color: #E8A0A0; }
+.promo-title em.blue { font-style: italic; color: #A8C4E8; }
+.promo-text { font-size: 18px; color: #C8D2DE; max-width: 700px; margin: 0 auto 40px; line-height: 1.6; }
+.promo-text strong { color: #fff; }
+.promo-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.promo-btn-red { background: #B33A3A; color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s; border: 2px solid #B33A3A; }
+.promo-btn-red:hover { background: #fff; color: #B33A3A; border-color: #fff; transform: translateY(-3px); }
+.promo-btn-blue { background: #1E4A7A; color: #fff; padding: 18px 40px; border-radius: 50px; font-weight: 700; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s; border: 2px solid #1E4A7A; }
+.promo-btn-blue:hover { background: #fff; color: #1E4A7A; border-color: #fff; transform: translateY(-3px); }
+
+.faq-list{max-width:800px;margin:0 auto}
+.faq-item{background:#fff;border:1px solid #E5DFD5;border-radius:12px;margin-bottom:15px;overflow:hidden;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
+.faq-q{width:100%;text-align:left;background:none;border:none;padding:22px 25px;font-family:'Montserrat',sans-serif;font-size:16px;font-weight:600;color:#0B1F3A;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.faq-q:hover{color:#B33A3A}
+.faq-q .faq-icon{color:#B33A3A;font-size:20px;transition:transform 0.3s;flex-shrink:0}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease;padding:0 25px;color:#4A5A6D;font-size:15px;line-height:1.7}
+.faq-item.open .faq-a{max-height:200px;padding-bottom:22px}
+
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:60px}
+.feature{text-align:center;padding:40px 20px}
+.feature .icon{font-size:36px;margin-bottom:25px;display:block;font-weight:300}
+.feature.red .icon{color:#B33A3A}
+.feature.blue .icon{color:#1E4A7A}
+.feature h3{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:700;color:#0B1F3A;margin-bottom:15px}
+.feature p{color:#4A5A6D;font-size:15px;font-weight:400;line-height:1.8}
+
+.about-section{background:#EFEBE4}
+.about-content{max-width:850px;margin:0 auto;text-align:center}
+.about-content p{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;line-height:1.8;color:#0B1F3A;margin-bottom:30px}
+.about-content em.red{color:#B33A3A;font-style:italic;font-weight:700}
+.about-content em.blue{color:#1E4A7A;font-style:italic;font-weight:700}
+.about-content strong{color:#0B1F3A;font-weight:700}
+
+.brands-section{background:#EFEBE4}
+.brands-columns{display:grid;grid-template-columns:1fr 1fr;gap:50px;max-width:1100px;margin:0 auto}
+.brands-col-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#0B1F3A;text-align:center;margin-bottom:30px;padding-bottom:15px}
+.brands-col-title.red{border-bottom:2px solid #B33A3A}
+.brands-col-title.blue{border-bottom:2px solid #1E4A7A}
+.brand-tier{margin-bottom:30px}
+.brand-tier-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+.brand-tier-label.red{color:#B33A3A}
+.brand-tier-label.blue{color:#1E4A7A}
+.brand-tier-list{display:flex;flex-wrap:wrap;gap:10px}
+.brand-chip{background:#fff;border:1px solid #DDD5C8;padding:8px 16px;border-radius:50px;font-size:13px;font-weight:600;color:#0B1F3A;transition:all 0.3s}
+.brand-chip.red:hover{border-color:#B33A3A;color:#B33A3A}
+.brand-chip.blue:hover{border-color:#1E4A7A;color:#1E4A7A}
+.brands-note{text-align:center;margin-top:40px;font-size:14px;color:#4A5A6D;max-width:700px;margin-left:auto;margin-right:auto}
+
+.contacts-section{background:#EFEBE4}
+.contacts-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:30px;max-width:1100px;margin:0 auto}
+.contact-card{background:#fff;text-align:center;padding:50px 25px;transition:all 0.4s;border:1px solid #E5DFD5;box-shadow:0 5px 20px rgba(11,31,58,0.03)}
+.contact-card:hover{transform:translateY(-5px);border-color:#B33A3A;box-shadow:0 20px 50px rgba(11,31,58,0.08)}
+.contact-card .contact-icon{font-size:26px;color:#B33A3A;margin-bottom:20px;display:block}
+.contact-card h4{font-family:'Montserrat',sans-serif;color:#B33A3A;font-size:11px;font-weight:700;margin-bottom:15px;text-transform:uppercase;letter-spacing:4px}
+.contact-card p,.contact-card a{font-family:'Cormorant Garamond',serif;color:#0B1F3A;font-size:22px;text-decoration:none;transition:color 0.3s;font-weight:700}
+.contact-card a:hover{color:#B33A3A}
+
+.news-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 900px; margin: 0 auto; }
+.news-card { background: #fff; padding: 35px 30px; border: 1px solid #E5DFD5; box-shadow: 0 5px 20px rgba(11,31,58,0.03); transition: all 0.4s; display: flex; flex-direction: column; }
+.news-card.red:hover { transform: translateY(-5px); border-color: #B33A3A; box-shadow: 0 20px 50px rgba(179,58,58,0.1); }
+.news-card.blue:hover { transform: translateY(-5px); border-color: #1E4A7A; box-shadow: 0 20px 50px rgba(30,74,122,0.1); }
+.news-date { font-size: 11px; color: #8A96A5; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 15px; }
+.news-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 700; color: #0B1F3A; margin-bottom: 15px; line-height: 1.3; }
+.news-card p { font-size: 14px; color: #4A5A6D; line-height: 1.6; margin-bottom: 20px; flex-grow: 1; }
+.news-link { font-family: 'Montserrat', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: color 0.3s; }
+.news-link.red { color: #B33A3A; }
+.news-link.red:hover { color: #8E2C2C; }
+.news-link.blue { color: #1E4A7A; }
+.news-link.blue:hover { color: #153A61; }
+
+footer{background:#0B1F3A;padding:60px 0 130px;text-align:center;color:#8A9BB0;font-size:13px;letter-spacing:1px;border-top:1px solid #16324F}
+footer .footer-brand{color:#E8C87A;font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;margin-bottom:20px}
+footer .footer-req{margin-bottom:15px;line-height:1.8;font-size:12px}
+footer .footer-req strong{color:#fff;font-weight:600}
+footer .footer-links{margin:15px 0;font-size:12px}
+footer .footer-links a{color:#8A9BB0;text-decoration:none;margin:0 10px;transition:color 0.3s}
+footer .footer-links a:hover{color:#B33A3A}
+footer .footer-copy{margin-top:20px;font-size:11px;color:#5A6B80;letter-spacing:2px}
+
+.floating-buttons{position:fixed;bottom:40px;right:40px;z-index:999;display:flex;flex-direction:column;gap:15px}
+.floating-btn-main{background:#B33A3A;color:#fff;border:none;padding:18px 35px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;cursor:pointer;box-shadow:0 15px 50px rgba(179,58,58,0.3);transition:all 0.4s;display:flex;align-items:center;gap:12px}
+.floating-btn-main:hover{background:#8E2C2C;transform:translateY(-3px);box-shadow:0 20px 60px rgba(179,58,58,0.5)}
+.floating-btn-catalog{background:#fff;color:#1E4A7A;border:2px solid #1E4A7A;padding:15px 30px;font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;box-shadow:0 10px 30px rgba(11,31,58,0.1);transition:all 0.4s;display:flex;align-items:center;gap:10px}
+.floating-btn-catalog:hover{background:#1E4A7A;color:#fff;transform:translateY(-3px)}
+
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(11,31,58,0.6);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:20px;animation:fadeIn 0.4s ease;overflow-y:auto}
+.modal-overlay.active{display:flex}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-content{background:#fff;max-width:550px;width:100%;padding:70px 50px;position:relative;max-height:90vh;overflow-y:auto;animation:slideUp 0.5s cubic-bezier(0.4,0,0.2,1);border:1px solid #E5DFD5;box-shadow:0 30px 80px rgba(11,31,58,0.2)}
+@keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-close{position:absolute;top:20px;right:25px;background:none;border:none;color:#8A96A5;font-size:28px;cursor:pointer;transition:color 0.3s;font-weight:300;width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+.modal-close:hover{color:#B33A3A}
+.modal-content h2{font-family:'Cormorant Garamond',serif;text-align:center;font-size:42px;font-weight:600;margin-bottom:10px;color:#0B1F3A}
+.modal-content h2 em{font-style:italic;font-weight:700;color:#B33A3A}
+.modal-content .form-subtitle{text-align:center;color:#8A96A5;margin-bottom:40px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+.form-group{margin-bottom:22px}
+.form-group label{display:block;margin-bottom:10px;color:#4A5A6D;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid #C8BFB2;color:#0B1F3A;font-size:18px;font-family:'Cormorant Garamond',serif;font-weight:600;outline:none;transition:border-color 0.4s;-webkit-appearance:none;appearance:none;border-radius:0}
 .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-bottom-color:#B33A3A}
 .form-group textarea{resize:vertical;min-height:80px}
 .form-group select{cursor:pointer;color:#0B1F3A}
@@ -143,7 +237,6 @@ section{padding:100px 0;position:relative}
 .consent a{color:#B33A3A;text-decoration:none}
 .consent a:hover{text-decoration:underline}
 
-/* АДАПТИВ */
 @media (max-width:1024px){
 header h1{font-size:72px}
 .section-title{font-size:52px}
@@ -216,7 +309,7 @@ header h1{font-size:38px}
 }
 </style>
 </head>
-<body>
+ <body>
 
 <div class="top-bar">
 <div class="top-bar-content">
@@ -425,7 +518,7 @@ header h1{font-size:38px}
 </div>
 </div>
 </section>
-<section style="background:#EFEBE4">
+  <section style="background:#EFEBE4">
 <div class="container">
 <div class="section-header reveal">
 <span class="section-label red">Преимущества</span>
@@ -605,7 +698,6 @@ header h1{font-size:38px}
 <div class="footer-req">
 <strong>ИП Салацкий Владислав Владимирович</strong><br>
 УНП: 693462668<br>
-<!-- Сюда можно будет добавить банковский счет -->
 </div>
 <div class="footer-links">
 <a href="#" onclick="openModal('privacy'); return false;">Политика конфиденциальности</a>
@@ -685,14 +777,15 @@ header h1{font-size:38px}
 <p><strong>2. Ледяная пробка в дренаже.</strong> Вода замерзает в трубке, конденсат течёт в комнату.</p>
 <p><strong>3. Переохлаждение наружного блока.</strong> Система работает на износ.</p>
 <p><strong>✅ Решение:</strong> зимний комплект (подогрев картера, дренажа и регулятор давления). Позволяет греть дом даже в −20 °C.</p>
-<p style="margin-top: 20px; font-weight: 600; color: #B33A3A;">Для полного отопления дома без газа и дров — воздушный тепловой насос.</p>
+<p style="margin-top: 20px; font-weight:  600; color: #B33A3A;">Для полного отопления дома без газа и дров — воздушный тепловой насос.</p>
 </div>
 <div style="text-align: center; margin-top: 30px;">
 <button onclick="closeModal('modalArticle'); openModal('service');" class="btn-primary">Получить расчёт</button>
 </div>
 </div>
 </div>
- <div class="modal-overlay" id="modalQuiz" onclick="closeModalOutside(event, 'modalQuiz')">
+
+<div class="modal-overlay" id="modalQuiz" onclick="closeModalOutside(event, 'modalQuiz')">
 <div class="modal-content" onclick="event.stopPropagation()">
 <button class="modal-close" onclick="closeModal('modalQuiz')">×</button>
 <h2>Подбор <em>мощности</em></h2>
@@ -902,4 +995,5 @@ revealElements.forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
+ 
  
